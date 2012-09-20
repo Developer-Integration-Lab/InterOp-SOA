@@ -1,0 +1,524 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd">
+	<S:Header>
+		<To xmlns="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</To>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">urn:ihe:iti:2007:CrossGatewayQueryResponse</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">uuid:2bb4cfce-b48c-4b0e-a7f3-bfaca4b27544</MessageID>
+		<RelatesTo xmlns="http://www.w3.org/2005/08/addressing">uuid:9e3e481d-f4c8-41fa-a10f-771718163b57</RelatesTo>
+		<wsse:Security S:mustUnderstand="true">
+			<wsu:Timestamp wsu:Id="_1" xmlns:ns15="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512" xmlns:ns14="http://schemas.xmlsoap.org/soap/envelope/">
+				<wsu:Created>2012-02-06T19:12:03Z</wsu:Created>
+				<wsu:Expires>2012-02-06T19:17:03Z</wsu:Expires>
+			</wsu:Timestamp>
+			<wsse11:SignatureConfirmation wsu:Id="_5002" Value="RNprXCfloOY6KH1FRxg5XcbWJ82tkLRiSaUWdouRqQGGpLaaxjp97sVkzm+NM7jt8rof93QwP0pcVbsFpJGtJ3VLZ4Rl/LExC9E6i8AKbG/uITx8cNJhpm+S9iefDZMpqvMm7hKCAgUfDlx7mXS+A6BMx067vPRvHfE/0BTryY7fJJ9Pi7oI3m6/5oar4IH32yN44k2SNbwSqSnzgTp2X2vOgNTAiqM8h4oKQuwEIs74AvrB/NGGbhJOxUrKJkOXormd9KgVEoRVZ3nUhfnJqyoq7IVzXzka5CmV6Tr+ef8c9lRll8oQfi0VOenvgguwMYpDFNDtgUMwKHKqLas3IQ==" xmlns:ns15="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512" xmlns:ns14="http://schemas.xmlsoap.org/soap/envelope/"/>
+		</wsse:Security>
+	</S:Header>
+	<S:Body>
+		<ns4:AdhocQueryResponse status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" xmlns:ns6="urn:gov:hhs:fha:nhinc:gateway:samltokendata">
+			<ns2:RegistryObjectList>
+				<ns2:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="Active" objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1" home="urn:oid:2.16.840.1.113883.0.101" id="urn:uuid:45cd7c51-ba5f-4d9e-850e-b09a0ba2fa86">
+					<ns2:Slot name="creationTime">
+						<ns2:ValueList>
+							<ns2:Value>20080712134500</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="hash">
+						<ns2:ValueList>
+							<ns2:Value>82e55c4b5e1c2a6d724b0310df0a0c6d583615b7</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="intendedRecipient">
+						<ns2:ValueList>
+							<ns2:Value>Unknown</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="languageCode">
+						<ns2:ValueList>
+							<ns2:Value>en-US</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="legalAuthenticator">
+						<ns2:ValueList>
+							<ns2:Value>legal</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="serviceStartTime">
+						<ns2:ValueList>
+							<ns2:Value>20070612040000</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="serviceStopTime">
+						<ns2:ValueList>
+							<ns2:Value>20070712040000</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="size">
+						<ns2:ValueList>
+							<ns2:Value>12679</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="sourcePatientId">
+						<ns2:ValueList>
+							<ns2:Value>RI1.101.00037</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="sourcePatientInfo">
+						<ns2:ValueList>
+							<ns2:Value>PID-3|pid1^^^domain</ns2:Value>
+							<ns2:Value>PID-5|Marta^Marquez^^^</ns2:Value>
+							<ns2:Value>PID-7|19701001</ns2:Value>
+							<ns2:Value>PID-8|F</ns2:Value>
+							<ns2:Value>PID-11|19591 Springs Pl^^Atlanta^GA^30345^US</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="URI">
+						<ns2:ValueList>
+							<ns2:Value>1.RI1.101.00037.11111</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="repositoryUniqueId">
+						<ns2:ValueList>
+							<ns2:Value>1</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Name>
+						<ns2:LocalizedString value="Marta Inter-Op Test Document 1"/>
+					</ns2:Name>
+					<ns2:Description>
+						<ns2:LocalizedString value="Marta Inter-Op Test Document 1 comments"/>
+					</ns2:Description>
+					<ns2:Classification nodeRepresentation="" classifiedObject="urn:uuid:45cd7c51-ba5f-4d9e-850e-b09a0ba2fa86" classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d" id="">
+						<ns2:Slot name="authorPerson">
+							<ns2:ValueList>
+								<ns2:Value>Dr. Sidney Garfield</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Slot name="authorInstitution">
+							<ns2:ValueList>
+								<ns2:Value>Kaiser Permanente</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Slot name="authorRole">
+							<ns2:ValueList>
+								<ns2:Value>Primary Care Provider</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Slot name="authorSpecialty">
+							<ns2:ValueList>
+								<ns2:Value>General</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="34133-9" classifiedObject="urn:uuid:45cd7c51-ba5f-4d9e-850e-b09a0ba2fa86" classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="Summarization of Episode Note"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="Confidential" classifiedObject="urn:uuid:45cd7c51-ba5f-4d9e-850e-b09a0ba2fa86" classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>Confidential</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="Confidential"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="interop" classifiedObject="urn:uuid:45cd7c51-ba5f-4d9e-850e-b09a0ba2fa86" classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>interopScheme</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="interopScheme"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007" classifiedObject="urn:uuid:45cd7c51-ba5f-4d9e-850e-b09a0ba2fa86" classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>IHE</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="HL7 CCD Document"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="FMC" classifiedObject="urn:uuid:45cd7c51-ba5f-4d9e-850e-b09a0ba2fa86" classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="Family Medicine Clinic"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="394802001" classifiedObject="urn:uuid:45cd7c51-ba5f-4d9e-850e-b09a0ba2fa86" classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>2.16.840.1.113883.6.96</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="General Medicine"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="test" classifiedObject="urn:uuid:45cd7c51-ba5f-4d9e-850e-b09a0ba2fa86" classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>test</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="test"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:ExternalIdentifier value="1.RI1.101.00037.11111" identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab" registryObject="urn:uuid:45cd7c51-ba5f-4d9e-850e-b09a0ba2fa86" id="">
+						<ns2:Name>
+							<ns2:LocalizedString value="XDSDocumentEntry.uniqueId"/>
+						</ns2:Name>
+					</ns2:ExternalIdentifier>
+					<ns2:ExternalIdentifier value="'RI1.101.00037^^^&amp;2.16.840.1.113883.0.101&amp;ISO'" identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427" registryObject="urn:uuid:45cd7c51-ba5f-4d9e-850e-b09a0ba2fa86" id="">
+						<ns2:Name>
+							<ns2:LocalizedString value="XDSDocumentEntry.patientId"/>
+						</ns2:Name>
+					</ns2:ExternalIdentifier>
+				</ns2:ExtrinsicObject>
+				<ns2:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="Active" objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1" home="urn:oid:2.16.840.1.113883.0.101" id="urn:uuid:c9869d20-ba7d-44d7-ba09-715ce61ac6f6">
+					<ns2:Slot name="creationTime">
+						<ns2:ValueList>
+							<ns2:Value>20090723134500</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="hash">
+						<ns2:ValueList>
+							<ns2:Value>d678981ef7ace11cc425f030738861cfcac83c18</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="intendedRecipient">
+						<ns2:ValueList>
+							<ns2:Value>Unknown</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="languageCode">
+						<ns2:ValueList>
+							<ns2:Value>en-US</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="legalAuthenticator">
+						<ns2:ValueList>
+							<ns2:Value>legal</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="serviceStartTime">
+						<ns2:ValueList>
+							<ns2:Value>20080623040000</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="serviceStopTime">
+						<ns2:ValueList>
+							<ns2:Value>20080723040000</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="size">
+						<ns2:ValueList>
+							<ns2:Value>12679</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="sourcePatientId">
+						<ns2:ValueList>
+							<ns2:Value>RI1.101.00037</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="sourcePatientInfo">
+						<ns2:ValueList>
+							<ns2:Value>PID-3|pid1^^^domain</ns2:Value>
+							<ns2:Value>PID-5|Marta^Marquez^^^</ns2:Value>
+							<ns2:Value>PID-7|19701001</ns2:Value>
+							<ns2:Value>PID-8|F</ns2:Value>
+							<ns2:Value>PID-11|19591 Springs Pl^^Atlanta^GA^30345^US</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="URI">
+						<ns2:ValueList>
+							<ns2:Value>1.RI1.101.00037.22222</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="repositoryUniqueId">
+						<ns2:ValueList>
+							<ns2:Value>1</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Name>
+						<ns2:LocalizedString value="Marta Inter-Op Test Document 2"/>
+					</ns2:Name>
+					<ns2:Description>
+						<ns2:LocalizedString value="Marta Inter-Op Test Document 2 comments"/>
+					</ns2:Description>
+					<ns2:Classification nodeRepresentation="" classifiedObject="urn:uuid:c9869d20-ba7d-44d7-ba09-715ce61ac6f6" classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d" id="">
+						<ns2:Slot name="authorPerson">
+							<ns2:ValueList>
+								<ns2:Value>Dr. Sidney Garfield</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Slot name="authorInstitution">
+							<ns2:ValueList>
+								<ns2:Value>Kaiser Permanente</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Slot name="authorRole">
+							<ns2:ValueList>
+								<ns2:Value>Primary Care Provider</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Slot name="authorSpecialty">
+							<ns2:ValueList>
+								<ns2:Value>General</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="34133-9" classifiedObject="urn:uuid:c9869d20-ba7d-44d7-ba09-715ce61ac6f6" classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="Summarization of Episode Note"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="Confidential" classifiedObject="urn:uuid:c9869d20-ba7d-44d7-ba09-715ce61ac6f6" classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>Confidential</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="Confidential"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007" classifiedObject="urn:uuid:c9869d20-ba7d-44d7-ba09-715ce61ac6f6" classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>IHE</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="HL7 CCD Document"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="FMC" classifiedObject="urn:uuid:c9869d20-ba7d-44d7-ba09-715ce61ac6f6" classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="Family Medicine Clinic"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="394802001" classifiedObject="urn:uuid:c9869d20-ba7d-44d7-ba09-715ce61ac6f6" classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>2.16.840.1.113883.6.96</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="General Medicine"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="test" classifiedObject="urn:uuid:c9869d20-ba7d-44d7-ba09-715ce61ac6f6" classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>test</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="test"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:ExternalIdentifier value="1.RI1.101.00037.22222" identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab" registryObject="urn:uuid:c9869d20-ba7d-44d7-ba09-715ce61ac6f6" id="">
+						<ns2:Name>
+							<ns2:LocalizedString value="XDSDocumentEntry.uniqueId"/>
+						</ns2:Name>
+					</ns2:ExternalIdentifier>
+					<ns2:ExternalIdentifier value="'RI1.101.00037^^^&amp;2.16.840.1.113883.0.101&amp;ISO'" identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427" registryObject="urn:uuid:c9869d20-ba7d-44d7-ba09-715ce61ac6f6" id="">
+						<ns2:Name>
+							<ns2:LocalizedString value="XDSDocumentEntry.patientId"/>
+						</ns2:Name>
+					</ns2:ExternalIdentifier>
+				</ns2:ExtrinsicObject>
+				<ns2:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="Active" objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1" home="urn:oid:2.16.840.1.113883.0.101" id="urn:uuid:d6d58b86-e43a-456b-bb50-01a06ae483bd">
+					<ns2:Slot name="creationTime">
+						<ns2:ValueList>
+							<ns2:Value>20090729134500</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="hash">
+						<ns2:ValueList>
+							<ns2:Value>bc1d5f893f6eeb918e9d9e30c58c688f1643a837</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="intendedRecipient">
+						<ns2:ValueList>
+							<ns2:Value>Unknown</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="languageCode">
+						<ns2:ValueList>
+							<ns2:Value>en-US</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="legalAuthenticator">
+						<ns2:ValueList>
+							<ns2:Value>legal</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="serviceStartTime">
+						<ns2:ValueList>
+							<ns2:Value>20080629040000</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="serviceStopTime">
+						<ns2:ValueList>
+							<ns2:Value>20080629040000</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="size">
+						<ns2:ValueList>
+							<ns2:Value>12679</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="sourcePatientId">
+						<ns2:ValueList>
+							<ns2:Value>RI1.101.00037</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="sourcePatientInfo">
+						<ns2:ValueList>
+							<ns2:Value>PID-3|pid1^^^domain</ns2:Value>
+							<ns2:Value>PID-5|Marta^Marquez^^^</ns2:Value>
+							<ns2:Value>PID-7|19701001</ns2:Value>
+							<ns2:Value>PID-8|F</ns2:Value>
+							<ns2:Value>PID-11|19591 Springs Pl^^Atlanta^GA^30345^US</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="URI">
+						<ns2:ValueList>
+							<ns2:Value>1.RI1.101.00037.33333</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Slot name="repositoryUniqueId">
+						<ns2:ValueList>
+							<ns2:Value>1</ns2:Value>
+						</ns2:ValueList>
+					</ns2:Slot>
+					<ns2:Name>
+						<ns2:LocalizedString value="Marta Inter-Op Test Document 3"/>
+					</ns2:Name>
+					<ns2:Description>
+						<ns2:LocalizedString value="Marta Inter-Op Test Document 3 comments"/>
+					</ns2:Description>
+					<ns2:Classification nodeRepresentation="" classifiedObject="urn:uuid:d6d58b86-e43a-456b-bb50-01a06ae483bd" classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d" id="">
+						<ns2:Slot name="authorPerson">
+							<ns2:ValueList>
+								<ns2:Value>Dr. Sidney Garfield</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Slot name="authorInstitution">
+							<ns2:ValueList>
+								<ns2:Value>Kaiser Permanente</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Slot name="authorRole">
+							<ns2:ValueList>
+								<ns2:Value>Primary Care Provider</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Slot name="authorSpecialty">
+							<ns2:ValueList>
+								<ns2:Value>General</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="34133-9" classifiedObject="urn:uuid:d6d58b86-e43a-456b-bb50-01a06ae483bd" classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="Summarization of Episode Note"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="Confidential" classifiedObject="urn:uuid:d6d58b86-e43a-456b-bb50-01a06ae483bd" classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>Confidential</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="Confidential"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007" classifiedObject="urn:uuid:d6d58b86-e43a-456b-bb50-01a06ae483bd" classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>IHE</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="HL7 CCD Document"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="FMC" classifiedObject="urn:uuid:d6d58b86-e43a-456b-bb50-01a06ae483bd" classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="Family Medicine Clinic"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="394802001" classifiedObject="urn:uuid:d6d58b86-e43a-456b-bb50-01a06ae483bd" classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>2.16.840.1.113883.6.96</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="General Medicine"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:Classification nodeRepresentation="test" classifiedObject="urn:uuid:d6d58b86-e43a-456b-bb50-01a06ae483bd" classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983" id="">
+						<ns2:Slot name="codingScheme">
+							<ns2:ValueList>
+								<ns2:Value>test</ns2:Value>
+							</ns2:ValueList>
+						</ns2:Slot>
+						<ns2:Name>
+							<ns2:LocalizedString value="test"/>
+						</ns2:Name>
+					</ns2:Classification>
+					<ns2:ExternalIdentifier value="1.RI1.101.00037.33333" identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab" registryObject="urn:uuid:d6d58b86-e43a-456b-bb50-01a06ae483bd" id="">
+						<ns2:Name>
+							<ns2:LocalizedString value="XDSDocumentEntry.uniqueId"/>
+						</ns2:Name>
+					</ns2:ExternalIdentifier>
+					<ns2:ExternalIdentifier value="'RI1.101.00037^^^&amp;2.16.840.1.113883.0.101&amp;ISO'" identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427" registryObject="urn:uuid:d6d58b86-e43a-456b-bb50-01a06ae483bd" id="">
+						<ns2:Name>
+							<ns2:LocalizedString value="XDSDocumentEntry.patientId"/>
+						</ns2:Name>
+					</ns2:ExternalIdentifier>
+				</ns2:ExtrinsicObject>
+			</ns2:RegistryObjectList>
+		</ns4:AdhocQueryResponse>
+	</S:Body>
+</S:Envelope>

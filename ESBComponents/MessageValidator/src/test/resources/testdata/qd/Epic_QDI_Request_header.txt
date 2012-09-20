@@ -1,0 +1,8 @@
+POST /CONNECTGateway/NhinService/RespondingGateway_Query_Service/DocQuery HTTP/1.1
+Content-type: application/soap+xml;charset="utf-8";action="urn:ihe:iti:2007:CrossGatewayQuery"
+Accept: application/soap+xml, multipart/related, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+User-Agent: JAX-WS RI 2.1.7-hudson-48-
+Host: epic.com:443
+Connection: keep-alive
+Content-Length: 10053
+X-Forwarded-For: 10.0.3.122

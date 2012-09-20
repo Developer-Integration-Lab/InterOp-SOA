@@ -1,0 +1,133 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.aegis.gateway.client</groupId>
+    <artifactId>Connect248WSClientTester</artifactId>
+    <version>1.0.0</version>
+    <packaging>bundle</packaging>
+
+    <name>Connect248WSClientTester</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.osgi.version>1.1.0</spring.osgi.version>
+        <NhincCommonTypesLib.version>2.4.8</NhincCommonTypesLib.version>
+        <Connect248WSClient.version>1.0.0</Connect248WSClient.version>
+        <Connect32WSClient.version>1.0.0</Connect32WSClient.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>1.0.0</version>
+        </dependency>       
+        <dependency>
+            <groupId>net.aegis.gateway.client</groupId>
+            <artifactId>Connect248WSClient</artifactId>
+            <scope>compile</scope>
+            <version>${Connect248WSClient.version}</version>
+        </dependency> 
+      <!--   <dependency>
+            <groupId>net.aegis.gateway.client</groupId>
+            <artifactId>Connect32WSClient</artifactId>
+            <version>${Connect32WSClient.version}</version>
+        </dependency> -->
+    </dependencies>
+
+    <build>
+    <resources>
+        <resource>
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+        </resource>
+    </resources>
+    <plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<!-- <manifestLocation>META-INF</manifestLocation> -->
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Import-Package>
+							gov.hhs.fha.nhinc.common.nhinccommon;version="${NhincCommonTypesLib.version}",
+							gov.hhs.fha.nhinc.common.nhinccommonentity;version="${NhincCommonTypesLib.version}",
+							gov.hhs.fha.nhinc.entitydocquery;version="${NhincCommonTypesLib.version}",
+							gov.hhs.fha.nhinc.entitydocretrieve;version="${NhincCommonTypesLib.version}",
+							gov.hhs.fha.nhinc.entitypatientdiscovery;version="${NhincCommonTypesLib.version}",
+							ihe.iti.xds_b._2007;version="${NhincCommonTypesLib.version}",
+							javax.jws,                            
+                            javax.xml.namespace,                           
+							javax.xml.bind,
+							javax.xml.bind.annotation,
+							javax.xml.ws,
+							javax.xml.ws.handler,
+							javax.xml.ws.http,
+							javax.xml.ws.spi,
+							javax.xml.ws.handler.soap,
+							javax.xml.ws.wsaddressing,
+							javax.xml.ws.spi.http,
+							javax.xml.ws.soap,
+							javax.wsdl,
+                            META-INF.cxf,
+                            META-INF.cxf.osgi,
+                            META-INF;version="${project.version}",
+                            net.aegis.gateway.client.connect248.pd;version="${Connect248WSClient.version}",
+							net.aegis.gateway.client.connect248.qd;version="${Connect248WSClient.version}",
+							net.aegis.gateway.client.connect248.rd;version="${Connect248WSClient.version}",
+							net.aegis.gateway.client.connect248.sp;version="${Connect248WSClient.version}",
+							net.aegis.gateway.client.connect248.util;version="${Connect248WSClient.version}",
+							net.aegis.gateway.client.service;version="${Connect248WSClient.version}",
+                            oasis.names.tc.ebxml_regrep.xsd.query._3;version="${NhincCommonTypesLib.version}",
+							oasis.names.tc.ebxml_regrep.xsd.rim._3;version="${NhincCommonTypesLib.version}",
+							org.hl7.v3;version="${NhincCommonTypesLib.version}",	
+                            org.apache.commons.logging,
+                            org.apache.cxf.bus,
+                            org.apache.cxf.bus.spring,
+                            org.apache.cxf.bus.resource,
+                            org.apache.cxf.configuration.spring,
+                            org.apache.cxf.jaxws.spi,
+                            org.apache.cxf.resource,
+                            org.apache.cxf.transport.http,
+                            org.apache.servicemix.util,                         
+							org.osgi.framework,
+							org.springframework.beans.factory.config,
+                            org.springframework.context,
+                            org.springframework.context.support,							
+							org.springframework.osgi.context
+						</Import-Package>
+						 <!-- <_failok>true</_failok> 
+            			<_nouses>true</_nouses>  -->
+            			<Bundle-Activator>net.aegis.gateway.client.internal.Activator</Bundle-Activator>
+						<Require-Bundle>org.apache.cxf.bundle,Connect248WSClient</Require-Bundle>						
+						<!-- add ,plugin.xml if it's present i.e. src/main/resources,plugin.xml -->
+						<!-- <Include-Resource>src/main/resources</Include-Resource> -->
+					</instructions>
+				</configuration>
+				<!-- generate manifest automatically once the classes are processed -->
+				<executions>
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

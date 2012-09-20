@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="security" namespace="/security" extends="tiles-default">
+
+        <action name="SignOn" class="net.aegis.lab.participant.web.action.security.SignOn">
+            <result name="success" type="tiles">security.login</result>
+        </action>
+
+        <action name="Login_*" method="{1}" class="net.aegis.lab.participant.web.action.security.Login">
+            <result name="input" type="tiles">security.login</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">MyInfo</param>
+                <param name="namespace">/info</param>
+            </result>
+        </action>
+
+        <action name="Logoff_*" method="{1}" class="net.aegis.lab.participant.web.action.security.Logoff">
+            <result name="success" type="tiles">security.login</result>
+        </action>
+
+        <!-- Add actions here -->
+        
+    </package>
+
+</struts>

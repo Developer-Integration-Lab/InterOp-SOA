@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">    
+    <xs:element name="patientPD">
+        <xs:complexType>
+            <xs:sequence>
+            	<xs:element name="userFamilyName" type="xs:string"/>
+            	<xs:element name="userGivenName" type="xs:string"/>
+            	<xs:element name="userInitials" type="xs:string"/>
+            	<xs:element name="userName" type="xs:string"/>
+                <xs:element name="patientId" type="xs:string"/>
+                <xs:element name="patientPrefix" type="xs:string"/>
+                <xs:element name="patientLastName" type="xs:string"/>
+                <xs:element name="patientGivenName" type="xs:string"/>
+                <xs:element name="patientGender" type="xs:string"/>
+                <xs:element name="patientDateOfBirth" type="xs:string"/>
+                <xs:element name="patientSsn" type="xs:string"/>
+                <xs:element name="patientTel" type="xs:string"/>
+                <xs:element name="patientStreetAddress" type="xs:string"/>
+                <xs:element name="patientCity" type="xs:string"/>
+                <xs:element name="patientState" type="xs:string"/>
+                <xs:element name="patientZip" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>    
+</xs:schema>

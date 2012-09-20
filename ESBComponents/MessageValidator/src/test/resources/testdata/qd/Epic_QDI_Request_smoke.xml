@@ -1,0 +1,135 @@
+
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">urn:ihe:iti:2007:CrossGatewayQuery</a:Action>
+		<a:MessageID>urn:uuid:4d2811b9-0343-45b2-800b-76cdf97ef7e8</a:MessageID>
+		<ActivityId CorrelationId="f282920f-535a-4b49-9537-e47acb64ea83" xmlns="http://schemas.microsoft.com/2004/09/ServiceModel/Diagnostics">00000000-0000-0000-0000-000000000000</ActivityId>
+		<a:ReplyTo>
+			<a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+		</a:ReplyTo>
+		<a:To s:mustUnderstand="1">https://conformance2.5amsolutions.com/CONNECTGateway/NhinService/RespondingGateway_Query_Service/DocQuery</a:To>
+		<a:From a:IsReferenceParameter="true">
+			<a:Address>urn:OCHIN:DEV-CE</a:Address>
+		</a:From>
+		<o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+			<u:Timestamp u:Id="_0">
+				<u:Created>2011-02-15T20:16:46.914Z</u:Created>
+				<u:Expires>2011-02-15T20:21:46.914Z</u:Expires>
+			</u:Timestamp>
+			<Assertion ID="_789431e2-2107-423a-b89d-edce51c0e7ba" IssueInstant="2011-02-15T20:16:46.836Z" Version="2.0" xmlns="urn:oasis:names:tc:SAML:2.0:assertion">
+				<Issuer Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">CN=NHINDEV.ochin.org, OU=NHIN-Test, O=nhin, C=US</Issuer>
+				<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+					<ds:SignedInfo>
+						<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+						<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+						<ds:Reference URI="#_789431e2-2107-423a-b89d-edce51c0e7ba">
+							<ds:Transforms>
+								<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+								<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+							</ds:Transforms>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+							<ds:DigestValue>Bg4dULxosrByfhXeWC7QVAys5Lg=</ds:DigestValue>
+						</ds:Reference>
+					</ds:SignedInfo>
+					<ds:SignatureValue>QPqmuXCvshnbFKD0I3ea4ImB8Loo3zdtNyN+hqgBHCVvbQFcCiVitglZfNqdgWfAuEb9iOQHwo9hbUPkV5LyeTSlRw0HlyWeiER3uURbWJCi79k4tdrAeKTrprq6GIPGr7lcMovsI0Y4Vu/2bwYe1OpVby9sa+dT1T9K2oFnxU39esd9me+K05e4HqKPhfuUxds2UtaILzsTACuLslQb5az6y1JPIbhOuBcQN09fCc6OplSWKfk6mXrUKAqzsB3inepYTjSMJPLHzc3mHvjWbqLx6SwPiDnGY3uyx34m00Id6ZMu1sQzBWX6yNZueQWA2dq177JX1eb+dQDPVsT4pA==</ds:SignatureValue>
+					<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+						<X509Data>
+							<X509Certificate>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</X509Certificate>
+						</X509Data>
+					</KeyInfo>
+				</ds:Signature>
+				<Subject>
+					<NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">CN=HyperspaceUserName-10804</NameID>
+					<SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:holder-of-key">
+						<SubjectConfirmationData a:type="KeyInfoConfirmationDataType" xmlns:a="http://www.w3.org/2001/XMLSchema-instance">
+							<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+								<trust:BinarySecret xmlns:trust="http://docs.oasis-open.org/ws-sx/ws-trust/200512">e5JcnZrqgPXDFtXcLRU0KJeop4c/0n1bxzDqMv0fvwo=</trust:BinarySecret>
+							</KeyInfo>
+						</SubjectConfirmationData>
+					</SubjectConfirmation>
+				</Subject>
+				<Conditions NotBefore="2011-02-15T20:16:46.773Z" NotOnOrAfter="2011-02-15T21:16:46.773Z">
+					<AudienceRestriction>
+						<Audience>https://conformance2.5amsolutions.com/CONNECTGateway/NhinService/RespondingGateway_Query_Service/DocQuery</Audience>
+					</AudienceRestriction>
+				</Conditions>
+				<AttributeStatement>
+					<Attribute Name="urn:oasis:names:tc:xspa:1.0:subject:subject-id" a:OriginalIssuer="OCHINSTS" xmlns:a="http://schemas.xmlsoap.org/ws/2009/09/identity/claims">
+						<AttributeValue>Justin Stauffer</AttributeValue>
+					</Attribute>
+					<Attribute Name="urn:oasis:names:tc:xspa:1.0:subject:organization" a:OriginalIssuer="OCHINSTS" xmlns:a="http://schemas.xmlsoap.org/ws/2009/09/identity/claims">
+						<AttributeValue>OCHIN</AttributeValue>
+					</Attribute>
+					<Attribute Name="urn:oasis:names:tc:xspa:1.0:subject:organization-id" a:OriginalIssuer="OCHINSTS" xmlns:a="http://schemas.xmlsoap.org/ws/2009/09/identity/claims">
+						<AttributeValue>urn:oid:2.16.840.1.113883.3.346</AttributeValue>
+					</Attribute>
+					<Attribute Name="urn:nhin:names:saml:homeCommunityId" a:OriginalIssuer="OCHINSTS" xmlns:a="http://schemas.xmlsoap.org/ws/2009/09/identity/claims">
+						<AttributeValue>urn:oid:2.16.840.1.113883.3.346</AttributeValue>
+					</Attribute>
+					<Attribute Name="urn:oasis:names:tc:xacml:2.0:subject:role" a:OriginalIssuer="OCHINSTS" xmlns:a="http://schemas.xmlsoap.org/ws/2009/09/identity/claims">
+						<AttributeValue>
+							<Role code="224608005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="OCHIN_MR_ADM_ROLE" xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+						</AttributeValue>
+					</Attribute>
+					<Attribute Name="urn:oasis:names:tc:xspa:1.0:subject:purposeofuse" a:OriginalIssuer="OCHINSTS" xmlns:a="http://schemas.xmlsoap.org/ws/2009/09/identity/claims">
+						<AttributeValue>
+							<PurposeForUse code="TREATMENT" codeSystem="2.16.840.1.113883.3.18.7.1" codeSystemName="nhin-purpose" displayName="Treatment" xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+						</AttributeValue>
+					</Attribute>
+				</AttributeStatement>
+				<AuthnStatement AuthnInstant="2011-02-15T20:16:46.836Z">
+					<AuthnContext>
+						<AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
+					</AuthnContext>
+				</AuthnStatement>
+			</Assertion>
+			<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+				<SignedInfo>
+					<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+					<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#hmac-sha1"/>
+					<Reference URI="#_0">
+						<Transforms>
+							<Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+						</Transforms>
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>7tOjNnaC2Nm8XyVILSv/Zco5DC4=</DigestValue>
+					</Reference>
+				</SignedInfo>
+				<SignatureValue>8V3ctYtwL2IxuMoXuiy65inOWfc=</SignatureValue>
+				<KeyInfo>
+					<o:SecurityTokenReference k:TokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0" xmlns:k="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd">
+						<o:KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">_789431e2-2107-423a-b89d-edce51c0e7ba</o:KeyIdentifier>
+					</o:SecurityTokenReference>
+				</KeyInfo>
+			</Signature>
+		</o:Security>
+	</s:Header>
+	<s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		<AdhocQueryRequest xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0">
+			<ResponseOption returnType="LeafClass"/>
+			<AdhocQuery id="urn:uuid:14d4debf-8f97-4251-9a74-a90016b0af0d" xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+				<Slot name="$XDSDocumentEntryPatientId">
+					<ValueList>
+						<Value>'NN600002^^^&amp;2.16.840.1.113883.3.614&amp;ISO'</Value>
+					</ValueList>
+				</Slot>
+				<Slot name="$XDSDocumentEntryStatus">
+					<ValueList>
+						<Value>('urn:oasis:names:tc:ebxml-regrep:StatusType:Approved')</Value>
+						<Value>('urn:ihe:iti:2010:StatusType:DeferredCreation')</Value>
+					</ValueList>
+				</Slot>
+				<Slot name="$XDSDocumentEntryClassCode">
+					<ValueList>
+						<Value>('34133-9^^2.16.840.1.113883.6.1')</Value>
+					</ValueList>
+				</Slot>
+				<Slot name="$XDSDocumentEntryFormatCode">
+					<ValueList>
+						<Value>('urn:ihe:pcc:xphr:2007^^2.16.840.1.113883.3.88.12.80.73')</Value>
+					</ValueList>
+				</Slot>
+			</AdhocQuery>
+		</AdhocQueryRequest>
+	</s:Body>
+</s:Envelope>

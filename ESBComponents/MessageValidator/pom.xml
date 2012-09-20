@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.aegis</groupId>
+	<artifactId>MessageValidator</artifactId>
+	<packaging>bundle</packaging>
+	<name>MessageValidator</name>
+	<properties>
+		<LabCore.version>1.0.0</LabCore.version>
+		<slf4j.version>1.5.0</slf4j.version>
+		<spring.maven.artifact.version>3.0.5.RELEASE</spring.maven.artifact.version>
+		<spring.osgi.version>1.2.1</spring.osgi.version>
+		<felix.ver>1.0.0</felix.ver>
+		<hibernate.version>3.3.2.GA</hibernate.version>
+		<hibernate.annotations.version>3.4.0.GA</hibernate.annotations.version>
+		<hibernate.common.annotations.version>3.3.0.ga</hibernate.common.annotations.version>
+		<hibernate.validator.version>4.1.0.Final</hibernate.validator.version>
+		<quartz.version>1.8.3</quartz.version>
+		<jms.version>1.1.1</jms.version>
+		<activemq.version>5.5.0-fuse-00-43</activemq.version>
+		<LabCommons.version>1.0.0</LabCommons.version>
+		<skipTests>true</skipTests>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.jms</artifactId>
+			<version>3.0.5.RELEASE</version>
+		</dependency>
+		<!-- JMS 1.1 -->
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jms_1.1_spec</artifactId>
+			<version>${jms.version}</version>
+		</dependency>
+		<!-- Active MQ -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-pool</artifactId>
+			<version>${activemq.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.aegis</groupId>
+			<artifactId>LabCore</artifactId>
+			<version>${LabCore.version}</version>
+		</dependency>
+
+		<!-- Copied LabCore dependencies Start -->
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>${felix.ver}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.beans</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.context</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.context.support</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.core</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+		</dependency>
+		<!-- Spring aop start -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.aop</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jamonapi</groupId>
+			<artifactId>com.springsource.com.jamonapi</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.cglib</groupId>
+			<artifactId>com.springsource.net.sf.cglib</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aopalliance</groupId>
+			<artifactId>com.springsource.org.aopalliance</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<!-- common logging dependency is in spring-core -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>com.springsource.org.apache.commons.pool</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>com.springsource.org.aspectj.weaver</artifactId>
+			<version>1.6.8.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.asm</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Spring aop End -->
+		<!-- spring dao , transaction Start -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.transaction</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+		</dependency>
+		<!-- spring dao , transaction End -->
+
+		<!-- Spring orm Start -->
+		<!-- Spring orm dependencies -->
+		<!-- Spring aop alliance 1.0.0 -->
+		<!-- Apache commons logging 1.1.1 -->
+		<!-- Spring aop -->
+		<!-- Spring core -->
+		<!-- Spring beans -->
+		<!-- Spring context -->
+		<!-- Spring transaction -->
+		<!-- Spring jdbc -->
+		<!-- hibernate [3.2.0 ,4.0) - optional -->
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.orm</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.transaction</groupId>
+					<artifactId>jta</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>org.springframework.dao</artifactId> 
+			<version>${spring.maven.artifact.version}</version> </dependency> -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.jdbc</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+		</dependency>
+		<!-- Spring orm End -->
+		<!-- Spring osgi classes like BundleContextAware -->
+
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.core</artifactId>
+			<version>${spring.osgi.version}</version>
+
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.io</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.test</artifactId>
+			<version>${spring.osgi.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.4</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- <dependency> <groupId>org.quartz-scheduler</groupId> <artifactId>quartz</artifactId> 
+			<version>1.7.2</version> <scope>compile</scope> </dependency> -->
+		<!-- From spring source dependency -->
+		<dependency>
+			<groupId>com.opensymphony.quartz</groupId>
+			<artifactId>com.springsource.org.quartz</artifactId>
+			<version>1.6.2</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- servicemix (Fuse ESB) bundles -->
+		<!-- <dependency> <groupId>org.apache.servicemix.bundles</groupId> <artifactId>org.apache.servicemix.bundles.quart</artifactId> 
+			<version>${quartz.version}</version> <scope>compile</scope> </dependency> -->
+
+		<dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer</artifactId>
+			<version>5.3.2</version>
+		</dependency>
+		<!-- <dependency> <groupId>commons-collections</groupId> <artifactId>commons-collections</artifactId> 
+			<version>2.1.1</version> <scope>compile</scope> </dependency> <dependency> 
+			<groupId>commons-validator</groupId> <artifactId>commons-validator</artifactId> 
+			<version>1.3.1</version> <scope>compile</scope> </dependency> -->
+
+
+		<!-- JBoss Hibernate Object-Relational Mapper 3.3.2.GA start -->
+		<!-- hibernate dependencies -->
+		<!-- antlr -->
+		<!-- java assist -->
+		<!-- cglib -->
+		<!-- commons.collections -->
+		<!-- dom4j -->
+		<!-- stax -->
+		<!-- ObjectWeb ASM -->
+		<!-- slf4j -->
+		<!-- SLF4J No-OP Binding -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>com.springsource.org.hibernate</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>com.springsource.antlr</artifactId>
+			<version>2.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.javassist</groupId>
+			<artifactId>com.springsource.javassist</artifactId>
+			<version>3.12.1.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>com.springsource.org.apache.commons.collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.dom4j</groupId>
+			<artifactId>com.springsource.org.dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.xml.stream</groupId>
+			<artifactId>com.springsource.javax.xml.stream</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.objectweb.asm</groupId>
+			<artifactId>com.springsource.org.objectweb.asm</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>com.springsource.slf4j.api</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>com.springsource.slf4j.nop</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		
+		<!--
+		<dependency>
+			<groupId>genjava</groupId>
+			<artifactId>gj-csv</artifactId>
+			<version>1.0</version>
+			<scope>test</scope>
+		</dependency> 
+		-->
+		
+		<dependency>
+			<groupId>org.ow2.bundles</groupId>
+			<artifactId>ow2-bundles-externals-opencsv</artifactId>
+			<version>1.0.33</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-core</artifactId> 
+			<version>${hibernate.version}</version> <exclusions> <exclusion> <groupId>javax.transaction</groupId> 
+			<artifactId>jta</artifactId> </exclusion> </exclusions> </dependency> -->
+		<!-- JBoss Hibernate Object-Relational Mapper 3.3.2.GA end -->
+
+		<!-- JBoss Hibernate Annotations 3.4.0.GA Start -->
+		<!-- hibernate annotations dependencies -->
+		<!-- javax persistence -->
+		<!-- dom4j 1.6.1 -->
+		<!-- stax 1.0.1 -->
+		<!-- Hibernate Common Annotations 3.3.0.ga -->
+		<!-- commons-logging 1.1.1 -->
+		<!-- slf4j 1.6.1 -->
+		<!-- SLF4J No-OP Binding 1.6.1 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>com.springsource.org.hibernate.annotations</artifactId>
+			<version>${hibernate.annotations.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>com.springsource.javax.persistence</artifactId>
+			<version>1.99.0</version>
+		</dependency>
+		<!-- JBoss Hibernate Annotations 3.4.0.GA End -->
+
+		<!-- JBoss Hibernate Common Annotations 3.3.0.ga Start -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>com.springsource.org.hibernate.annotations.common</artifactId>
+			<version>${hibernate.common.annotations.version}</version>
+		</dependency>
+		<!-- JBoss Hibernate Common Annotations 3.3.0.ga End -->
+
+		<!-- JBoss Hibernate Entity Manager 3.3.2.GA Start -->
+		<!-- hibernate Entity Manager dependencies -->
+		<!-- javax assist 3.12.1.GA -->
+		<!-- java persistence 1.99.0 -->
+		<!-- dom4j 1.6.1 -->
+		<!-- stax 1.0.1 -->
+		<!-- Hibernate Common Annotations 3.3.0.ga -->
+		<!-- commons-logging 1.1.1 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>com.springsource.org.hibernate.ejb</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<!-- JBoss Hibernate Entity Manager 3.3.2.GA End -->
+
+		<!-- Hibernate Ehcache Integration 3.3.2.GA Start -->
+		<!-- hibernate Ehcache dependencies -->
+		<!-- EHCache 1.6.2 -->
+		<!-- slf4j 1.6.1 -->
+		<!-- SLF4J No-OP Binding 1.6.1 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>com.springsource.org.hibernate.cache</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.codehaus.woodstox</groupId>
+			<artifactId>woodstox-core-asl</artifactId>
+			<version>4.1.1</version>
+		</dependency> -->
+		<dependency>
+			<groupId>org.codehaus.woodstox</groupId>
+			<artifactId>stax2-api</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+		
+<!--		<dependency>
+    		<groupId>axis2</groupId>
+    		<artifactId>axis2-core</artifactId>
+   			<version>0.94</version>   			
+		</dependency>
+		<dependency>
+   		 	<groupId>axis2</groupId>
+    		<artifactId>axis2-kernel</artifactId>
+    		<version>1.0</version>    
+		</dependency>
+		
+  		<dependency>
+	    	<groupId>org.apache.ws.commons.axiom</groupId>
+	   		<artifactId>axiom-api</artifactId>
+	   		 <version>1.2.12</version>	    
+		</dependency>
+		<dependency>
+    		<groupId>org.apache.cxf</groupId>
+   			 <artifactId>cxf-rt-core</artifactId>
+    		<version>2.3.9</version>
+		</dependency>
+		
+		<dependency>
+    	<groupId>com.sun.xml.ws</groupId>
+   		 <artifactId>webservices-osgi</artifactId>
+    	<version>2.0-b17</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.apache.servicemix.bundles</groupId>
+    		<artifactId>org.apache.servicemix.bundles.axiom-impl</artifactId>
+    		<version>1.2.12-2</version>    
+		</dependency>
+	-->	
+		<dependency>
+			<groupId>wsdl4j</groupId>
+			<artifactId>wsdl4j-qname</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.axis2</groupId>
+		    <artifactId>axis2</artifactId>
+		    <version>1.6.1</version>		    
+		</dependency>
+
+		<dependency>
+			<groupId>net.sourceforge.ehcache</groupId>
+			<artifactId>com.springsource.net.sf.ehcache</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+		<!-- Hibernate Ehcache Integration 3.3.2.GA End -->
+		<!-- Aegis jars Start -->
+
+		<dependency>
+			<groupId>net.aegis</groupId>
+			<artifactId>LabCommons</artifactId>
+			<version>${LabCommons.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Aegis jars End -->
+
+		<dependency>
+			<groupId>com.mysql.jdbc</groupId>
+			<artifactId>com.springsource.com.mysql.jdbc</artifactId>
+			<version>5.1.6</version>
+		</dependency>		
+		<!-- Copied LabCore dependencies End -->
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- =================================================================================== -->
+		<!--                   Multipart parsing dependencies                                    -->
+		<!-- =================================================================================== -->
+		<!-- org.springframework.core-x.x.x.jar : This is already added as part of other dependencies above. -->
+		<!-- org.springframework.test-x.x.x.jar : -->
+		
+		<dependency> 
+			<groupId>com.oreilly.servlet</groupId> 
+			<artifactId>com.springsource.com.oreilly.servlet</artifactId> 
+			<version>0.0.0.BUILD-20021105</version> 
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.web</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.test</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+		</dependency>
+				
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+	</dependencies>
+
+	<version>1.0.0</version>
+	<build>
+		<resources>
+			<!-- standard Maven folder -->
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<!-- plus root folder -->
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>plugin.xml</include>
+					<include>META-INF/*</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<!-- added for jaxb start -->
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				
+				<configuration>
+					<!-- Changes the default schema directory -->
+					<schemaDirectory>src/main/schema</schemaDirectory>
+					<schemaIncludes>
+						<include>NHINMessage.xsd</include>
+						<include>PD-NHINCommon.xsd</include>
+						<include>PD-NHINRequest.xsd</include>
+						<include>PD-NHINResponse.xsd</include>
+						<include>QD-NHINRequest.xsd</include>
+						<include>QD-NHINResponse.xsd</include>
+						<include>RD-NHINRequest.xsd</include>
+						<include>RD-NHINResponse.xsd</include>												
+					</schemaIncludes>			
+					<schemaExcludes>
+						
+					</schemaExcludes>			
+					<!-- <bindingDirectory>src/main/binding</bindingDirectory> -->
+				</configuration>
+				<executions>
+					<execution>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>${basedir}/target/generated-sources</sourceRoot>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<!-- manifestLocation>META-INF</manifestLocation -->
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Export-Package>
+							!net.aegis.internal,
+							net.aegis.mv*,							
+							'=META-INF.config' 				 
+							
+						</Export-Package>
+						<Import-Package>
+							com.mysql.jdbc,
+							javassist,
+							javassist.bytecode,
+							javassist.bytecode.analysis,
+							javassist.bytecode.annotation,
+							javassist.bytecode.stackmap,
+							javassist.compiler,
+							javassist.compiler.ast,
+							javassist.convert,
+							javassist.expr,
+							javassist.runtime,
+							javassist.scopedpool,
+							javassist.tools,
+							javassist.tools.reflect,
+							javassist.tools.rmi,
+							javassist.tools.web,
+							javassist.util,
+							javassist.util.proxy,
+							org.apache.activemq; version=${activemq.version},
+							org.apache.activemq.advisory; version=${activemq.version},
+							org.apache.activemq.blob; version=${activemq.version},
+							org.apache.activemq.broker; version=${activemq.version},
+							org.apache.activemq.broker.cluster; version=${activemq.version},
+							org.apache.activemq.broker.ft; version=${activemq.version},
+							org.apache.activemq.broker.jmx; version=${activemq.version},
+							org.apache.activemq.broker.region; version=${activemq.version},
+							org.apache.activemq.broker.region.cursors; version=${activemq.version},
+							org.apache.activemq.broker.region.group; version=${activemq.version},
+							org.apache.activemq.broker.region.policy; version=${activemq.version},
+							org.apache.activemq.broker.region.virtual; version=${activemq.version},
+							org.apache.activemq.broker.util; version=${activemq.version},
+							org.apache.activemq.broker.view; version=${activemq.version},
+							org.apache.activemq.command; version=${activemq.version},
+							org.apache.activemq.filter; version=${activemq.version},
+							org.apache.activemq.jaas; version=${activemq.version},
+							org.apache.activemq.jmdns; version=${activemq.version},
+							org.apache.activemq.jndi; version=${activemq.version},
+							org.apache.activemq.kaha; version=${activemq.version},
+							org.apache.activemq.kaha.impl; version=${activemq.version},
+							org.apache.activemq.kaha.impl.async; version=${activemq.version},
+							org.apache.activemq.kaha.impl.container; version=${activemq.version},
+							org.apache.activemq.kaha.impl.data; version=${activemq.version},
+							org.apache.activemq.kaha.impl.index; version=${activemq.version},
+							org.apache.activemq.kaha.impl.index.hash; version=${activemq.version},
+							org.apache.activemq.kaha.impl.index.tree; version=${activemq.version},
+							org.apache.activemq.management; version=${activemq.version},
+							org.apache.activemq.memory; version=${activemq.version},
+							org.apache.activemq.memory.buffer; version=${activemq.version},
+							org.apache.activemq.memory.list; version=${activemq.version},
+							org.apache.activemq.network; version=${activemq.version},
+							org.apache.activemq.network.jms; version=${activemq.version},
+							org.apache.activemq.openwire; version=${activemq.version},
+							org.apache.activemq.openwire.tool; version=${activemq.version},
+							org.apache.activemq.openwire.v1; version=${activemq.version},
+							org.apache.activemq.openwire.v2; version=${activemq.version},
+							org.apache.activemq.openwire.v3; version=${activemq.version},
+							org.apache.activemq.openwire.v4; version=${activemq.version},
+							org.apache.activemq.openwire.v5; version=${activemq.version},
+							org.apache.activemq.plugin; version=${activemq.version},
+							org.apache.activemq.protobuf; version=${activemq.version},
+							org.apache.activemq.protobuf.compiler; version=${activemq.version},
+							org.apache.activemq.protobuf.compiler.parser; version=${activemq.version},
+							org.apache.activemq.proxy; version=${activemq.version},
+							org.apache.activemq.security; version=${activemq.version},
+							org.apache.activemq.selector; version=${activemq.version},
+							org.apache.activemq.spring; version=${activemq.version},
+							org.apache.activemq.state; version=${activemq.version},
+							org.apache.activemq.store; version=${activemq.version},
+							org.apache.activemq.store.amq; version=${activemq.version},
+							org.apache.activemq.store.jdbc; version=${activemq.version},
+							org.apache.activemq.store.jdbc.adapter; version=${activemq.version},
+							org.apache.activemq.store.journal; version=${activemq.version},
+							org.apache.activemq.store.kahadaptor; version=${activemq.version},
+							org.apache.activemq.store.kahadb; version=${activemq.version},
+							org.apache.activemq.store.kahadb.data; version=${activemq.version},
+							org.apache.activemq.store.memory; version=${activemq.version},
+							org.apache.activemq.thread; version=${activemq.version},
+							org.apache.activemq.transaction; version=${activemq.version},
+							org.apache.activemq.transport; version=${activemq.version},
+							org.apache.activemq.transport.discovery; version=${activemq.version},
+							org.apache.activemq.transport.discovery.multicast; version=${activemq.version},
+							org.apache.activemq.transport.discovery.rendezvous; version=${activemq.version},
+							org.apache.activemq.transport.discovery.simple; version=${activemq.version},
+							org.apache.activemq.transport.failover; version=${activemq.version},
+							org.apache.activemq.transport.fanout; version=${activemq.version},
+							org.apache.activemq.transport.logwriters; version=${activemq.version},
+							org.apache.activemq.transport.mock; version=${activemq.version},
+							org.apache.activemq.transport.multicast; version=${activemq.version},
+							org.apache.activemq.transport.nio; version=${activemq.version},
+							org.apache.activemq.transport.peer; version=${activemq.version},
+							org.apache.activemq.transport.reliable; version=${activemq.version},
+							org.apache.activemq.transport.stomp; version=${activemq.version},
+							org.apache.activemq.transport.tcp; version=${activemq.version},
+							org.apache.activemq.transport.udp; version=${activemq.version},
+							org.apache.activemq.transport.vm; version=${activemq.version},
+							org.apache.activemq.usage; version=${activemq.version},
+							org.apache.activemq.util; version=${activemq.version},
+							org.apache.activemq.wireformat; version=${activemq.version},
+							org.apache.activemq.xbean; version=${activemq.version},
+							org.aspectj.bridge,
+							org.aspectj.lang,
+							org.aspectj.lang.annotation,
+							org.aspectj.lang.reflect,
+							org.aspectj.runtime.internal,
+							org.aspectj.util,
+							org.aspectj.weaver,
+							org.aspectj.weaver.ast,
+							org.aspectj.weaver.internal.tools,
+							org.aspectj.weaver.patterns,
+							org.aspectj.weaver.reflect,
+							org.aspectj.weaver.tools,
+							org.hibernate.jdbc,
+							org.hibernate.cfg,
+							org.hibernate.hql,
+							org.hibernate.hql.ast,
+							org.hibernate.proxy,
+							org.quartz; version=${quartz.version},
+							org.quartz.core; version=${quartz.version},
+							org.quartz.ee.jta; version=${quartz.version},
+							org.quartz.ee.servlet; version=${quartz.version},
+							org.quartz.helpers; version=${quartz.version},
+							org.quartz.impl; version=${quartz.version},
+							org.quartz.impl.calendar; version=${quartz.version},
+							org.quartz.impl.jdbcjobstore; version=${quartz.version},
+							org.quartz.jobs; version=${quartz.version},
+							org.quartz.jobs.ee.ejb; version=${quartz.version},
+							org.quartz.jobs.ee.jms; version=${quartz.version},
+							org.quartz.jobs.ee.jmx; version=${quartz.version},
+							org.quartz.jobs.ee.mail; version=${quartz.version},
+							org.quartz.listeners; version=${quartz.version},
+							org.quartz.plugins; version=${quartz.version},
+							org.quartz.plugins.history; version=${quartz.version},
+							org.quartz.plugins.management; version=${quartz.version},
+							org.quartz.plugins.xml; version=${quartz.version},
+							org.quartz.simpl; version=${quartz.version},
+							org.quartz.spi; version=${quartz.version},
+							org.quartz.utils; version=${quartz.version},
+							org.quartz.xml; version=${quartz.version},
+							org.springframework.aop; version=${spring.maven.artifact.version},
+							org.springframework.aop.aspectj; version=${spring.maven.artifact.version},
+							org.springframework.aop.aspectj.annotation; version=${spring.maven.artifact.version},
+							org.springframework.aop.aspectj.autoproxy; version=${spring.maven.artifact.version},
+							org.springframework.aop.config; version=${spring.maven.artifact.version},
+							org.springframework.aop.framework; version=${spring.maven.artifact.version},
+							org.springframework.aop.framework.adapter; version=${spring.maven.artifact.version},
+							org.springframework.aop.framework.autoproxy; version=${spring.maven.artifact.version},
+							org.springframework.aop.framework.autoproxy.target; version=${spring.maven.artifact.version},
+							org.springframework.aop.interceptor; version=${spring.maven.artifact.version},
+							org.springframework.aop.scope; version=${spring.maven.artifact.version},
+							org.springframework.aop.support; version=${spring.maven.artifact.version},
+							org.springframework.aop.support.annotation; version=${spring.maven.artifact.version},
+							org.springframework.aop.target; version=${spring.maven.artifact.version},
+							org.springframework.aop.target.dynamic; version=${spring.maven.artifact.version},
+							org.springframework.beans,
+							org.springframework.beans.annotation,
+							org.springframework.beans.factory,
+							org.springframework.beans.factory.access,
+							org.springframework.beans.factory.access.el,
+							org.springframework.beans.factory.annotation,
+							org.springframework.beans.factory.config,
+							org.springframework.beans.factory.parsing,
+							org.springframework.beans.factory.serviceloader,
+							org.springframework.beans.factory.support,
+							org.springframework.beans.factory.wiring,
+							org.springframework.beans.factory.xml,
+							org.springframework.beans.propertyeditors,
+							org.springframework.beans.support,
+							org.springframework.cache.ehcache,
+							org.springframework.jms; version=${spring.maven.artifact.version},
+							org.springframework.jms.config; version=${spring.maven.artifact.version},
+							org.springframework.jms.connection; version=${spring.maven.artifact.version},
+							org.springframework.jms.core; version=${spring.maven.artifact.version},
+							org.springframework.jms.core.support; version=${spring.maven.artifact.version},
+							org.springframework.jms.listener; version=${spring.maven.artifact.version},
+							org.springframework.jms.listener.adapter; version=${spring.maven.artifact.version},
+							org.springframework.jms.listener.endpoint; version=${spring.maven.artifact.version},
+							org.springframework.jms.remoting; version=${spring.maven.artifact.version},
+							org.springframework.jms.support; version=${spring.maven.artifact.version},
+							org.springframework.jms.support.converter; version=${spring.maven.artifact.version},
+							org.springframework.jms.support.destination; version=${spring.maven.artifact.version},
+							org.springframework.mail,
+							org.springframework.mail.javamail,
+							org.springframework.scheduling.commonj,
+							org.springframework.scheduling.quartz,
+							org.springframework.ui.freemarker,
+							org.springframework.ui.jasperreports,
+							org.springframework.ui.velocity,
+							org.codehaus.stax2,														
+							javax.xml.stream.events,
+							javax.xml.namespace,
+							javax.xml.stream,	
+							
+							*					
+						</Import-Package>
+						<Include-Resource>src/main/resources</Include-Resource>
+						<_nouses>true</_nouses>
+						<_failok>true</_failok>
+						<Require-Bundle>net.aegis.LabCore,org.apache.cxf.bundle, net.aegis.LabCommons</Require-Bundle>
+					</instructions>
+				</configuration>
+				<!-- generate manifest automatically once the classes are processed -->
+				<executions>
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.10</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>							
+						</goals>						
+						<configuration>
+							<skipTests>${skipTests}</skipTests>
+						</configuration>
+					</execution>
+					
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

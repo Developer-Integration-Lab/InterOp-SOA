@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <patientRD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="PatientDataRD.xsd">       
+        <initiatorPatientId>VEN21000037</initiatorPatientId>
+        <userFamilyName>Responder scenario</userFamilyName>
+        <userGivenName>Wilma</userGivenName>
+        <userInitials>WA</userInitials>
+        <userName>Wilma Anderson</userName>
+        <patientDocument>
+            <responderHCIDCode>1</responderHCIDCode>
+            <repositoryUniqueId>1</repositoryUniqueId>
+            <documentUniqueId>1.VEN21000037.11111</documentUniqueId>
+        </patientDocument>
+        <patientDocument>
+            <responderHCIDCode>1</responderHCIDCode>
+            <repositoryUniqueId>1</repositoryUniqueId>
+            <documentUniqueId>1.VEN21000037.22222</documentUniqueId>
+        </patientDocument>
+        
+         <!-- <patientDocument>
+            <responderHCIDCode>1</responderHCIDCode>
+            <repositoryUniqueId>1</repositoryUniqueId>
+            <documentUniqueId>1.RI1.101.00037.11111</documentUniqueId>
+        </patientDocument>
+        <patientDocument>
+            <responderHCIDCode>1</responderHCIDCode>
+            <repositoryUniqueId>1</repositoryUniqueId>
+            <documentUniqueId>1.RI1.101.00037.22222</documentUniqueId>
+        </patientDocument> -->
+    </patientRD>
+    

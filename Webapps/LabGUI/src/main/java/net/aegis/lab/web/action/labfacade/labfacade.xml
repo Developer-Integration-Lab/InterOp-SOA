@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="labfacade" namespace="/facade" extends="tiles-default">
+
+        <action name="SwitchDashboard" class="net.aegis.lab.web.action.labfacade.SwitchDashboard">
+            <result name="error" type="tiles">error.default</result>
+            <result name="success" type="redirectAction">
+                <param name="namespace">${ns}</param>
+                <param name="actionName">${dashboard}</param>
+            </result>
+        </action>
+
+        <!-- Add actions here -->
+
+    </package>
+</struts>

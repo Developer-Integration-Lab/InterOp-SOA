@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="nhinrep" namespace="/nhinrep" extends="tiles-default">
+
+        <action name="NhinrepDashboard" class="net.aegis.lab.web.action.nhinrep.NhinrepDashboard">
+            <!--<result name="input" type="tiles">nhinrep.dashboard</result>-->
+            <result name="input" type="redirectAction">
+                <param name="actionName">AssignParticipants</param>
+                <param name="namespace">/nhinrep</param>
+            </result>
+            <result name="success" type="tiles">nhinrep.dashboard</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="ActiveTestResults" class="net.aegis.lab.web.action.nhinrep.ActiveTestResults">
+            <result name="input" type="tiles">nhinrep.dashboard</result>
+            <result name="success" type="tiles">nhinrep.active.test.results</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="ActiveScenarioResults" class="net.aegis.lab.web.action.nhinrep.ActiveScenarioResults">
+            <result name="input" type="tiles">nhinrep.dashboard</result>
+            <result name="success" type="tiles">nhinrep.active.scenario.results</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+         <action name="ShowActionMessages" class="net.aegis.lab.web.action.nhinrep.ActiveScenarioResults" method="showAuditExtensionMsg">
+            <result name="input" type="tiles">nhinrep.dashboard</result>
+            <result name="success" type="tiles">nhinrep.active.scenario.results</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>        
+
+        <action name="LogEntries" class="net.aegis.lab.web.action.nhinrep.LogEntries">
+            <result name="input" type="tiles">nhinrep.dashboard</result>
+            <result name="success" type="tiles">nhinrep.log.entries</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="AssignParticipants" class="net.aegis.lab.web.action.nhinrep.AssignParticipants">
+            <result name="input" type="tiles">nhinrep.dashboard</result>
+            <result name="success" type="tiles">nhinrep.assignparticipants</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="RegisterParticipant" class="net.aegis.lab.web.action.nhinrep.RegisterParticipant">
+            <!--<result name="input" type="tiles">nhinrep.dashboard</result>-->
+            <result name="input" type="redirectAction">
+                <param name="actionName">NhinrepDashboard</param>
+                <param name="namespace">/nhinrep</param>
+            </result>
+            <result name="success" type="tiles">nhinrep.register.participant</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <!--  <action name="MessageSearch" class="net.aegis.lab.web.action.nhinrep.MessageSearch">
+            <result name="input" type="tiles">nhinrep.message.search</result>
+            <result name="success" type="tiles">nhinrep.message.search</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="ValidMessageSearch" class="net.aegis.lab.web.action.nhinrep.MessageSearch" method="messageSearch">
+            <result name="input" type="tiles">nhinrep.message.search</result>
+            <result name="success" type="tiles">nhinrep.message.search</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+        <action name="MyInfo" class="net.aegis.lab.web.action.nhinrep.MyInfo">
+            <result name="input" type="tiles">nhinrep.myinfo</result>
+            <result name="success" type="tiles">nhinrep.myinfo</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+       <!--  <action name="LogSearch" class="net.aegis.lab.web.action.nhinrep.LogSearch">
+            <result name="input" type="tiles">nhinrep.log.search</result>
+            <result name="success" type="tiles">nhinrep.log.search</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+        <!-- Add actions here -->
+
+    </package>
+
+</struts>

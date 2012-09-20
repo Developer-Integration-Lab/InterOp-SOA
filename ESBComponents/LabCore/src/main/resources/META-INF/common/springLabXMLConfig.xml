@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+       http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.5.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <aop:aspectj-autoproxy />
+    
+   
+
+    <tx:annotation-driven />
+
+       <!-- datasouce, transaction manager and hibernate template definition for
+            test harness database-->
+    <bean id="transactionManager"
+            class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="namingStrategy"
+              class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+        <property name="staticField">
+            <value>org.hibernate.cfg.DefaultNamingStrategy.INSTANCE</value>
+        </property>
+    </bean>
+    <bean id="extendedFinderNamingStrategy" class="net.aegis.lab.genericdao.finder.impl.ExtendedFinderNamingStrategy"/>
+    <bean id="sessionFactory"
+            class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="namingStrategy">
+            <ref bean="namingStrategy"/>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">net.aegis.lab.helper.MySQLDialectEx</prop>
+                <prop key="hibernate.show_sql">${hibernate.show.sql}</prop>
+                <prop key="format.sql">${format.sql}</prop>
+				<prop key="use.sql.comments">{use.sql.comments}</prop>
+                        <!--<prop key="hibernate.c3p0.acquire_increment">${hibernate.c3p0.acquireIncrement}</prop>
+                        <prop key="hibernate.c3p0.idle_test_period">${hibernate.c3p0.idleConnectionTestPeriod}</prop>
+                        <prop key="hibernate.c3p0.timeout">${hibernate.c3p0.maxIdleTime}</prop>
+                        <prop key="hibernate.c3p0.max_size">${hibernate.c3p0.maxPoolSize}</prop>
+                        <prop key="hibernate.c3p0.min_size">${hibernate.c3p0.minPoolSize}</prop>-->
+            </props>
+        </property>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mappingLocations">
+            <list>
+                <value>classpath:net/aegis/lab/dao/pojo/Altscenariocase.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Applicationproperties.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Attachment.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Auditsummary.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Participant.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Participantaudithistory.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Participantendpoint.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Participantpatientmap.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Caseexecution.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Caseresult.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Caseresultparameters.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Caseschedule.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Code.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Codetype.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Nhinrep.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Patient.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Patientcorrelation.hbm.xml</value>                
+                <value>classpath:net/aegis/lab/dao/pojo/Questionnaire.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Questionnairecase.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Questionnairetestplan.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Questionnaireresponse.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Resultdocument.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Resultsummary.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Role.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Scenario.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Scenariocase.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Scenarioexecution.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Serviceset.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Servicesetexecution.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Testcase.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Scenariocaseparameters.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Testharnessendpoint.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Testharnessri.hbm.xml</value>
+                <value>classpath:net/aegis/gateway/agent/dao/pojo/Transaction.hbm.xml</value>
+                <value>classpath:net/aegis/gateway/agent/dao/pojo/Gateway.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/User.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Userrole.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/Validation.hbm.xml</value>
+                <value>classpath:net/aegis/lab/dao/pojo/VwGateway.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="dataSource"
+            class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://${db.host.lab}:${db.port.lab}/lab" />
+        <property name="username" value="${db.user.lab}" />
+        <property name="password" value="${db.pwd.lab}" />
+    </bean>
+    <!--  Dao Layer instances -->
+    <bean id="altscenariocaseDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.AltscenariocaseDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Altscenariocase</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="applicationpropertiesDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ApplicationpropertiesDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Applicationproperties</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="attachmentDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.AttachmentDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Attachment</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="auditsummaryDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.AuditsummaryDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Auditsummary</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="participantaudithistoryDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ParticipantaudithistoryDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Participantaudithistory</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="participantDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ParticipantDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Participant</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="participantendpointDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ParticipantendpointDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Participantendpoint</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="participantpatientmapDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ParticipantpatientmapDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Participantpatientmap</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="caseexecutionDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.CaseexecutionDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Caseexecution</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="caseresultDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.CaseresultDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Caseresult</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="caseResultParamsDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.CaseresultparametersDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Caseresultparameters</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="casescheduleDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.CasescheduleDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Caseschedule</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="codeDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.CodeDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Code</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="codetypeDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.CodetypeDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Codetype</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="nhinrepDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.NhinrepDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Nhinrep</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="patientDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.PatientDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Patient</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    
+    <bean id="patientcorrelationDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.PatientcorrelationDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Patientcorrelation</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="questionnaireDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.QuestionnaireDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Questionnaire</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+     <bean id="questionnairecaseDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.QuestionnairecaseDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Questionnairecase</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+     <bean id="questionnairetestplanDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.QuestionnairetestplanDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Questionnairetestplan</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="questionnaireresponseDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.QuestionnaireresponseDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Questionnaireresponse</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="resultdocumentDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ResultdocumentDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Resultdocument</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="resultsummaryDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ResultsummaryDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Resultsummary</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="roleDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.RoleDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Role</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="scenariocaseDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ScenariocaseDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Scenariocase</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="scenarioexecutionDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ScenarioexecutionDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Scenarioexecution</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="scenarioDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ScenarioDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Scenario</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="servicesetexecutionDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ServicesetexecutionDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Servicesetexecution</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="servicesetDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ServicesetDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Serviceset</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="testcaseDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.TestcaseDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Testcase</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="scenariocaseParamsDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ScenariocaseparametersDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Scenariocaseparameters</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="testharnessendpointDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.TestharnessendpointDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Testharnessendpoint</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="testharnessriDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.TestharnessriDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Testharnessri</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="userDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.UserDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.User</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="userroleDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.UserroleDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Userrole</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="validationDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.ValidationDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.Validation</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    
+    <bean id="transactionDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.gateway.agent.dao.TransactionDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.gateway.agent.dao.pojo.Transaction</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+      <bean id="gatewayDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.gateway.agent.dao.GatewayDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.gateway.agent.dao.pojo.Gateway</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>    
+     <bean id="vwGatewayDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.lab.dao.VwGatewayDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.lab.dao.pojo.VwGateway</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    
+	    <!--  Dao Layer generic config-->
+    <bean id="finderIntroductionAdvisor" class="net.aegis.lab.genericdao.finder.impl.FinderIntroductionAdvisor"/>
+    <bean id="abstractDaoTarget"
+              class="net.aegis.lab.genericdao.impl.GenericDaoHibernateImpl" abstract="true">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory"/>
+        </property>
+        <property name="namingStrategy">
+            <ref bean="extendedFinderNamingStrategy" />
+        </property>
+    </bean>
+    <bean id="abstractDao" class="org.springframework.aop.framework.ProxyFactoryBean" abstract="true">
+        <property name="interceptorNames">
+            <list>
+                <value>finderIntroductionAdvisor</value>
+            </list>
+        </property>
+    </bean>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:db-${aegis.implementation.environment}.properties"/>
+    </bean>
+
+       <!-- scheduling lab coordinator with quartz-->
+    <!-- <bean id="labCoordinator" class="net.aegis.lab.scheduler.LabCoordinator"/>
+    <bean id="labJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="labCoordinator"/>
+        <property name="targetMethod" value="runProcessor"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="labTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean" scope="singleton">
+          see the example of method invoking job above
+        <property name="jobDetail" ref="labJobDetail"/>
+                60 seconds (1 minute)
+        <property name="startDelay" value="10000"/>
+                repeat every 180 seconds (3 minutes)
+        <property name="repeatInterval" value="120000"/>
+    </bean>
+    <bean id="labScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="autoStartup">
+            <value>false</value>
+        </property>
+        <property name="applicationContextSchedulerContextKey">
+            <value>applicationContext</value>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                    ThreadPool
+                <prop key="org.quartz.threadPool.class">org.quartz.simpl.SimpleThreadPool</prop>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+                <prop key="org.quartz.threadPool.threadPriority">1</prop>
+                    Job store
+                <prop key="org.quartz.jobStore.misfireThreshold">60000</prop>
+                <prop key="org.quartz.jobStore.class">org.quartz.simpl.RAMJobStore</prop>
+                    Plugins
+                <prop key="org.quartz.plugin.shutdownhook.class">org.quartz.plugins.management.ShutdownHookPlugin</prop>
+                <prop key="org.quartz.plugin.shutdownhook.cleanShutdown">true</prop>
+                <prop key="org.quartz.plugin.triggHistory.class">org.quartz.plugins.history.LoggingTriggerHistoryPlugin</prop>
+                <prop key="org.quartz.plugin.triggHistory.triggerFiredMessage">Trigger {1}.{0} fired job {6}.{5} at: {4, date, HH:mm:ss MM/dd/yyyy}</prop>
+                <prop key="org.quartz.plugin.triggHistory.triggerCompleteMessage">Trigger {1}.{0} completed firing job {6}.{5} at {4, date, HH:mm:ss MM/dd/yyyy} with resulting trigger instruction code: {9}</prop>
+            </props>
+        </property> end of quartzProperties
+        <property name="triggers">
+            <list>
+                <ref bean="labTrigger"/>
+            </list>
+        </property>
+    </bean> -->
+    	
+   <!-- Dozer mapping added by Venkat Keesara Start-->
+    <!-- <bean id="mapper" class="org.dozer.DozerBeanMapper">
+        <property name="mappingFiles">
+            <list>
+                <value>dozer-global-configuration.xml</value>
+                <value>dozer-bean-mappings.xml</value>
+            </list>
+        </property>
+    </bean> -->
+    <!-- Dozer mapping added by Venkat Keesara End> -->
+
+    <bean id="participantService" class="net.aegis.lab.participant.service.ParticipantServiceImpl"></bean>
+
+    <bean id="userService" class="net.aegis.lab.user.service.UserServiceImpl"></bean>
+
+    <bean id="nhinrepService" class="net.aegis.lab.nhinrep.service.NhinrepServiceImpl"></bean>
+
+    <bean id="userroleService" class="net.aegis.lab.userrole.service.UserroleServiceImpl"></bean>
+
+    <bean id="altscenariocaseService" class="net.aegis.lab.altscenariocase.service.AltscenariocaseServiceImpl"></bean>
+
+    <bean id="scenarioCaseService" class="net.aegis.lab.scenariocase.service.ScenarioCaseServiceImpl"></bean>
+
+    <bean id="scenarioExecutionService" class="net.aegis.lab.scenarioexecution.service.ScenarioExecutionServiceImpl"></bean>
+
+    <bean id="testCaseService" class="net.aegis.lab.testcase.service.TestCaseServiceImpl"></bean>
+
+    <bean id="testHarnessriService" class="net.aegis.lab.testharnessri.service.TestHarnessriServiceImpl"></bean>
+    
+    <bean id="transactionService" class="net.aegis.gateway.agent.service.TransactionServiceImpl"></bean>
+    
+    <bean id="gatewayService" class="net.aegis.gateway.agent.service.GatewayServiceImpl"></bean>
+    
+    <bean id="caseExecutionService" class="net.aegis.lab.caseexecution.service.CaseExecutionServiceImpl"></bean>
+
+    <bean id="attachmentService" class="net.aegis.lab.attachment.service.AttachmentServiceImpl"></bean>
+
+    <bean id="auditSummaryService" class="net.aegis.lab.auditsummary.service.AuditSummaryServiceImpl"></bean>
+
+    <bean id="applicationpropertiesService" class="net.aegis.lab.applicatioproperties.service.ApplicationpropertiesServiceImpl"></bean>
+
+    <bean id="participantAuditHistService" class="net.aegis.lab.participantaudithistory.service.ParticipantAuditHistoryServiceImpl"></bean>
+
+    <bean id="participantPatientMapService" class="net.aegis.lab.participantpatientmap.service.ParticipantPatientMapServiceImpl"></bean>
+
+    <bean id="caseResultService" class="net.aegis.lab.caseresult.service.CaseResultServiceImpl"></bean>
+ 
+    <bean id="caseResultParamsService" class="net.aegis.lab.caseresultparams.service.CaseResultParamsServiceImpl"></bean>
+
+    <bean id="caseScheduleService" class="net.aegis.lab.caseschedule.service.CaseScheduleServiceImpl"></bean>
+
+    <!-- <bean id="coordinatorService" class="net.aegis.lab.coordinator.service.CoordinatorServiceImpl">
+    </bean>
+	<bean id="scheduler"  class="org.quartz.impl.StdScheduler"> 
+	</bean>-->
+    <bean id="manageusersService" class="net.aegis.lab.manageusers.service.ManageUsersServiceImpl"></bean>
+
+    <bean id="patientService" class="net.aegis.lab.patient.service.PatientServiceImpl"></bean>
+    
+     <bean id="patientcorrelationService" class="net.aegis.lab.patientcorrelation.service.PatientcorrelationServiceImpl"></bean>
+
+    <bean id="questionnaireService" class="net.aegis.lab.questionnaire.service.QuestionnaireServiceImpl"></bean>
+
+    <bean id="questionnaireresponseService" class="net.aegis.lab.questionnaireresponse.service.QuestionnaireresponseServiceImpl"></bean>
+
+    <bean id="scenarioService" class="net.aegis.lab.scenario.service.ScenarioServiceImpl"></bean>
+
+    <bean id="resultDocumentService" class="net.aegis.lab.resultdocument.service.ResultDocumentServiceImpl"></bean>
+    
+    <bean id="resultsummaryService" class="net.aegis.lab.resultsummary.service.ResultsummaryServiceImpl"></bean>
+	
+    <bean id="scenarioCaseParamsService" class="net.aegis.lab.scenariocaseparams.service.ScenariocaseParamsServiceImpl"></bean>
+
+    <bean id="serviceSetService" class="net.aegis.lab.serviceset.service.ServiceSetServiceImpl"></bean>
+
+    <bean id="serviceSetExecutionService" class="net.aegis.lab.servicesetexecution.service.ServiceSetExecutionServiceImpl"></bean>
+
+   <bean id="validationService" class="net.aegis.lab.validation.service.ValidationServiceImpl"></bean>
+   
+   <bean id="vwGatewayService" class="net.aegis.lab.view.service.VwGatewayServiceImpl"></bean>
+  
+   <context:component-scan base-package="net.aegis.lab" />
+   
+</beans>

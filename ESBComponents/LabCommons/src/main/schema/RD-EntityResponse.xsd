@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aegis.net/labcommons/jaxb/RD" xmlns:lab="http://www.aegis.net/labcommons/jaxb/RD"
+	elementFormDefault="qualified">
+
+	<xs:element name="RDEntityResponse" type="lab:RDEntityResponseType">
+	</xs:element>
+
+	<xs:complexType name="RDEntityResponseType">
+		<xs:sequence>
+			<xs:element name="retrieveDocSetResponse" type="lab:retrieveDocSetResponseType"></xs:element>
+		</xs:sequence>
+
+	</xs:complexType>
+	<xs:complexType name="retrieveDocSetResponseType">
+
+		<xs:sequence>
+			<xs:element name="docResponse" type="lab:docResponseType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			<xs:element name="status" type="xs:string"></xs:element>
+			<xs:element name="responseXML" type="xs:string">
+			</xs:element>
+		</xs:sequence>
+
+	</xs:complexType>
+
+	<xs:complexType name="docResponseType">
+		<xs:sequence>
+			<xs:element name="homeCommunityId" type="xs:string"></xs:element>
+			<xs:element name="repositoryUniqueId" type="xs:string"></xs:element>
+			<xs:element name="documentUniqueId" type="xs:string"></xs:element>
+			<xs:element name="mimeType" type="xs:string"></xs:element>
+			<xs:element name="document" type="xs:base64Binary" ></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+</xs:schema>

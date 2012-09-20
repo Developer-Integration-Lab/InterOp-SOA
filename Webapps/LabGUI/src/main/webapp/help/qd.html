@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>NHIN Lab Help - Query for Documents</title>
+        <link rel="stylesheet" href="../style/master.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <style type="text/css">
+            .content-title table
+            {
+                width:70%;
+            }
+            #content
+            {
+                margin:0 10px 0 25px;
+            }
+            h1.page-title
+            {
+                margin:0.6em auto 0.6em 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <p align=right><A href="helpIndex.html"><font size=5>Return</font></A>&nbsp;&nbsp;</p>
+        <H1 class="page-title">Query for Documents</H1>
+        <div id="content">
+            <div class="content-title">
+                <table>
+                    <tr>
+                        <td><span class="content-title-text">Help - Query for Documents</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content-area">
+                <ul>
+                    <li><a href="#topic1"><b>Returned zero(0) documents</b></a></li>
+                    <li><a href="#topic2"><b>Document Query response not found/ did not find any documents</b></a></li>
+                    <li><a href="#topic3"><b>Test Status - FAIL</b></a></li>
+                    <li><a href="#topic4"><b>Test Status - PROGRESS_PENDING</b></a></li>
+                    <li><a href="#topic5"><b>Case Result (QD) not saved/ ResultDocument (QD) not saved</b></a></li>
+                    <li><a href="#topic6"><b>Error codes - Query for Documents</b></a></li>
+                </ul>
+                <br /><br />
+
+                <a name="topic1"></a>
+                <h3> Returned zero(0) documents: </h3>
+
+                <ul>
+                    <li>Verify the query parameters that are being used in query criteria</li>
+                    <li>Verify that there are any documents in the registry/repository related to the given patient and given query criteria</li>
+                    <li>Invalid query criteria might have caused an error from the registry in processing the query. Verify logs</li>
+                    <li>If the policy engine is turned on, verify the responder Access Consent Policy(ACP) documents</li>
+                    <li>Verify that the REQUIRED query parameters (patient unique id and status) are present in the query parameters.</li>
+                </ul>
+
+                <br />
+
+                <a name="topic2"></a>
+                <h3> Document Query response not found/ did not find any documents:</h3>
+
+                <ul>
+                    <li>Verify the target gateway "HomecommunityId" in the query request</li>
+                    <li>Verify the internalConnectionInfo.xml/uddiConnectionInfo.xml for the correct end points of the initiator and target gateways</li>
+                    <li>Verify that the REQUIRED parameters (patient unique id and status) are present in the query</li>
+                    <li>Verify the Connectivity to the target server</li>
+                    <li>Verify the certificates are installed correctly and the server was configured with certificates information on initiator and target gateways</li>
+                    <li>If the policy engine is turned on, verify Access Consent Policy(ACP) documents on both initiator and responder ends</li>
+                    <li>Verify logs for any exceptions</li>
+                </ul>
+                <br />
+
+
+                <a name="topic3"></a>
+                <h3> Test Status - FAIL:</h3>
+
+                <ul>
+                    <li>Returned documents count is more or less than expected: Verify the query parameters in the query request. Verify the documents in registry.</li>
+                    <li>If expecting single dynamic document, verify that the participant "Dynamic Content" was set to "Single" while registering the participant</li>
+                    <li>Check the help topics "Returned zero(0) documents" and "Query response not found - did not find any documents" on this page</li>
+                </ul>
+
+                <br />
+
+                <a name="topic4"></a>
+                <h3> Test Status - PROGRESS_PENDING:</h3>
+
+                <ul>
+                    <li>Initiator or target servers are not responding</li>
+                    <li>Test case execution might have caused an exception in the code. Verify the logs</li>
+                </ul>
+
+                <br />
+
+                <a name="topic5"></a>
+                <h3> Case Result (QD) not saved/ ResultDocument (QD) not saved:</h3>
+
+                <ul>
+                    <li>Verify that the database is up and running at initiator end</li>
+                    <li>Check the connectivity if the application server and database are on different machines</li>
+                    <li>Data might be too large or attempted to insert null in not null columns. Verify logs.</li>
+                </ul>
+
+                <br />
+
+                <a name="topic6"></a>
+                <h3> Error codes - Query for Documents:</h3>
+
+                <ul>
+                    <li>XDSRegistryError: Error from the registry in processing the query (eg. invalid query criteria)</li>
+                    <li>XDSRegistryBusy: Too much activity</li>
+                    <li>XDSRegistryOutOfResources: Resources are low</li>
+                    <li>XDSUnknownStoredQuery: The Query ID provided in the request is not recognized.</li>
+                    <li>XDSStoredQueryMissingParam:  A required parameter to a stored query is missing</li>
+                    <li>XDSStoredQueryParamNumber: A parameter which only accepts a single value is coded with multiple values</li>
+                    <li>XDSUnknownPatientId: The Patient ID specified is no longer valid. If the Patient ID is not known, has never been valid, and the HIE is not able to distinguish this from previously valid Patient IDs then this error should also be returned. Otherwise a Patient ID that has never been valid should result in an empty list.</li>
+                    <li>XDSUnknownCommunity: A value for the homeCommunityId is not recognized</li>
+                    <li>XDSMissingHomeCommunityId: A value for the homeCommunityId is required and has not been specified</li>
+                </ul>
+
+                <br />
+                <a href="qd.html"><b>Go to top</b></a>
+            </div>
+        </div>
+    </body>

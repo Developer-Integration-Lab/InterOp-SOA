@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+    <!-- ======================== -->
+    <!-- TILES LAYOUT DEFINITIONS -->
+    <!-- ======================== -->
+    <definition name="errorLayout" template="/WEB-INF/layout/errorLayout.jsp">
+        <put-attribute name="title" value="NHIN Lab Test Platform"/>
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+    </definition>
+
+    <definition name="loginLayout" template="/WEB-INF/layout/loginLayout.jsp">
+        <put-attribute name="title" value="NHIN Lab Test Platform"/>
+        <put-attribute name="header" value=""/>
+        <put-attribute name="menu" value=""/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value=""/>
+    </definition>
+
+    <definition name="mainLayout" template="/WEB-INF/layout/mainLayout.jsp">
+        <put-attribute name="title" value="NHIN Lab Test Platform"/>
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+    </definition>
+
+     <definition name="popupLayout" template="/WEB-INF/layout/mainLayout.jsp">
+        <put-attribute name="title" value="NHIN Lab Test Platform"/>
+        <put-attribute name="header" value=""/>
+        <put-attribute name="menu" value=""/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+    </definition>
+    <!-- ======================= -->
+    <!-- ERROR - DEFAULT DISPLAY -->
+    <!-- ======================= -->
+    <definition name="error.default" extends="errorLayout">
+        <put-attribute name="body" value="/WEB-INF/error/Error.jsp"/>
+    </definition>
+
+    <!-- =============================== -->
+    <!-- LOGIN - SECURITY AUTHENTICATION -->
+    <!-- =============================== -->
+    <definition name="security.login" extends="loginLayout">
+        <put-attribute name="body" value="/WEB-INF/security/Login.jsp"/>
+    </definition>
+    <definition name="security.changepassword" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/security/ChangePassword.jsp"/>
+    </definition>
+
+    <!-- ========================= -->
+    <!-- ADMINISTRATOR DEFINITIONS -->
+    <!-- ========================= -->
+    <definition name="admin.log.search" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/LogSearch.jsp"/>
+    </definition>
+
+    <definition name="admin.dashboard" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/error/Error.jsp"/>
+    </definition>
+
+    <!-- ============================== -->
+    <!-- NHIN ADMINISTRATOR DEFINITIONS -->
+    <!-- ============================== -->
+    <definition name="admin.applicationproperties" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/AppProperties.jsp"/>
+    </definition>
+
+    <definition name="admin.addapplicationproperties" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/AddProperties.jsp"/>
+    </definition>
+
+    <definition name="admin.register.nhinrep" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/RegisterNhinRep.jsp"/>
+    </definition>
+    <definition name="admin.manageusers" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/ManageUsers.jsp"/>
+    </definition>
+    <definition name="admin.manageselecteduser" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/ManageSelectedUser.jsp"/>
+    </definition>
+    <definition name="admin.manageservicesets" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/ManageServiceSets.jsp"/>
+    </definition>
+    <definition name="admin.manageserviceset" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/ManageServiceSet.jsp"/>
+    </definition>
+    <definition name="admin.managescenarios" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/ManageScenarios.jsp"/>
+    </definition>
+    <definition name="admin.managescenario" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/ManageScenario.jsp"/>
+    </definition>
+    <definition name="admin.managetestcases" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/ManageTestCases.jsp"/>
+    </definition>
+    <definition name="admin.managetestcase" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/ManageTestCase.jsp"/>
+    </definition>
+    <definition name="admin.managenewsupdates" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/NewsUpdate.jsp"/>
+    </definition>
+
+    <definition name="admin.message.search" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/admin/MessageSearch.jsp"/>
+    </definition>
+    <!-- =============================== -->
+    <!-- NHIN REPRESENTATIVE DEFINITIONS -->
+    <!-- =============================== -->
+    <definition name="nhinrep.dashboard" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinrep/Dashboard.jsp"/>
+    </definition>
+
+    <definition name="nhinrep.active.test.results" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinrep/ActiveTestResults.jsp"/>
+    </definition>
+
+    <definition name="nhinrep.active.scenario.results" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinrep/ActiveScenarioResults.jsp"/>
+    </definition>
+
+    <definition name="nhinrep.log.entries" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinrep/LogEntries.jsp"/>
+    </definition>
+
+     <definition name="nhinrep.message.search" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinrep/MessageSearch.jsp"/>
+    </definition>
+
+    <definition name="nhinrep.assignparticipants" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinrep/AssignParticipants.jsp"/>
+    </definition>
+
+    <definition name="nhinrep.register.participant" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinrep/RegisterParticipant.jsp"/>
+    </definition>
+
+    <definition name="nhinrep.myinfo" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinrep/MyInfo.jsp"/>
+    </definition>
+
+    <definition name="nhinrep.log.search" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinrep/LogSearch.jsp"/>
+    </definition>
+
+    <!-- ================================ -->
+    <!-- NHIN VALIDATING BODY DEFINITIONS -->
+    <!-- ================================ -->
+    <definition name="nhinvalid.dashboard" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinvalid/Dashboard.jsp"/>
+    </definition>
+
+    <definition name="nhinvalid.validatesubmitted.test.results" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinvalid/ValidateSubmittedTestResults.jsp"/>
+    </definition>
+
+    <definition name="assign.submission" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinvalid/AssignSubmission.jsp"/>
+    </definition>
+
+    <definition name="nhinvalid.submitted.scenario.results" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinvalid/SubmittedScenarioResults.jsp"/>
+    </definition>
+
+    <definition name="nhinvalid.log.entries" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinvalid/LogEntries.jsp"/>
+    </definition>
+
+    <definition name="nhinvalid.myinfo" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinvalid/MyInfo.jsp"/>
+    </definition>
+
+    <definition name="nhinvalid.log.search" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinvalid/LogSearch.jsp"/>
+    </definition>
+
+    <definition name="nhinvalid.message.search" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/nhinvalid/MessageSearch.jsp"/>
+    </definition>
+
+    <!-- ===================== -->
+    <!-- PARTICIPANT DEFINITIONS -->
+    <!-- ===================== -->
+    <definition name="participant.dashboard" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/Dashboard.jsp"/>
+    </definition>
+
+    <definition name="participant.active.test.results" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/ActiveTestResults.jsp"/>
+    </definition>
+
+    <definition name="participant.active.scenario.results" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/ActiveScenarioResults.jsp"/>
+    </definition>
+
+   <!--  <definition name="participant.conf.active.scenario.results" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/ConfActiveScenarioResults.jsp"/>
+    </definition> -->
+
+    <definition name="participant.setup.test" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/SetUpTest.jsp"/>
+    </definition>
+
+    <definition name="participant.connectionStatus.check" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/ConnectionStatusChecks.jsp"/>
+    </definition>
+
+    <definition name="participant.message.search" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/MessageSearch.jsp"/>
+    </definition>
+
+    <definition name="participant.endpoint.url" extends="popupLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/DisplayLabUDDIEndpoints.jsp"/>
+    </definition>
+
+    <definition name="participant.myinfo" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/MyInfo.jsp"/>
+    </definition>
+
+    <definition name="participant.log.entries" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/LogEntries.jsp"/>
+    </definition>
+
+    <definition name="participant.log.search" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/LogSearch.jsp"/>
+    </definition>
+
+    <definition name="participant.attachdoc.upload" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/upload.jsp"/>
+    </definition>
+
+    <definition name="participant.attachdoc.uploadsuccess" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/participant/uploadSuccess.jsp"/>
+    </definition>
+
+    <!-- ILT-300 -->
+    <definition name="gatewayagent.transactionList" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/gatewayagent/Transaction.jsp"/>
+    </definition>
+
+    <!-- ======================== -->
+    <!-- TEST HISTORY DEFINITIONS -->
+    <!-- ======================== -->
+    <definition name="history.testhistory" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/history/TestHistory.jsp"/>
+    </definition>
+
+    <definition name="history.historytestresults" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/history/HistoryTestResults.jsp"/>
+    </definition>
+
+    <definition name="history.historyscenarioresults" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/history/TestHistoryScenarioResults.jsp"/>
+    </definition>
+
+    <definition name="history.log.entries" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/history/LogEntries.jsp"/>
+    </definition>
+
+    <!-- ================ -->
+    <!-- HELP DEFINITIONS -->
+    <!-- ================ -->
+    <definition name="help.guidance" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/help/Guidance.jsp"/>
+    </definition>
+
+    <definition name="help.coordinator" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/help/Coordinator.jsp"/>
+    </definition>
+
+</tiles-definitions>

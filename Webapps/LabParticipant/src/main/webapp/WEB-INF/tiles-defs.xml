@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+    <definition name="loginLayout" template="/WEB-INF/layout/loginLayout.jsp">
+        <put-attribute name="title" value="NHIN Lab Participant"/>
+        <put-attribute name="header" value=""/>
+        <put-attribute name="menu" value=""/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value=""/>
+    </definition>
+
+    <definition name="mainLayout" template="/WEB-INF/layout/mainLayout.jsp">
+        <put-attribute name="title" value="NHIN Lab Participant"/>
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+    </definition>
+
+    <!-- Security -->
+    <definition name="security.login" extends="loginLayout">
+        <put-attribute name="body" value="/WEB-INF/security/Login.jsp"/>
+    </definition>
+
+    <!-- [Participant] Info -->
+    <definition name="info.myinfo" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/info/MyInfo.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/info/MyInfoMenu.jsp"/>
+    </definition>
+
+    <!-- Test Scenarios and Cases -->
+    <definition name="test.active.scenarios" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/test/ActiveScenarios.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/test/ActiveScenariosMenu.jsp"/>
+    </definition>
+
+    <definition name="test.scenario.cases" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/test/ScenarioCases.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/test/ActiveScenariosMenu.jsp"/>
+    </definition>
+
+    <definition name="test.reset.test" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/test/ResetTest.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/test/ResetTestMenu.jsp"/>
+    </definition>
+
+    <!-- Patient [Local Search/Detail] -->
+    <definition name="patient.search" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/patient/Search.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/patient/SearchMenu.jsp"/>
+    </definition>
+
+    <definition name="patient.detail" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/patient/Detail.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/patient/SearchMenu.jsp"/>
+    </definition>
+
+</tiles-definitions>

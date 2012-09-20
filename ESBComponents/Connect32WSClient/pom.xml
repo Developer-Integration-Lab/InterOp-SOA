@@ -1,0 +1,206 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>net.aegis.gateway.client</groupId>
+	<artifactId>Connect32WSClient</artifactId>
+	<version>1.0.0</version>
+	<packaging>bundle</packaging>
+
+	<name>Connect32WSClient</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.osgi.version>1.1.0</spring.osgi.version>
+		<spring.maven.artifact.version>3.0.5.RELEASE</spring.maven.artifact.version>
+		<CONNECTCommonTypesLib.version>3.2.1</CONNECTCommonTypesLib.version>
+		<LabCommons.version>1.0.0</LabCommons.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.aegis</groupId>
+			<artifactId>CONNECTCommonTypesLib</artifactId>
+			<version>${CONNECTCommonTypesLib.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.context</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>spring-osgi-core</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>spring-osgi-io</artifactId>
+			<version>${spring.osgi.version}</version>
+		</dependency>
+		
+		<!--  aegis jars Start-->
+			<dependency>
+				<groupId>net.aegis</groupId>
+				<artifactId>LabCommons</artifactId>
+				<version>${LabCommons.version}</version>
+				<scope>compile</scope>
+			</dependency> 
+			<!--  aegis jars End-->
+	</dependencies>
+
+	<!-- for packaging as an OSGi bundle, we use the maven-bundle-plugin -->
+
+	<!-- see http://felix.apache.org/site/maven-bundle-plugin-bnd.html for more 
+		info -->
+	<build>
+		<!-- <defaultGoal>install</defaultGoal> -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+			<directory>.</directory>
+				<includes>
+					<include>META-INF/**</include>
+				</includes>
+			</resource>
+		</resources> 
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<!-- <manifestLocation>META-INF</manifestLocation> -->
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Export-Package>
+							net.aegis.gateway.client.connect32.pd;version="${project.version}",
+							net.aegis.gateway.client.connect32.qd;version="${project.version}",
+							net.aegis.gateway.client.connect32.rd;version="${project.version}",
+							net.aegis.gateway.client.connect32.sp;version="${project.version}",
+							net.aegis.gateway.client.connect32.util;version="${project.version}",
+							'=META-INF'
+						</Export-Package>
+						<Import-Package>
+							javax.jws,                            
+                            javax.xml.namespace,                           
+							javax.xml.bind,
+							javax.xml.bind.annotation,
+							javax.xml.ws,
+							javax.xml.ws.handler,
+							javax.xml.ws.http,
+							javax.xml.ws.spi,
+							javax.xml.ws.handler.soap,
+							javax.xml.ws.wsaddressing,
+							javax.xml.ws.spi.http,
+							javax.xml.ws.soap,
+							javax.wsdl,
+                            META-INF.cxf,
+                            META-INF.cxf.osgi,
+                            META-INF;version="${project.version}",
+                            org.apache.commons.logging,
+                            org.apache.cxf.bus,
+                            org.apache.cxf.bus.spring,
+                            org.apache.cxf.bus.resource,
+                            org.apache.cxf.configuration.spring,
+                            org.apache.cxf.jaxws.spi,
+                            org.apache.cxf.resource,
+                            org.apache.cxf.transport.http,
+                            org.apache.servicemix.util,                         
+							org.osgi.framework,
+							org.springframework.beans,
+							org.springframework.beans.factory.config,
+                            org.springframework.context,
+                            org.springframework.context.support,							
+							org.springframework.osgi.context,
+							*				
+						</Import-Package>
+						<Bundle-Activator>net.aegis.gateway.client.connect32.internal.Activator</Bundle-Activator>
+						<_failok>true</_failok>
+            			<_nouses>true</_nouses>
+						<Require-Bundle>org.apache.cxf.bundle,CONNECTCommonTypesLib,net.aegis.LabCommons</Require-Bundle>						
+						<!-- add ,plugin.xml if it's present i.e. src/main/resources,plugin.xml -->
+						<!-- <Include-Resource>src/main/resources</Include-Resource> -->
+					</instructions>
+				</configuration>
+				<!-- generate manifest automatically once the classes are processed -->
+				<executions>
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
+				<configuration> <source>1.6</source> <target>1.6</target> </configuration> 
+				<version>4.0</version> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+				<artifactId>maven-assembly-plugin</artifactId> <configuration> <descriptorRefs> 
+				<descriptorRef>jar-with-dependencies</descriptorRef> </descriptorRefs> </configuration> 
+				</plugin> -->
+		</plugins>
+	</build>
+	<!-- <profiles>
+		<profile>
+			<id>connect248WSClinetProfileId</id>
+			<properties>
+				<env>defaultEnv</env>
+				<connect248Version>${CONNECTCommonTypesLib.version}</connect248Version>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+	</profiles> -->
+	<repositories>
+		<repository>
+			<id>com.springsource.repository.bundles.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
+
+		<repository>
+			<id>com.springsource.repository.bundles.release</id>
+			<name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/release</url>
+		</repository>
+
+		<repository>
+			<id>com.springsource.repository.bundles.milestone</id>
+			<name>SpringSource Enterprise Bundle Repository - SpringSource Milestone Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/milestone</url>
+		</repository>
+	</repositories>
+</project>

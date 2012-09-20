@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aegis.net/labcommons/jaxb/PD" xmlns:lab="http://www.aegis.net/labcommons/jaxb/PD"
+	elementFormDefault="qualified">
+
+	<xs:element name="PDEntityResponse" type="lab:PDEntityResponseType">
+	</xs:element>
+
+	<xs:complexType name="PDEntityResponseType">
+		<xs:sequence>
+			<xs:element name="communityResponse" type="lab:communityResponseType" minOccurs="0" maxOccurs="unbounded"></xs:element>			
+		</xs:sequence>
+
+	</xs:complexType>
+	<xs:complexType name="communityResponseType">
+		<xs:sequence>
+			<xs:element name="receiver" type="lab:receiverType"></xs:element>
+			<!--  this element may not needed -->
+			<xs:element name="sender" type="lab:senderType" minOccurs="0"></xs:element>
+			<xs:element name="status" type="xs:string"></xs:element>
+			<xs:element name="responseXML" type="xs:string"> </xs:element>
+		</xs:sequence>
+
+	</xs:complexType>
+	<xs:complexType name="receiverType">
+		<xs:sequence>
+			<xs:element name="patient" type="lab:PatientType"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="senderType">
+		<xs:sequence>
+			<xs:element name="patient" type="lab:PatientType"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PatientType">
+		<xs:sequence>
+			<xs:element name="patientId" type="xs:string"></xs:element>
+			<xs:element name="assigningAuthority" type="xs:string"></xs:element>
+			
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

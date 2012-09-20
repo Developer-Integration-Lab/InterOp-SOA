@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://www.aegis.net/mv/jaxb/msg" 
+xmlns:labmsg="http://www.aegis.net/mv/jaxb/msg" elementFormDefault="qualified">
+		
+	<xs:complexType name="nhinMessage" abstract="true">  
+		<xs:sequence>
+			<xs:element name="messageID" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+		
+</xs:schema>

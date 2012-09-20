@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="conformance-participant" namespace="/conformance/participant" extends="participant"/>
+
+    <package name="participant" namespace="/participant" extends="tiles-default">
+
+        <!--  <interceptors>
+        <interceptor name="tmWindowexecAndWait" class="net.aegis.lab.web.interceptor.TMWindowExecAndWaitInterceptor">
+        </interceptor>
+     
+    </interceptors> -->
+
+        <action name="ParticipantDashboard" class="net.aegis.lab.web.action.participant.ParticipantDashboard">
+            <result name="input" type="tiles">participant.dashboard</result>
+            <result name="success" type="tiles">participant.dashboard</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="ActiveTestResults" class="net.aegis.lab.web.action.participant.ActiveTestResults">
+            <result name="input" type="tiles">participant.active.test.results</result>
+            <result name="success" type="tiles">participant.active.test.results</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="ActiveScenarioResults" class="net.aegis.lab.web.action.participant.ActiveScenarioResults">
+            <result name="input" type="tiles">participant.active.scenario.results</result>
+            <result name="success" type="tiles">participant.active.scenario.results</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+      <!--   <action name="ConfActiveScenarioResults" class="net.aegis.lab.web.action.participant.ActiveScenarioResults">
+            <result name="input" type="tiles">participant.conf.active.scenario.results</result>
+            <result name="success" type="tiles">participant.conf.active.scenario.results</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+       
+
+      <!--   <action name="StartTimedWindow"  class="net.aegis.lab.web.action.participant.ActiveScenarioResults" method="startTimedWindow">
+            <interceptor-ref name="completeStack"></interceptor-ref>
+            <interceptor-ref name="tmWindowexecAndWait"></interceptor-ref>
+            result name="wait" type="tiles">participant.wait.display</result
+            <result name="wait" >/WEB-INF/participant/waitDisplay.jsp</result>
+            <result name="success" type="tiles">participant.conf.active.scenario.results</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+     <!--    <action name="PopTWMessages" class="net.aegis.lab.web.action.participant.ActiveScenarioResults" method="popTimedWindowResults">
+            <result name="success">/WEB-INF/participant/MessageWithInTimedWindow.jsp</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+       <!--  <action name="ShowActionMessages" class="net.aegis.lab.web.action.participant.ActiveScenarioResults" method="showAuditExtensionMsg">
+            <result name="input" type="tiles">participant.conf.active.scenario.results</result>
+            <result name="success" type="tiles">participant.conf.active.scenario.results</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+ -->
+
+        <action name="ClearCaseResult" class="net.aegis.lab.web.action.participant.ActiveScenarioResults" method="clearCaseResult">
+            <result name="input" type="tiles">participant.active.scenario.results</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">ActiveScenarioResults</param>
+                <param name="selectedScenarioExecutionId">${selectedScenarioExecutionId}</param>
+                <param name="namespace"></param>
+            </result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="ExecuteTestCase" class="net.aegis.lab.web.action.participant.ExecuteTestCase">
+            <result name="input" type="tiles">participant.active.scenario.results</result>
+            <result name="success" type="tiles">participant.active.scenario.results</result>
+         <!--  <result name="confsuccess" type="tiles">participant.conf.active.scenario.results</result> -->
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="DisplayDocuments" class="net.aegis.lab.web.action.participant.DisplayDocuments">
+            <result name="success">/WEB-INF/participant/Documents.jsp</result>
+        </action>
+
+        <action name="DownloadDocument" class="net.aegis.lab.web.action.participant.DownloadDocument">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileStream</param>
+                <param name="contentDisposition">resultDocument;filename="${filename}"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+
+      <!--   <action name="MessageSearch" class="net.aegis.lab.web.action.participant.MessageSearch">
+            <result name="input" type="tiles">participant.message.search</result>
+            <result name="success" type="tiles">participant.message.search</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+        <!-- <action name="ValidMessageSearch" class="net.aegis.lab.web.action.participant.MessageSearch" method="messageSearch">
+            <result name="input" type="tiles">participant.message.search</result>
+            <result name="success" type="tiles">participant.message.search</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+        <action name="SetUpTest" class="net.aegis.lab.web.action.participant.SetUpTest">
+            <result name="input" type="tiles">participant.setup.test</result>
+            <result name="success" type="tiles">participant.setup.test</result>
+            <result name="error" type="tiles">error.default</result>            
+        </action>
+
+         <action name="ConnectionStatusChecks" class="net.aegis.lab.web.action.participant.SetUpTest">
+            <result name="input" type="tiles">participant.connectionStatus.check</result>
+            <result name="success" type="tiles">participant.connectionStatus.check</result>
+            <result name="error" type="tiles">error.default</result>
+            <result name="showOutput" type="stream">
+                <param name="contentType">text/xml</param>
+                <param name="inputName">oStream</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+
+        <action name="getEndPoints" method="getLabUddiEndPoints" class="net.aegis.lab.web.action.participant.SetUpTest">
+            <!--result name="input" type="tiles">participant.endpoint.url</result -->
+            <result name="success">/WEB-INF/participant/DisplayLabUDDIEndpoints.jsp</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="LogEntries" class="net.aegis.lab.web.action.participant.LogEntries">
+            <result name="input" type="tiles">participant.log.entries</result>
+            <result name="success" type="tiles">participant.log.entries</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+       <!--  <action name="LogSearch" class="net.aegis.lab.web.action.participant.LogSearch">
+            <result name="input" type="tiles">participant.log.search</result>
+            <result name="success" type="tiles">participant.log.search</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+        <action name="MyInfo" class="net.aegis.lab.web.action.participant.MyInfo">
+            <result name="input" type="tiles">participant.myinfo</result>
+            <result name="success" type="tiles">participant.myinfo</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <!-- File Upload -->
+        <action name="AttachDocument" class="net.aegis.lab.web.action.participant.AttachDocument">            
+            <result name="success">/WEB-INF/participant/upload.jsp</result>
+        </action>
+
+        <action name="AttachDocumentExecute" class="net.aegis.lab.web.action.participant.AttachDocumentExecute">
+        <!-- Jyoti Devarakonda ILT-246 -->
+             <interceptor-ref name="exception"/>
+            <interceptor-ref name="i18n"/>
+            <interceptor-ref name="basicStack"/>
+            <interceptor-ref name="fileUpload">
+       		<param name="maximumSize">4194304</param>
+  	    </interceptor-ref>
+             <interceptor-ref name="params">
+                <param name="excludeParams">dojo\..*,^struts\..*</param>
+            </interceptor-ref>
+            <interceptor-ref name="validation">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+            <interceptor-ref name="workflow">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+
+            <result name="success">/WEB-INF/participant/upload.jsp</result>
+            <result name="input">/WEB-INF/participant/upload.jsp</result>
+            <!--End Jyoti Devarakonda ILT-246 -->
+        </action>
+        <!-- End File Upload -->
+
+        <action name="ShowAttachments" class="net.aegis.lab.web.action.participant.ShowAttachments">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+            <result>/WEB-INF/participant/ShowAttachments.jsp</result>
+        </action>
+
+        <action name="DownloadAttachment" class="net.aegis.lab.web.action.participant.DownloadAttachment">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileStream</param>
+                <param name="contentDisposition">attachment;filename="${filename}"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+
+        <action name="DeleteAttachment" class="net.aegis.lab.web.action.participant.DeleteAttachment">
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+            <result name="success" type="redirectAction">
+                <param name="actionName">ShowAttachments</param>
+                <param name="namespace">/participant</param>
+                <param name="parse">true</param>
+            </result>
+        </action>
+
+        <!-- Add actions here -->
+
+    </package>
+</struts>

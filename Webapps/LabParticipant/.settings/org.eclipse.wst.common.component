@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+  <wb-module deploy-name="LabParticipant">
+    <wb-resource deploy-path="/" source-path="src/main/webapp"/>
+        <dependent-module archiveName="LabCore-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/LabCore/LabCore">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LabCommons-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/LabCommons/LabCommons">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="TestProcessorWSClient-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/TestProcessorWSClient/TestProcessorWSClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    <property name="java-output-path" value="/target/classes"/>
+        <property name="context-root" value="participant"/>
+    <wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
+    <wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
+  </wb-module>
+</project-modules>

@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>net.aegis</groupId>
+	<artifactId>CONNECTCommonTypesLib</artifactId>
+	<version>3.2.1</version>
+	<packaging>bundle</packaging>
+
+	<name>CONNECTCommonTypesLib</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>    
+		    <groupId>gov.hhs.fha</groupId>  
+		    <artifactId>CONNECTCommonTypesLib</artifactId>  
+		    <version>1.0.0</version>  
+		    <scope>system</scope>  
+		        <systemPath>${basedir}/lib/gov/hhs/fha/1.0.0/CONNECTCommonTypesLib.jar</systemPath>   
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-resources-plugin</artifactId>
+			  <version>2.3</version>
+			  <configuration>
+				<includeEmptyDirs>true</includeEmptyDirs>
+			  </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<!-- <manifestLocation>META-INF</manifestLocation> -->
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<!-- <Export-Package>
+							gov.hhs.fha.nhinc.common.nhinccommon;version="${project.version}",
+							gov.hhs.fha.nhinc.common.nhinccommonentity;version="${project.version}",
+							gov.hhs.fha.nhinc.entitydocquery;version="${project.version}",
+							gov.hhs.fha.nhinc.entitydocretrieve;version="${project.version}",
+							gov.hhs.fha.nhinc.entitypatientdiscovery;version="${project.version}",
+							ihe.iti.xds_b._2007;version="${project.version}",
+							oasis.names.tc.ebxml_regrep.xsd.query._3;version="${project.version}",
+							oasis.names.tc.ebxml_regrep.xsd.rim._3;version="${project.version}",
+							oasis.names.tc.ebxml_regrep.xsd.rs._3;version="${project.version}",
+							org.uddi.api_v3;version="${project.version}",
+							org.hl7.v3;version="${project.version}"
+						</Export-Package> -->
+						<Export-Package>
+							com.nhin.*;version="${project.version}",
+							com.services.*;version="${project.version}",
+							com.sun.*;version="${project.version}",							
+							gov.hhs.*;version="${project.version}",
+							ihe.iti.*;version="${project.version}",
+							oasis.names.*;version="${project.version}",
+							org.hl7.*;version="${project.version}",
+							org.netbeans.*;version="${project.version}",
+							org.oasis_open.*;version="${project.version}",	
+							org.uddi.*;version="${project.version}",
+							org.w3.*;version="${project.version}",
+							org.xmlsoap.*;version="${project.version}"						
+						</Export-Package>
+						<_nouses>true</_nouses>
+						<Import-Package>*</Import-Package>
+					</instructions>
+				</configuration>
+				<!-- generate manifest automatically once the classes are processed -->
+				<executions>
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

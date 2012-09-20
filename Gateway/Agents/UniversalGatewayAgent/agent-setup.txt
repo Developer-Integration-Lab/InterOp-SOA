@@ -1,0 +1,16 @@
+Download contents from https://rd-ssp-01.aegis.net:8443/svn/lab/trunk/Gateway/Agents/UniversalGatewayAgent/bin
+
+1) set MEMBRANE_HOME to path\router\membrane-router-2.0.4\
+2) Edit monitor-beans.xml
+  a) Set database URL
+3) Edit rules.xml
+ a) Make sure the certificates keystores are valid in rules.xml
+ b) Make sure hostnames are set
+ c) Make sure port numbers do no conflict
+4) Update the service endpoint hostname and port number in InternalConnectionInfo.xml on the participant and RI's servers
+	a)ParticipantHostname:portnumber -> agentHostname:portnumber
+	b)ServerHostname:portnumber -> agentHostname:portnumber
+	c)Test by entering the updated endpoint with ?wsdl in a browser window.
+5) Run memrouter.bat (May require admin previliges)
+-- added by Venkat
+6) We might need to add additional jars (woodstox-core-asl-4.0.5.jar,stax2-api-3.0.1.jar,stax-api-1.0.1.jar) to .\bin\lib folder

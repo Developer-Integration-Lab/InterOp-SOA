@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd">
+	<S:Header>
+		<To xmlns="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</To>
+		<Action S:mustUnderstand="1" xmlns="http://www.w3.org/2005/08/addressing">urn:hl7-org:v3:PRPA_IN201306UV02:CrossGatewayPatientDiscovery</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">uuid:1503b669-2cd2-4a64-b80d-015cfe01d235</MessageID>
+		<RelatesTo xmlns="http://www.w3.org/2005/08/addressing">uuid:6eb05e27-2ae4-493f-a753-d652fde6c42d</RelatesTo>
+		<wsse:Security S:mustUnderstand="true">
+			<wsu:Timestamp wsu:Id="_1" xmlns:ns15="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512" xmlns:ns14="http://schemas.xmlsoap.org/soap/envelope/">
+				<wsu:Created>2011-08-12T19:31:17Z</wsu:Created>
+				<wsu:Expires>2011-08-12T19:36:17Z</wsu:Expires>
+			</wsu:Timestamp>
+			<wsse11:SignatureConfirmation wsu:Id="_5002" Value="SppE4OLcvwzqNijnRwPF8PCIhZCvvXTaF9PpwZVQXpVbP5qgzc5v6nEPCze3dJarjjVvi7X5dNLDURCvETQQW+Stu9jyvH/ieXTpnGfeYi5L1lPBzDw/uQXygaAtGyYiR0pCMsIpmkBpoQEY5zOHja0Yf2zBz3UJKgLkuQZtWLs=" xmlns:ns15="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512" xmlns:ns14="http://schemas.xmlsoap.org/soap/envelope/"/>
+		</wsse:Security>
+	</S:Header>
+	<S:Body>
+		<PRPA_IN201306UV02 ITSVersion="XML_1.0" xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" xmlns:ns3="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:ns4="urn:gov:hhs:fha:nhinc:common:patientcorrelationfacade">
+			<id extension="6629229a:1317815e117:-50cb" root="2.16.840.1.113883.0.102"/>
+			<creationTime value="2011812193112"/>
+			<interactionId extension="PRPA_IN201306UV" root="2.16.840.1.113883.1.6"/>
+			<processingCode code="P"/>
+			<processingModeCode code="R"/>
+			<acceptAckCode code="AL"/>
+			<receiver typeCode="RCV">
+				<device determinerCode="INSTANCE" classCode="">
+					<id root="1.2.345.678.999"/>
+					<asAgent classCode="AGNT">
+						<representedOrganization determinerCode="INSTANCE" classCode="ORG">
+							<id root="2.16.840.1.113883.0.200"/>
+						</representedOrganization>
+					</asAgent>
+				</device>
+			</receiver>
+			<sender typeCode="SND">
+				<device determinerCode="INSTANCE" classCode="">
+					<id root="1.2.345.678.999"/>
+					<asAgent classCode="AGNT">
+						<representedOrganization determinerCode="INSTANCE" classCode="ORG">
+							<id root="2.16.840.1.113883.0.102"/>
+						</representedOrganization>
+					</asAgent>
+				</device>
+			</sender>
+			<acknowledgement>
+				<typeId extension="PRPA_IN201305UV02" root="2.16.840.1.113883.1.6"/>
+				<typeCode code="AA"/>
+				<targetMessage xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+			</acknowledgement>
+			<controlActProcess moodCode="EVN" classCode="">
+				<code codeSystem="2.16.840.1.113883.1.6" code="PRPA_TE201306UV"/>
+				<authorOrPerformer typeCode="AUT">
+					<assignedDevice classCode="">
+						<id root="2.16.840.1.113883.0.102"/>
+					</assignedDevice>
+				</authorOrPerformer>
+				<subject typeCode="SUBJ">
+					<registrationEvent moodCode="" classCode="">
+						<id nullFlavor="NA"/>
+						<statusCode code="active"/>
+						<subject1 typeCode="">
+							<patient classCode="PAT">
+								<id extension="RI2.102.00018" root="2.16.840.1.113883.0.102"/>
+								<statusCode code="SD"/>
+								<patientPerson>
+									<name>
+										<family partType="FAM">Smith</family>
+										<given partType="GIV">John</given>
+										<given partType="GIV">T</given>
+										<prefix partType="PFX">Mr</prefix>
+									</name>
+									<telecom value="tel:+1-416-400-3400"/>
+									<administrativeGenderCode code="M"/>
+									<birthTime value="19570423"/>
+									<addr>
+										<streetAddressLine>102 Drink Cup Drive</streetAddressLine>
+										<city>Kansas City</city>
+										<state>MO</state>
+										<postalCode>64116</postalCode>
+									</addr>
+									<asOtherIDs classCode="SD">
+										<id extension="666660018" root="2.16.840.1.113883.4.1"/>
+										<scopingOrganization determinerCode="" classCode="">
+											<id root="2.16.840.1.113883.4.1"/>
+										</scopingOrganization>
+									</asOtherIDs>
+								</patientPerson>
+								<providerOrganization determinerCode="" classCode="">
+									<id root="2.16.840.1.113883.0.102"/>
+									<contactParty xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+								</providerOrganization>
+								<subjectOf1>
+									<queryMatchObservation moodCode="" classCode="">
+										<code code="IHE_PDQ"/>
+										<value xsi:type="INT" value="100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+									</queryMatchObservation>
+								</subjectOf1>
+							</patient>
+						</subject1>
+						<custodian typeCode="">
+							<assignedEntity classCode="">
+								<id root="2.16.840.1.113883.0.102"/>
+							</assignedEntity>
+						</custodian>
+					</registrationEvent>
+				</subject>
+				<queryAck>
+					<queryId extension="-abd3453dcd24wkkks545" root="2.16.840.1.113883.0.200"/>
+					<queryResponseCode code="OK"/>
+					<resultTotalQuantity value="1"/>
+					<resultCurrentQuantity value="1"/>
+					<resultRemainingQuantity value="0"/>
+				</queryAck>
+				<queryByParameter xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<queryId extension="-abd3453dcd24wkkks545" root="2.16.840.1.113883.0.200"/>
+					<statusCode code="new"/>
+					<responseModalityCode code="R"/>
+					<responsePriorityCode code="I"/>
+					<parameterList>
+						<livingSubjectAdministrativeGender>
+							<value code="M"/>
+							<semanticsText representation="TXT"/>
+						</livingSubjectAdministrativeGender>
+						<livingSubjectBirthTime>
+							<value value="19570423"/>
+							<semanticsText representation="TXT"/>
+						</livingSubjectBirthTime>
+						<livingSubjectId>
+							<value extension="CAN20000018" root="2.16.840.1.113883.0.200"/>
+							<semanticsText representation="TXT"/>
+						</livingSubjectId>
+						<livingSubjectId>
+							<value extension="" root="2.16.840.1.113883.4.1"/>
+							<semanticsText representation="TXT"/>
+						</livingSubjectId>
+						<livingSubjectName>
+							<value>
+								<family partType="FAM">Smith</family>
+								<given partType="GIV">John</given>
+							</value>
+							<semanticsText representation="TXT"/>
+						</livingSubjectName>
+						<patientAddress>
+							<value>
+								<streetAddressLine>102 Drink Cup Drive</streetAddressLine>
+								<city>Kansas City</city>
+								<state>MO</state>
+								<postalCode>64116</postalCode>
+							</value>
+						</patientAddress>
+					</parameterList>
+				</queryByParameter>
+			</controlActProcess>
+		</PRPA_IN201306UV02>
+	</S:Body>
+</S:Envelope>

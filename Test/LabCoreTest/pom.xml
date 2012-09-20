@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.aegis</groupId>
+	<artifactId>LabCoreTest</artifactId>
+	<version>1.0.0</version>
+	<packaging>bundle</packaging>
+	<name>LabCoreTest</name>
+	  <properties>
+	  	<LabCore.version>1.0.0</LabCore.version>
+	  	<slf4j.version>1.5.0</slf4j.version>
+		<spring.maven.artifact.version>3.0.5.RELEASE</spring.maven.artifact.version>
+		<spring.osgi.version>1.2.1</spring.osgi.version>
+		<felix.ver>1.0.0</felix.ver>
+		<hibernate.version>3.3.2.GA</hibernate.version>
+		<hibernate.annotations.version>3.4.0.GA</hibernate.annotations.version>
+		<hibernate.common.annotations.version>3.3.0.ga</hibernate.common.annotations.version>
+		<hibernate.validator.version>4.1.0.Final</hibernate.validator.version>
+		<quartz.version>1.8.3</quartz.version>
+		<NhincCommonTypesLib.version>2.4.8</NhincCommonTypesLib.version>
+		<NhincCommonLib.version>2.4.8</NhincCommonLib.version>
+		<Connect248WSClient.version>1.0.0</Connect248WSClient.version>
+		<MessageDispatcher.version>1.0.0</MessageDispatcher.version>
+	  </properties>
+	<dependencies>
+		<dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>1.0.0</version>
+        </dependency> 
+		<dependency>
+			<groupId>net.aegis</groupId>
+			<artifactId>LabCore</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.context</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.aegis</groupId>
+			<artifactId>MessageDispatcher</artifactId>
+			<version>${MessageDispatcher.version}</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<obrRepository>NONE</obrRepository>
+					<!-- <manifestLocation>META-INF</manifestLocation> -->
+					<instructions>
+						<Import-Package>
+							com.mysql.jdbc,
+							net.aegis.lab.*;version="${LabCore.version}",
+							net.aegis.ri.*;version="${LabCore.version}",
+							org.aspectj.bridge,
+							org.aspectj.lang,
+							org.aspectj.lang.annotation,
+							org.aspectj.lang.reflect,
+							org.aspectj.runtime.internal,
+							org.aspectj.util,
+							org.aspectj.weaver,
+							org.aspectj.weaver.ast,
+							org.aspectj.weaver.internal.tools,
+							org.aspectj.weaver.patterns,
+							org.aspectj.weaver.reflect,
+							org.aspectj.weaver.tools,
+							org.hibernate.cfg,
+							org.hibernate.hql,
+							org.hibernate.hql.ast,
+							org.hibernate.proxy,
+							org.quartz; version=${quartz.version},
+							org.quartz.core; version=${quartz.version},
+							org.quartz.ee.jta; version=${quartz.version},
+							org.quartz.ee.servlet; version=${quartz.version},
+							org.quartz.helpers; version=${quartz.version},
+							org.quartz.impl; version=${quartz.version},
+							org.quartz.impl.calendar; version=${quartz.version},
+							org.quartz.impl.jdbcjobstore; version=${quartz.version},
+							org.quartz.jobs; version=${quartz.version},
+							org.quartz.jobs.ee.ejb; version=${quartz.version},
+							org.quartz.jobs.ee.jms; version=${quartz.version},
+							org.quartz.jobs.ee.jmx; version=${quartz.version},
+							org.quartz.jobs.ee.mail; version=${quartz.version},
+							org.quartz.listeners; version=${quartz.version},
+							org.quartz.plugins; version=${quartz.version},
+							org.quartz.plugins.history; version=${quartz.version},
+							org.quartz.plugins.management; version=${quartz.version},
+							org.quartz.plugins.xml; version=${quartz.version},
+							org.quartz.simpl; version=${quartz.version},
+							org.quartz.spi; version=${quartz.version},
+							org.quartz.utils; version=${quartz.version},
+							org.quartz.xml; version=${quartz.version},
+							org.springframework.aop; version=3.0.5.RELEASE,
+							org.springframework.aop.aspectj; version=3.0.5.RELEASE,
+							org.springframework.aop.aspectj.annotation; version=3.0.5.RELEASE,
+							org.springframework.aop.aspectj.autoproxy; version=3.0.5.RELEASE,
+							org.springframework.aop.config; version=3.0.5.RELEASE,
+							org.springframework.aop.framework; version=3.0.5.RELEASE,
+							org.springframework.aop.framework.adapter; version=3.0.5.RELEASE,
+							org.springframework.aop.framework.autoproxy; version=3.0.5.RELEASE,
+							org.springframework.aop.framework.autoproxy.target; version=3.0.5.RELEASE,
+							org.springframework.aop.interceptor; version=3.0.5.RELEASE,
+							org.springframework.aop.scope; version=3.0.5.RELEASE,
+							org.springframework.aop.support; version=3.0.5.RELEASE,
+							org.springframework.aop.support.annotation; version=3.0.5.RELEASE,
+							org.springframework.aop.target; version=3.0.5.RELEASE,
+							org.springframework.aop.target.dynamic; version=3.0.5.RELEASE,
+							org.springframework.beans,
+							org.springframework.beans.annotation,
+							org.springframework.beans.factory,
+							org.springframework.beans.factory.access,
+							org.springframework.beans.factory.access.el,
+							org.springframework.beans.factory.annotation,
+							org.springframework.beans.factory.config,
+							org.springframework.beans.factory.parsing,
+							org.springframework.beans.factory.serviceloader,
+							org.springframework.beans.factory.support,
+							org.springframework.beans.factory.wiring,
+							org.springframework.beans.factory.xml,
+							org.springframework.beans.propertyeditors,
+							org.springframework.beans.support,
+							org.springframework.cache.ehcache,
+							org.springframework.mail,
+							org.springframework.mail.javamail,
+							org.springframework.scheduling.commonj,
+							org.springframework.scheduling.quartz,
+							org.springframework.ui.freemarker,
+							org.springframework.ui.jasperreports,
+							org.springframework.ui.velocity,
+							javassist,
+							javassist.bytecode,
+							javassist.bytecode.analysis,
+							javassist.bytecode.annotation,
+							javassist.bytecode.stackmap,
+							javassist.compiler,
+							javassist.compiler.ast,
+							javassist.convert,
+							javassist.expr,
+							javassist.runtime,
+							javassist.scopedpool,
+							javassist.tools,
+							javassist.tools.reflect,
+							javassist.tools.rmi,
+							javassist.tools.web,
+							javassist.util,
+							javassist.util.proxy,						
+							META-INF.common,																											
+							*
+						</Import-Package>
+						<!-- <Include-Resource>src/main/resources</Include-Resource> -->
+						<_nouses>true</_nouses>
+						<_failok>true</_failok>
+						<Bundle-Activator>labcoretest.Activator</Bundle-Activator>
+						<Require-Bundle>net.aegis.LabCore,Connect248WSClient</Require-Bundle>
+					</instructions>
+				</configuration>
+
+				<executions>
+					<!-- <execution> <id>bundle-manifest</id> <phase>package</phase> <goals> 
+						<goal>bundle</goal> </goals> </execution> -->
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>manifest</goal>
+							<!-- <goal>bundleall</goal> -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+
+		<repository>
+			<id>com.springsource.repository.bundles.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
+
+		<repository>
+			<id>com.springsource.repository.bundles.release</id>
+			<name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/release</url>
+		</repository>
+
+		<repository>
+			<id>com.springsource.repository.bundles.milestone</id>
+			<name>SpringSource Enterprise Bundle Repository - SpringSource Milestone Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/milestone</url>
+		</repository>
+	</repositories>
+</project>

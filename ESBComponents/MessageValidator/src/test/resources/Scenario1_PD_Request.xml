@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion" xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd" xmlns:exc14n="http://www.w3.org/2001/10/xml-exc-c14n#">
+	<S:Header>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://D9YF7ZN1.aegis.net:9897/CONNECTGateway/NhinService/NhinPatientDiscovery</To>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">urn:hl7-org:v3:PRPA_IN201305UV02:CrossGatewayPatientDiscovery</Action>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">uuid:5a1642a8-21c7-48df-bfd5-fda45bb7c8d8</MessageID>
+		<wsse:Security S:mustUnderstand="true">
+			<wsu:Timestamp wsu:Id="_1" xmlns:ns17="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512" xmlns:ns16="http://schemas.xmlsoap.org/soap/envelope/">
+				<wsu:Created>2012-02-06T19:10:28Z</wsu:Created>
+				<wsu:Expires>2012-02-06T19:15:28Z</wsu:Expires>
+			</wsu:Timestamp>
+			<saml2:Assertion ID="68f40c1c-e158-43d1-a576-37403e755e3e" IssueInstant="2012-02-06T19:10:28.577Z" Version="2.0" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:exc14n="http://www.w3.org/2001/10/xml-exc-c14n#" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+				<saml2:Issuer Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">CN=SAML User,OU=SU,O=SAML User,L=Los Angeles,ST=CA,C=US</saml2:Issuer>
+				<saml2:Subject>
+					<saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">UID=Scenario 1 PDI-1.1c</saml2:NameID>
+					<saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:holder-of-key">
+						<saml2:SubjectConfirmationData>
+							<ds:KeyInfo>
+								<ds:KeyValue>
+									<ds:RSAKeyValue>
+										<ds:Modulus>iBZ/n+dEppKXo8ThovFtk4sDERkrrSSHvZ86Ubtn13qjoPTN1rtJSimn2hs1TVBHdKL+yOhBD6vcwmn/5VXytKwf2vdCpASfo/QCjYyzmyhXNBUBEascjI3uv/zodfclVud+4v9c1RFh9kbAh2lY8Y1G8s0q0EyLEFZ4byucx65dtIF/sg09BtyCPKr7YWlFIYoSyH+uiLtYh7GcWmocChSJNVKK95BZ9+hbwX1h9ZNkXXA5R4TeKiE9mTbx55up54jaT6v2gDRv72ZkqLheOoUUXegrRoudqK1ZU/5y+4IfKqVjGZqD99uELVPHN4+xEBfppbuZfuITvSaCAhp/2Q==</ds:Modulus>
+										<ds:Exponent>AQAB</ds:Exponent>
+									</ds:RSAKeyValue>
+								</ds:KeyValue>
+							</ds:KeyInfo>
+						</saml2:SubjectConfirmationData>
+					</saml2:SubjectConfirmation>
+				</saml2:Subject>
+				<saml2:AuthnStatement AuthnInstant="2012-02-06T19:10:23.167Z" SessionIndex="123456">
+					<saml2:SubjectLocality/>
+					<saml2:AuthnContext>
+						<saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:X509</saml2:AuthnContextClassRef>
+					</saml2:AuthnContext>
+				</saml2:AuthnStatement>
+				<saml2:AttributeStatement>
+					<saml2:Attribute Name="urn:oasis:names:tc:xspa:1.0:subject:subject-id">
+						<saml2:AttributeValue ns6:type="ns7:string" xmlns:ns6="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns7="http://www.w3.org/2001/XMLSchema">Lab IT Testcase</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute Name="urn:oasis:names:tc:xspa:1.0:subject:organization">
+						<saml2:AttributeValue ns6:type="ns7:string" xmlns:ns6="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns7="http://www.w3.org/2001/XMLSchema">2.16.840.1.113883.0.210</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute Name="urn:oasis:names:tc:xspa:1.0:subject:organization-id">
+						<saml2:AttributeValue ns6:type="ns7:string" xmlns:ns6="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns7="http://www.w3.org/2001/XMLSchema">2.16.840.1.113883.0.210</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute Name="urn:nhin:names:saml:homeCommunityId">
+						<saml2:AttributeValue ns6:type="ns7:string" xmlns:ns6="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns7="http://www.w3.org/2001/XMLSchema">2.16.840.1.113883.0.210</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute Name="urn:oasis:names:tc:xacml:2.0:subject:role">
+						<saml2:AttributeValue>
+							<hl7:Role code="46255001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" displayName="Pharmacist" xsi:type="hl7:CE" xmlns:hl7="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute Name="urn:oasis:names:tc:xspa:1.0:subject:purposeofuse">
+						<saml2:AttributeValue>
+							<hl7:PurposeForUse code="TREATMENT" codeSystem="2.16.840.1.113883.3.18.7.1" codeSystemName="nhin-purpose" displayName="Treatment" xsi:type="hl7:CE" xmlns:hl7="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute Name="urn:oasis:names:tc:xacml:2.0:resource:resource-id">
+						<saml2:AttributeValue ns6:type="ns7:string" xmlns:ns6="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns7="http://www.w3.org/2001/XMLSchema">VEN21000037^^^&amp;2.16.840.1.113883.0.210&amp;ISO</saml2:AttributeValue>
+					</saml2:Attribute>
+				</saml2:AttributeStatement>
+				<saml2:AuthzDecisionStatement Decision="Permit" Resource="https://D9YF7ZN1.aegis.net:9897/CONNECTGateway/NhinService/NhinPatientDiscovery">
+					<saml2:Action Namespace="urn:oasis:names:tc:SAML:1.0:action:rwedc">Execute</saml2:Action>
+					<saml2:Evidence>
+						<saml2:Assertion ID="83d58b80-55ea-4006-83c8-7d8cb7996e70" IssueInstant="2012-02-06T19:10:23.171Z" Version="2.0">
+							<saml2:Issuer Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">CN=SAML User,OU=SU,O=SAML User,L=Los Angeles,ST=CA,C=US</saml2:Issuer>
+							<saml2:Conditions NotBefore="2012-02-06T19:10:23.171Z" NotOnOrAfter="2012-02-06T19:10:23.171Z"/>
+							<saml2:AttributeStatement>
+								<saml2:Attribute Name="AccessConsentPolicy" NameFormat="http://www.hhs.gov/healthit/nhin"/>
+								<saml2:Attribute Name="InstanceAccessConsentPolicy" NameFormat="http://www.hhs.gov/healthit/nhin"/>
+							</saml2:AttributeStatement>
+						</saml2:Assertion>
+					</saml2:Evidence>
+				</saml2:AuthzDecisionStatement>
+				<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+					<ds:SignedInfo>
+						<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+						<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+						<ds:Reference URI="#68f40c1c-e158-43d1-a576-37403e755e3e">
+							<ds:Transforms>
+								<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+								<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+							</ds:Transforms>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+							<ds:DigestValue>6ZIJ5VRCEwT4ZLyV+E2nH9rP3uQ=</ds:DigestValue>
+						</ds:Reference>
+					</ds:SignedInfo>
+					<ds:SignatureValue>Y7hVdzpA4fKpDczmrQm5m1HCtNUnWRnVg2KVsEJ5uEUao8D0HJQ0XNujY/fgykfYlOIAH0hH/agh
+aLS5smB6/F5NA+Db0YGGG7qIqgv/mh4aTeSRCSjZgXrflJLLN3YSfAsvO9iGf9wjoIpik2e2kqfp
+OpgOMmMtX6kmIRQT4q69tAHDt3wsIXhQb4VukHVHPaZtBX2dai3AF88ChazV8rETTIKXNV3+JIi/
+Gdn5SY3zPGPNaAFfTqDLBsj3XmiQYlbJ2LqvbGYRbsrdOph9mbrghMEKtpj2HZLGzenBkziEJvh9
+EilTUGlI7xJMfkeoAv5K4F66sKFeExG3IbUNJg==</ds:SignatureValue>
+					<ds:KeyInfo>
+						<ds:KeyValue>
+							<ds:RSAKeyValue>
+								<ds:Modulus>iBZ/n+dEppKXo8ThovFtk4sDERkrrSSHvZ86Ubtn13qjoPTN1rtJSimn2hs1TVBHdKL+yOhBD6vc
+wmn/5VXytKwf2vdCpASfo/QCjYyzmyhXNBUBEascjI3uv/zodfclVud+4v9c1RFh9kbAh2lY8Y1G
+8s0q0EyLEFZ4byucx65dtIF/sg09BtyCPKr7YWlFIYoSyH+uiLtYh7GcWmocChSJNVKK95BZ9+hb
+wX1h9ZNkXXA5R4TeKiE9mTbx55up54jaT6v2gDRv72ZkqLheOoUUXegrRoudqK1ZU/5y+4IfKqVj
+GZqD99uELVPHN4+xEBfppbuZfuITvSaCAhp/2Q==</ds:Modulus>
+								<ds:Exponent>AQAB</ds:Exponent>
+							</ds:RSAKeyValue>
+						</ds:KeyValue>
+					</ds:KeyInfo>
+				</ds:Signature>
+			</saml2:Assertion>
+			<ds:Signature Id="_2" xmlns:ns17="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512" xmlns:ns16="http://schemas.xmlsoap.org/soap/envelope/">
+				<ds:SignedInfo>
+					<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+						<exc14n:InclusiveNamespaces PrefixList="wsse S"/>
+					</ds:CanonicalizationMethod>
+					<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+					<ds:Reference URI="#_1">
+						<ds:Transforms>
+							<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+								<exc14n:InclusiveNamespaces PrefixList="wsu wsse S"/>
+							</ds:Transform>
+						</ds:Transforms>
+						<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<ds:DigestValue>Zgu2ef4AmfKNduE4O+XhhOOVawg=</ds:DigestValue>
+					</ds:Reference>
+				</ds:SignedInfo>
+				<ds:SignatureValue>I1BAx/ykNOYGj68XavGmfatlX+3za0fTL93crTTUcXjkjxi5i8Wnqu/qrbKsquwfXxFyAFT1+26ZFPxazMnZfOat6dcySemQa7JgHHO8DFi3MNLYhDCmRPcAHVlqFOB0Qt3qa6DriJNiOXKlTMEtMdaF9sWRGO8qsyEmWh4j6FQwtK6fAWR8Vf2KMckvCycRvr642MKTYRxAvbh4/Tei25v22S3EQPu361EV2UG8Rt09e3WBUuygIc7IotOay0dDmsijGCUsfW59wJLZN/3qSvy0QdCull8H4B6+WBD2a/eeqUoBHa0GePNC+00Cy0441E96N2eHZXqOAqjmepWYtQ==</ds:SignatureValue>
+				<ds:KeyInfo>
+					<wsse:SecurityTokenReference wsse11:TokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0">
+						<wsse:KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">68f40c1c-e158-43d1-a576-37403e755e3e</wsse:KeyIdentifier>
+					</wsse:SecurityTokenReference>
+				</ds:KeyInfo>
+			</ds:Signature>
+		</wsse:Security>
+	</S:Header>
+	<S:Body>
+		<PRPA_IN201305UV02 ITSVersion="XML_1.0" xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" xmlns:ns3="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:ns4="urn:gov:hhs:fha:nhinc:common:patientcorrelationfacade">
+			<id extension="-5a3e95b1:11d1fa33d45:-7f9b" root="2.16.840.1.113883.0.210"/>
+			<creationTime value="20120206141023"/>
+			<interactionId extension="PRPA_IN201305UV02" root="2.16.840.1.113883.1.6"/>
+			<processingCode code="T"/>
+			<processingModeCode code="T"/>
+			<acceptAckCode code="AL"/>
+			<receiver typeCode="RCV">
+				<device determinerCode="INSTANCE" classCode="">
+					<id root="1.2.345.678.999"/>
+					<asAgent classCode="AGNT">
+						<representedOrganization determinerCode="INSTANCE" classCode="ORG">
+							<id root="2.16.840.1.113883.0.101"/>
+						</representedOrganization>
+					</asAgent>
+				</device>
+			</receiver>
+			<sender typeCode="SND">
+				<device determinerCode="INSTANCE" classCode="DEV">
+					<id root="2.16.840.1.113883.0.210"/>
+					<asAgent classCode="AGENT">
+						<representedOrganization determinerCode="INSTANCE" classCode="ORG">
+							<id root="2.16.840.1.113883.0.210"/>
+						</representedOrganization>
+					</asAgent>
+				</device>
+			</sender>
+			<controlActProcess moodCode="EVN" classCode="CACT">
+				<code codeSystem="2.16.840.1.113883.1.6" code="PRPA_TE201305UV02"/>
+				<authorOrPerformer typeCode="AUT">
+					<assignedDevice classCode="">
+						<id root="2.16.840.1.113883.0.210"/>
+					</assignedDevice>
+				</authorOrPerformer>
+				<queryByParameter>
+					<queryId extension="-abd3453dcd24wkkks545" root="2.16.840.1.113883.0.210"/>
+					<statusCode code="new"/>
+					<responseModalityCode code="R"/>
+					<responsePriorityCode code="I"/>
+					<parameterList>
+						<livingSubjectAdministrativeGender>
+							<value code="F"/>
+							<semanticsText representation="TXT"/>
+						</livingSubjectAdministrativeGender>
+						<livingSubjectBirthTime>
+							<value value="19701001"/>
+							<semanticsText representation="TXT"/>
+						</livingSubjectBirthTime>
+						<livingSubjectId>
+							<value extension="VEN21000037" root="2.16.840.1.113883.0.210"/>
+							<semanticsText representation="TXT"/>
+						</livingSubjectId>
+						<livingSubjectName>
+							<value>
+								<family partType="FAM">Marquez</family>
+								<given partType="GIV">Marta</given>
+							</value>
+							<semanticsText representation="TXT"/>
+						</livingSubjectName>
+						<patientAddress>
+							<value/>
+						</patientAddress>
+					</parameterList>
+				</queryByParameter>
+			</controlActProcess>
+		</PRPA_IN201305UV02>
+	</S:Body>
+</S:Envelope>

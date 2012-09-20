@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aegis.net/labcommons/jaxb/QD" xmlns:lab="http://www.aegis.net/labcommons/jaxb/QD"
+	elementFormDefault="qualified">
+
+	<xs:element name="QDEntityResponse" type="lab:QDEntityResponseType">
+	</xs:element>
+
+	<xs:complexType name="QDEntityResponseType">
+		<xs:sequence>
+			<xs:element name="adhocQueryResp" type="lab:adhocQueryRespType"></xs:element>			
+		</xs:sequence>
+
+	</xs:complexType>
+	<xs:complexType name="adhocQueryRespType">
+		
+		<xs:sequence>
+			<xs:element name="regObjectList" type="lab:regObjectListType" ></xs:element>
+			<xs:element name="status" type="xs:string"></xs:element>
+			<xs:element name="responseXML" type="xs:string"> </xs:element>
+		</xs:sequence>
+
+	</xs:complexType>
+	<xs:complexType name="regObjectListType">
+		<xs:sequence>
+			<xs:element name="extrinObject" type="lab:extrinObjectType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="extrinObjectType">
+		<xs:sequence>
+			<xs:element name="documentInfo" type="lab:documentInfoType"></xs:element>
+			
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="documentInfoType">
+		<xs:sequence>
+			<xs:element name="documentUniqueId" type="xs:string"></xs:element>
+			<xs:element name="patientId" type="xs:string"></xs:element>
+			<xs:element name="repositoryUniqueId" type="xs:string"></xs:element>
+			<xs:element name="hash" type="xs:string"></xs:element>
+			<xs:element name="size" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	 
+	
+</xs:schema>

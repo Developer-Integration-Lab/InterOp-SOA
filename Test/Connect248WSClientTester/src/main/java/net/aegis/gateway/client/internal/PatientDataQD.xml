@@ -1,0 +1,31 @@
+<patientQD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PatientDataQD.xsd">
+	<userFamilyName>Testcase</userFamilyName>
+	<userGivenName>Interop</userGivenName>
+	<userInitials>IT</userInitials>
+	<userName>Scenario 1 QDI-1.1</userName>
+	<initiatorPatientId>VEN21000037</initiatorPatientId>
+	<!-- <responderPatient>
+		<responderPatientId>RI1.101.00037</responderPatientId>
+	</responderPatient> -->
+	<documentParams>
+		<creationTimeInd>N</creationTimeInd>
+		<creationTimeFrom>03/20/2007</creationTimeFrom>
+		<creationTimeTo>05/20/2010</creationTimeTo>
+		<serviceStartTimeInd>N</serviceStartTimeInd>
+		<serviceStartTimeFrom>01/20/2007</serviceStartTimeFrom>
+		<serviceStartTimeTo>03/20/2007</serviceStartTimeTo>
+		<serviceStopTimeInd>N</serviceStopTimeInd>
+		<serviceStopTimeFrom>02/20/2007</serviceStopTimeFrom>
+		<serviceStopTimeTo>04/20/2007</serviceStopTimeTo>
+		<classCodeInd>Y</classCodeInd>
+		<classCodeList>
+			<classCode>34133-9^^2.16.840.1.113883.6.1</classCode>
+		</classCodeList>
+		<statusInd>Y</statusInd>
+		<statusList>
+			<status>urn:oasis:names:tc:ebxml-regrep:StatusType:Approved</status>
+		</statusList>
+	</documentParams>
+</patientQD>
+
+    

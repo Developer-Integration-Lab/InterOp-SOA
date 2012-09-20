@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>NHIN Lab Help - Patient Discovery</title>
+        <link rel="stylesheet" href="../style/master.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <style type="text/css">
+            .content-title table
+            {
+                width:70%;
+            }
+            #content
+            {
+                margin:0 10px 0 25px;
+            }
+            h1.page-title
+            {
+                margin:0.6em auto 0.6em 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <p align=right><A href="helpIndex.html"><font size=5>Return</font></A>&nbsp;&nbsp;</p>
+        <H1 class="page-title">Patient Discovery</H1>
+        <div id="content">
+            <div class="content-title">
+                <table>
+                    <tr>
+                        <td><span class="content-title-text">Help - Patient Discovery</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content-area">
+            <!-- begin content area -->
+<div class="content-area">
+                <ul>
+<li><a href="#topic1"><b>Response did not return correlation identifiers/ Correlation not found </b></a></li>
+<li><a href="#topic2"><b>Response not found</b></a></li>
+<li><a href="#topic3"><b>Test Status - FAIL</b></a></li>
+<li><a href="#topic4"><b>Test Status - PROGRESS_PENDING</b></a></li>
+<li><a href="#topic5"><b>Case Result (QD) not saved</b></a></li>
+<li><a href="#topic6"><b>Error/Informative Codes - Patient Discovery</b></a></li>
+
+
+       </ul>
+                <br />
+                <br />
+
+
+
+<h3 id="topic1" >Response did not return correlation identifiers/ Correlation not found: </h3>
+<ul>
+<li>Check the MPI.xml for valid Patient entries on both initiator and responder.</li>
+<li>Verify the query parameters that are being used in query criteria.</li>
+<li>Verify the livingSubjectId is present in the request.</li>
+<li>Verify that the REQUIRED query parameters (LivingSubjectName,LivingSubjectAdministrativeGender,LivingSubjectBirthTime) are present in the request.</li>
+<li>If the policy engine is turned on, verify the responder Access Consent Policy(ACP) documents.</li>
+</ul>
+<br /><br />
+<h3 id="topic2">Response not found:</h3>
+<ul>
+<li>Verify the target gateway "HomecommunityId" in the pateint discovery request.</li>
+<li>Verify the internalConnectionInfo.xml/uddiConnectionInfo.xml for the correct end points of the initiator and target gateways.</li>
+<li>Verify that the REQUIRED query parameters (LivingSubjectName,LivingSubjectAdministrativeGender,LivingSubjectBirthTime) are present in the request.</li>
+<li>Verify the Connectivity to the target server. Check the server logs for connection related errors (for example: connection timed out).</li>
+<li>Verify the livingSubjectId is present in the request.</li>
+<li>Verify the certificates are installed correctly and the server was configured with certificates information on initiator and target gateways.</li>
+<li>If the policy engine is turned on, verify Access Consent Policy(ACP) documents on both initiator and responder ends.</li>
+<li>Verify logs for any exceptions.</li>
+</ul>
+<br /><br />
+<h3 id="topic3">Test Status - FAIL:</h3>
+<ol >
+<li >Patient correlation record not updated in correlatedIdentifiers table, when correlation expected.</li>
+<li>Patient correlation record updated in correlatedIdentifiers table, when correlation not expected.</li>
+<li>Check the help topics "Response not found" and "esponse did not return correlation identifiers/Correlation not found" on this page.</li>
+</ol>
+<br /><br />
+<h3 id="topic4">Test Status - PROGRESS_PENDING:</h3>
+<ol>
+<li>Initiator or target servers are not responding.</li>
+<li>Test case execution might have caused an exception in the code. Verify the logs.</li>
+</ol>
+<br /><br />
+<h3 id="topic5">Case Result (QD) not saved:</h3>
+<ul>
+<li>Verify that the database is up and running at the initiator end.</li>
+<li>Check the connectivity if the application server and database are on different machines.</li>
+<li>Data might be too large or attempted to insert null in not null columns. Verify logs for a SQL exception causing this problem. </li>
+</ul>
+<br /><br />
+<h3 id="topic6">Error/Informative Codes - Patient Discovery:</h3>
+<ul>
+<li>ResponderBusy: The responder was not able to process the request because it is currently overloaded.</li>
+<li>AnswerNotAvailable: The answer is not available. Human intervention may be needed.</li>
+<li>LivingSubjectAdministrativeGenderRequested: Requests the LivingSubjectAdministrativeGender attribute be specified.</li>
+<li>PatientAdressRequested: Requests the PatientAddress attribute be specified.</li>
+<li>PatientTelecomRequested: Requests the PatientTelecom attribute be specified.</li>
+<li>LivingSubjectBirthPlaceNameRequested: Requests the LivingSubjectBirthPlaceName attribute be specified.</li>
+<li>LivingSubjectBirthPlaceAddressRequested: Requests the LivingSubjectBirthPlaceAddress attribute be specified.</li>
+<li>MothersMaidenNameRequested: Requests the MothersMaidenName attribute be specified.</li>
+</ul>
+            <!-- end content area-->
+                <a href="pd.html"><b>Go to top</b></a>
+            </div>
+        </div>
+    </body>

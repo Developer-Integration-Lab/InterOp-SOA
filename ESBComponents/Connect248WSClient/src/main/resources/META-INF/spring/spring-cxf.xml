@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET: beans -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+	xsi:schemaLocation="http://cxf.apache.org/transports/http/configuration
+http://cxf.apache.org/schemas/configuration/http-conf.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxws
+http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+  	<import resource="classpath:META-INF/cxf/osgi/cxf-extension-osgi.xml"/>
+
+	<!-- <http-conf:conduit name="{http://localhost:8080/CONNECTAdapter/EntityPatientDiscovery}EntityPatientDiscoveryPortType.http-conduit"> -->
+	<http-conf:conduit name="*.http-conduit">
+		<http-conf:client Connection="Keep-Alive"
+			ReceiveTimeout="300000" AllowChunking="false" />
+	</http-conf:conduit>
+
+	<jaxws:client id="entityPatientDiscoveryPortType248Proxy"
+		serviceClass="gov.hhs.fha.nhinc.entitypatientdiscovery.EntityPatientDiscoveryPortType"
+		address="http://localhost:8080/CONNECTAdapter/EntityPatientDiscovery"
+		endpointName="EntityPatientDiscoveryPortSoap11" 
+		serviceName="EntityPatientDiscovery" />
+		
+	<jaxws:client id="entityDocQueryPortType248Proxy"
+		serviceClass="gov.hhs.fha.nhinc.entitydocquery.EntityDocQueryPortType"
+		address="http://localhost:8080/CONNECTAdapter/EntityDocQuery"
+		endpointName="EntityDocQueryPortSoap11" 
+		serviceName="EntityDocQuery" />
+	
+	<jaxws:client id="entityDocRetrievePortType248Proxy"
+		serviceClass="gov.hhs.fha.nhinc.entitydocretrieve.EntityDocRetrievePortType"
+		address="http://localhost:8080/CONNECTAdapter/EntityDocRetrieve"
+		endpointName="EntityDocRetrievePortSoap11" 
+		serviceName="EntityDocRetrieve" />
+		
+	<bean id="applicationConfigurationContext"
+		class="net.aegis.gateway.client.connect248.osgi.util.ApplicationConfigurationContext"
+		init-method="init">
+		<!-- <property name="bundleContext"/> -->
+	</bean>
+	<bean id="applicationContextProvider"
+		class="net.aegis.gateway.client.connect248.util.ApplicationContextProvider">
+	</bean> 
+	
+	
+</beans>
+<!-- END SNIPPET: beans -->

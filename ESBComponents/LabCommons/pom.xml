@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.aegis</groupId>
+	<artifactId>LabCommons</artifactId>
+	<packaging>bundle</packaging>
+	<name>LabCommons</name>
+	<properties>
+		<felix.ver>1.0.0</felix.ver>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>${felix.ver}</version>
+		</dependency>
+		
+	</dependencies>
+
+
+	<version>1.0.0</version>
+	<build>
+		<resources>
+			<!-- standard Maven folder -->
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<!-- plus root folder -->
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>META-INF/*</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<!-- added for jaxb start -->
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				
+				<configuration>
+					<!-- Changes the default schema directory -->
+					<schemaDirectory>src/main/schema</schemaDirectory>
+					<schemaIncludes>
+						<include>PD-EntityResponse.xsd</include>
+						<include>QD-EntityResponse.xsd</include>
+						<include>RD-EntityResponse.xsd</include>
+					</schemaIncludes>			
+					<schemaExcludes>
+						<exclude>PatientDataPD2.4.8.xsd</exclude>
+						<exclude>PatientDataPD3.2.xsd</exclude>
+					</schemaExcludes>			
+					<!-- <bindingDirectory>src/main/binding</bindingDirectory> -->
+				</configuration>
+				<executions>
+					<execution>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>${basedir}/target/generated-sources</sourceRoot>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- <plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb20-plugin</artifactId>
+				<version>${project.version}</version>
+				<executions>
+					<execution>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb21-plugin</artifactId>
+				<version>${project.version}</version>
+				<executions>
+					<execution>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb22-plugin</artifactId>
+				<version>${project.version}</version>
+				<executions>
+					<execution>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> -->
+			<!-- added for jaxb End -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<obrRepository>NONE</obrRepository>
+					<!-- <manifestLocation>META-INF</manifestLocation> -->
+					<instructions>
+						<Export-Package>
+							net.aegis.labcommons*							
+						</Export-Package>
+						<Import-Package>							                           
+							javax.xml.bind,
+							javax.xml.bind.annotation,
+							javax.xml.namespace
+						</Import-Package>
+						<_nouses>true</_nouses>
+						<Include-Resource>src/main/resources</Include-Resource>
+					</instructions>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+
+
+
+
+
+</project>

@@ -1,0 +1,3 @@
+https://ihdedbtest.axolotl.com/xc/services/RespondingGatewayRetrieve_Service
+Content-type: multipart/related;start="<rootpart*470224ad-91ca-49c9-a969-c1256c61a91c@example.jaxws.sun.com>";type="application/xop+xml";boundary="uuid:470224ad-91ca-49c9-a969-c1256c61a91c";start-info="application/soap+xml";action="urn:ihe:iti:2007:CrossGatewayRetrieve"
+Accept: application/soap+xml, multipart/related, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2

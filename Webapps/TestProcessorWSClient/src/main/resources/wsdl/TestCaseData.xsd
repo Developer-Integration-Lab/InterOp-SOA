@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.7-hudson-48-. -->
+<xs:schema xmlns:tns="http://ws.tp.aegis.net/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws.tp.aegis.net/" version="1.0">
+	<xs:element name="processTestCaseRequest" type="tns:processTestCaseRequestType" />
+	<xs:element name="processTestCaseResponse" type="tns:processTestCaseResponseType" />
+	<xs:complexType name="processTestCaseRequestType">
+		<xs:sequence>
+			<xs:element name="targetVersion" type="xs:string" />
+            <xs:element name="candidateId" type="xs:string" />
+            <xs:element name="scenarioExecutionId" type="xs:string" />
+            <xs:element name="caseExecutionId" type="xs:string" />
+            <xs:element name="scenarioLevelExecution" type="xs:string" />
+            <xs:element name="labType" type="xs:string" />
+            <xs:element name="uniquePatientId" type="xs:string" minOccurs="0"/>
+            <xs:element name="documentList" type="tns:document" minOccurs ="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>	
+	<xs:complexType name="document">
+		<xs:sequence>
+			<xs:element name="repoID" type="xs:string" />
+			<xs:element name="documentID" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processTestCaseResponseType">
+		<xs:sequence>
+			<xs:element name="status" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

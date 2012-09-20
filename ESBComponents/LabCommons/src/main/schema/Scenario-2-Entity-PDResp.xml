@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd">
+	<S:Header>
+		<To xmlns="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</To>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">hl7:RespondingGateway_PRPA_IN201306UV02Response
+		</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">uuid:7614bae7-9889-4500-91e4-f2ba5693c3ba
+		</MessageID>
+		<RelatesTo xmlns="http://www.w3.org/2005/08/addressing">uuid:0c6cd96d-29fa-4b82-8940-e1ef618f899e
+		</RelatesTo>
+		<wsse:Security S:mustUnderstand="1">
+			<wsu:Timestamp
+				xmlns:ns15="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512"
+				xmlns:ns14="http://www.w3.org/2003/05/soap-envelope" wsu:Id="_1">
+				<wsu:Created>2011-10-11T14:53:03Z</wsu:Created>
+				<wsu:Expires>2011-10-11T14:58:03Z</wsu:Expires>
+			</wsu:Timestamp>
+			<wsse11:SignatureConfirmation
+				xmlns:ns15="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512"
+				xmlns:ns14="http://www.w3.org/2003/05/soap-envelope" wsu:Id="_5002"
+				Value="LHoHzlwrJZWGQc8DU3FYjI5poW98HbD9fw2bvjhdyhrrOOIbkIYKZhEhQ0PSkgg3YF6emL937ChK/yfJp2hkYySQ3FzqGEUkAUtM2TiNaQ8Yu2lDL6A7DhwmdefkCjbSPSYav51hd9xZabLW6Ok1BtfFtf+bW/wjZhgFHC7+rf0=" />
+		</wsse:Security>
+	</S:Header>
+	<S:Body>
+		<RespondingGateway_PRPA_IN201306UV02Response
+			xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon"
+			xmlns:ns3="urn:gov:hhs:fha:nhinc:common:patientcorrelationfacade"
+			xmlns:ns4="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+			<communityResponse>
+				<PRPA_IN201306UV02 ITSVersion="XML_1.0"
+					nullFlavor="">
+					<id extension="-7f417b38:132d4c442d9:-6dc6" root="2.16.840.1.113883.0.101" />
+					<creationTime value="20111011145223" />
+					<interactionId extension="PRPA_IN201306UV" root="2.16.840.1.113883.1.6" />
+					<processingCode code="P" />
+					<processingModeCode code="R" />
+					<acceptAckCode code="AL" />
+					<receiver typeCode="RCV">
+						<device determinerCode="INSTANCE" classCode="">
+							<id root="1.2.345.678.999" />
+							<asAgent classCode="AGNT">
+								<representedOrganization determinerCode="INSTANCE"
+									classCode="ORG">
+									<id root="2.16.840.1.113883.0.210" />
+								</representedOrganization>
+							</asAgent>
+						</device>
+					</receiver>
+					<sender typeCode="SND">
+						<device determinerCode="INSTANCE" classCode="">
+							<id root="1.2.345.678.999" />
+							<asAgent classCode="AGNT">
+								<representedOrganization determinerCode="INSTANCE"
+									classCode="ORG">
+									<id root="2.16.840.1.113883.0.101" />
+								</representedOrganization>
+							</asAgent>
+						</device>
+					</sender>
+					<acknowledgement>
+						<typeId extension="PRPA_IN201305UV02" root="2.16.840.1.113883.1.6" />
+						<typeCode code="AA" />
+						<targetMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:nil="true" />
+					</acknowledgement>
+					<controlActProcess moodCode="EVN" classCode=""
+						nullFlavor="">
+						<code codeSystem="2.16.840.1.113883.1.6" code="PRPA_TE201306UV" />
+						<authorOrPerformer typeCode="AUT" nullFlavor="">
+							<assignedDevice classCode="">
+								<id root="2.16.840.1.113883.0.101" />
+							</assignedDevice>
+						</authorOrPerformer>
+						<subject typeCode="SUBJ">
+							<registrationEvent moodCode="" classCode="">
+								<id nullFlavor="NA" />
+								<statusCode code="active" />
+								<subject1 typeCode="">
+									<patient classCode="PAT">
+										<id extension="RI1.101.00001" root="2.16.840.1.113883.0.101" />
+										<statusCode code="SD" />
+										<patientPerson>
+											<name>
+												<family partType="FAM">Brown</family>
+												<given partType="GIV">Charles</given>
+												<given partType="GIV">T</given>
+												<prefix partType="PFX">Mr</prefix>
+											</name>
+											<telecom value="tel:+1-501-300-2343" />
+											<administrativeGenderCode code="M" />
+											<birthTime value="19350105" />
+											<addr>
+												<streetAddressLine>4000 Minor St</streetAddressLine>
+												<city>Honolulu</city>
+												<state>HI</state>
+												<postalCode>96801</postalCode>
+											</addr>
+											<asOtherIDs classCode="SD">
+												<id extension="666660001" root="2.16.840.1.113883.4.1" />
+												<scopingOrganization determinerCode=""
+													classCode="">
+													<id root="2.16.840.1.113883.4.1" />
+												</scopingOrganization>
+											</asOtherIDs>
+										</patientPerson>
+										<providerOrganization determinerCode=""
+											classCode="">
+											<id root="2.16.840.1.113883.0.101" />
+											<contactParty xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+												xsi:nil="true" />
+										</providerOrganization>
+										<subjectOf1>
+											<queryMatchObservation moodCode=""
+												classCode="">
+												<code code="IHE_PDQ" />
+												<value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+													xsi:type="INT" value="100" />
+											</queryMatchObservation>
+										</subjectOf1>
+									</patient>
+								</subject1>
+								<custodian typeCode="">
+									<assignedEntity classCode="">
+										<id root="2.16.840.1.113883.0.101" />
+									</assignedEntity>
+								</custodian>
+							</registrationEvent>
+						</subject>
+						<queryAck>
+							<queryId extension="-abd3453dcd24wkkks545" root="2.16.840.1.113883.0.210" />
+							<queryResponseCode code="OK" />
+							<resultTotalQuantity value="1" />
+							<resultCurrentQuantity value="1" />
+							<resultRemainingQuantity value="0" />
+						</queryAck>
+						<queryByParameter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:nil="true" />
+					</controlActProcess>
+				</PRPA_IN201306UV02>
+			</communityResponse>
+			<communityResponse>
+				<PRPA_IN201306UV02 ITSVersion="XML_1.0"
+					nullFlavor="">
+					<id extension="-7187cd41:132cabc411e:-64f5" root="2.16.840.1.113883.0.102" />
+					<creationTime value="20111011145242" />
+					<interactionId extension="PRPA_IN201306UV" root="2.16.840.1.113883.1.6" />
+					<processingCode code="P" />
+					<processingModeCode code="R" />
+					<acceptAckCode code="AL" />
+					<receiver typeCode="RCV">
+						<device determinerCode="INSTANCE" classCode="">
+							<id root="1.2.345.678.999" />
+							<asAgent classCode="AGNT">
+								<representedOrganization determinerCode="INSTANCE"
+									classCode="ORG">
+									<id root="2.16.840.1.113883.0.210" />
+								</representedOrganization>
+							</asAgent>
+						</device>
+					</receiver>
+					<sender typeCode="SND">
+						<device determinerCode="INSTANCE" classCode="">
+							<id root="1.2.345.678.999" />
+							<asAgent classCode="AGNT">
+								<representedOrganization determinerCode="INSTANCE"
+									classCode="ORG">
+									<id root="2.16.840.1.113883.0.102" />
+								</representedOrganization>
+							</asAgent>
+						</device>
+					</sender>
+					<acknowledgement>
+						<typeId extension="PRPA_IN201305UV02" root="2.16.840.1.113883.1.6" />
+						<typeCode code="AA" />
+						<targetMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:nil="true" />
+					</acknowledgement>
+					<controlActProcess moodCode="EVN" classCode=""
+						nullFlavor="">
+						<code codeSystem="2.16.840.1.113883.1.6" code="PRPA_TE201306UV" />
+						<authorOrPerformer typeCode="AUT" nullFlavor="">
+							<assignedDevice classCode="">
+								<id root="2.16.840.1.113883.0.102" />
+							</assignedDevice>
+						</authorOrPerformer>
+						<subject typeCode="SUBJ">
+							<registrationEvent moodCode="" classCode="">
+								<id nullFlavor="NA" />
+								<statusCode code="active" />
+								<subject1 typeCode="">
+									<patient classCode="PAT">
+										<id extension="RI2.102.00001" root="2.16.840.1.113883.0.102" />
+										<statusCode code="SD" />
+										<patientPerson>
+											<name>
+												<family partType="FAM">Brown</family>
+												<given partType="GIV">Charles</given>
+												<given partType="GIV">T</given>
+												<prefix partType="PFX">Mr</prefix>
+											</name>
+											<telecom value="tel:+1-501-300-2343" />
+											<administrativeGenderCode code="M" />
+											<birthTime value="19350105" />
+											<addr>
+												<streetAddressLine>4000 Minor St</streetAddressLine>
+												<city>Honolulu</city>
+												<state>HI</state>
+												<postalCode>96801</postalCode>
+											</addr>
+											<asOtherIDs classCode="SD">
+												<id extension="666660001" root="2.16.840.1.113883.4.1" />
+												<scopingOrganization determinerCode=""
+													classCode="">
+													<id root="2.16.840.1.113883.4.1" />
+												</scopingOrganization>
+											</asOtherIDs>
+										</patientPerson>
+										<providerOrganization determinerCode=""
+											classCode="">
+											<id root="2.16.840.1.113883.0.102" />
+											<contactParty xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+												xsi:nil="true" />
+										</providerOrganization>
+										<subjectOf1>
+											<queryMatchObservation moodCode=""
+												classCode="">
+												<code code="IHE_PDQ" />
+												<value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+													xsi:type="INT" value="100" />
+											</queryMatchObservation>
+										</subjectOf1>
+									</patient>
+								</subject1>
+								<custodian typeCode="">
+									<assignedEntity classCode="">
+										<id root="2.16.840.1.113883.0.102" />
+									</assignedEntity>
+								</custodian>
+							</registrationEvent>
+						</subject>
+						<queryAck>
+							<queryId extension="-abd3453dcd24wkkks545" root="2.16.840.1.113883.0.210" />
+							<queryResponseCode code="OK" />
+							<resultTotalQuantity value="1" />
+							<resultCurrentQuantity value="1" />
+							<resultRemainingQuantity value="0" />
+						</queryAck>
+						<queryByParameter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:nil="true" />
+					</controlActProcess>
+				</PRPA_IN201306UV02>
+			</communityResponse>
+		</RespondingGateway_PRPA_IN201306UV02Response>
+	</S:Body>
+</S:Envelope>

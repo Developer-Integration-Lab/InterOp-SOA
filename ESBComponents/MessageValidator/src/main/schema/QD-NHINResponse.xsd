@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aegis.net/mv/jaxb/QD" xmlns:lab="http://www.aegis.net/mv/jaxb/QD"
+	xmlns:labmsg="http://www.aegis.net/mv/jaxb/msg" elementFormDefault="qualified">
+	<xs:import namespace="http://www.aegis.net/mv/jaxb/msg" />
+
+	<xs:element name="QDNhinResponse" type="lab:QDNhinResponse"></xs:element>
+
+	<xs:complexType name="QDNhinResponse">
+		<xs:complexContent>
+			<xs:extension base="labmsg:nhinMessage">
+				<xs:sequence>
+					<xs:element name="relatesTo" type="xs:string" minOccurs="0"></xs:element>
+					<xs:element name="responderPatientID" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="responderHCID" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="responderAAID" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="responseStatusType" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="documentList" type="lab:documentInfo"
+						nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="documentInfo">
+		<xs:sequence>
+			<xs:element name="extrinsicObjectStatus" type="xs:string"
+				minOccurs="0"></xs:element>
+			<xs:element name="classCode" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="hash" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="size" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="documentId" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="repositoryUniqueId" type="xs:string"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

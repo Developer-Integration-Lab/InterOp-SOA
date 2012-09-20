@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="admin" namespace="/admin" extends="tiles-default">
+
+        <action name="ApplicationProperties" class="net.aegis.lab.web.action.admin.ApplicationProperties">
+            <!--<result name="input" type="tiles">admin.applicationproperties</result>-->
+            <result name="success" type="tiles">admin.applicationproperties</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="AddApplicationProperties" class="net.aegis.lab.web.action.admin.AddApplicationProperties">
+            <!--<result name="input" type="tiles">nhinrep.dashboard</result>-->
+            <result name="success" type="tiles">admin.addapplicationproperties</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="RegisterNhinRep" class="net.aegis.lab.web.action.admin.RegisterNhinRep">
+            <result name="success" type="tiles">admin.register.nhinrep</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <!-- <action name="LogSearch" class="net.aegis.lab.web.action.admin.LogSearch">
+            <result name="input" type="tiles">admin.log.search</result>
+            <result name="success" type="tiles">admin.log.search</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+        <action name="ManageUsers" class="net.aegis.lab.web.action.admin.ManageUsers"> 
+            <result name="success" type="tiles">admin.manageusers</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+        <action name="ManageSelectedUser" class="net.aegis.lab.web.action.admin.ManageSelectedUser">
+            <result name="success" type="tiles">admin.manageselecteduser</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <!-- Actions related to management of service sets -->
+        <action name="ManageServiceSets" class="net.aegis.lab.web.action.admin.ManageServiceSets" method="fetchServiceSets">
+            <result name="success" type="tiles">admin.manageservicesets</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+        <action name="ManageServiceSet" class="net.aegis.lab.web.action.admin.ManageServiceSet" method="fetchServiceSet">
+            <result name="success" type="tiles">admin.manageserviceset</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+        <action name="UpdateServiceSet" class="net.aegis.lab.web.action.admin.ManageServiceSet" method="updateServiceSet">
+            <result name="success" type="tiles">admin.manageserviceset</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <!-- Actions related to management of scenarios -->
+        <action name="ManageScenarios" class="net.aegis.lab.web.action.admin.ManageScenarios" method="fetchScenarios">
+            <result name="success" type="tiles">admin.managescenarios</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+        <action name="ManageScenario" class="net.aegis.lab.web.action.admin.ManageScenario" method="fetchScenario">
+            <result name="success" type="tiles">admin.managescenario</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+        <action name="UpdateScenario" class="net.aegis.lab.web.action.admin.ManageScenario" method="updateScenario">
+            <result name="success" type="tiles">admin.managescenario</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <!-- Actions related to management of test cases -->
+        <action name="ManageTestCases" class="net.aegis.lab.web.action.admin.ManageTestCases" method="fetchTestCases">
+            <result name="success" type="tiles">admin.managetestcases</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+        <action name="ManageTestCase" class="net.aegis.lab.web.action.admin.ManageTestCase" method="fetchTestCase">
+            <result name="success" type="tiles">admin.managetestcase</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+        <action name="UpdateTestCase" class="net.aegis.lab.web.action.admin.ManageTestCase" method="updateTestCase">
+            <result name="success" type="tiles">admin.managetestcase</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+        <action name="ManageNewsUpdates" class="net.aegis.lab.web.action.admin.ManageNewsUpdate">
+            <result name="input" type="tiles">admin.managenewsupdates</result>
+            <result name="success" type="tiles">admin.managenewsupdates</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <!-- <action name="MessageSearch" class="net.aegis.lab.web.action.admin.MessageSearch">
+            <result name="input" type="tiles">admin.message.search</result>
+            <result name="success" type="tiles">admin.message.search</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> 
+
+        <action name="ValidMessageSearch" class="net.aegis.lab.web.action.nhinvalid.MessageSearch" method="messageSearch">
+            <result name="input" type="tiles">admin.message.search</result>
+            <result name="success" type="tiles">admin.message.search</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>-->
+    </package>
+</struts>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+
+    <package name="default" namespace="/" extends="tiles-default">
+        <default-action-ref name="index" />
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">SignOn</param>
+                <param name="namespace">/security</param>
+            </result>
+        </action>
+    </package>
+
+    <!-- Add packages here -->
+
+    <include file="net/aegis/lab/participant/web/action/security/security.xml"/>
+    <include file="net/aegis/lab/participant/web/action/info/info.xml"/>
+    <include file="net/aegis/lab/participant/web/action/patient/patient.xml"/>
+    <include file="net/aegis/lab/participant/web/action/test/test.xml"/>
+
+</struts>

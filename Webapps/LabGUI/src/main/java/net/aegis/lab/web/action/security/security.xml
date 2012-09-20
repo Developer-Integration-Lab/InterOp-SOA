@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="security" namespace="/security" extends="tiles-default">
+
+        <action name="SignOn" class="net.aegis.lab.web.action.security.SignOn">
+            <result name="success" type="tiles">security.login</result>
+        </action>
+
+        <action name="Login_*" method="{1}" class="net.aegis.lab.web.action.security.Login">
+            <result name="input" type="tiles">security.login</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">ActiveTestResults</param>
+                <param name="namespace">/participant</param>
+            </result>
+            <result name="admin_dashboard" type="redirectAction">
+                <param name="actionName">ManageNewsUpdates</param>
+                <param name="namespace">/admin</param>
+            </result>
+            <result name="nhinadmin_dashboard" type="tiles">nhinadmin.dashboard</result>
+            <result name="nhinrep_dashboard" type="redirectAction">
+                <param name="actionName">NhinrepDashboard</param>
+                <param name="namespace">/nhinrep</param>
+            </result>
+            <result name="nhinvalid_dashboard" type="redirectAction">
+                <param name="actionName">NhinvalidDashboard</param>
+                <param name="namespace">/nhinvalid</param>
+            </result>
+            <result name="participant_dashboard" type="redirectAction">
+                <param name="actionName">ParticipantDashboard</param>
+                <param name="namespace">/participant</param>
+            </result>
+            <result name="participant_activetestresults" type="redirectAction">
+                <param name="actionName">ActiveTestResults</param>
+                <param name="namespace">/participant</param>
+            </result>
+            <result name="participant_setuptest" type="redirectAction">
+                <param name="actionName">SetUpTest</param>
+                <param name="namespace">/participant</param>
+            </result>
+            <result name="landingPage" type="redirectAction">
+                <param name="actionName">SwitchDashboard</param>
+                <param name="namespace">/facade</param>
+                <param name="ns">${ns}</param>
+                <param name="dashboard">${dashboard}</param>
+            </result>
+        </action>
+
+        <action name="Logoff_*" method="{1}" class="net.aegis.lab.web.action.security.Logoff">
+            <result name="success" type="tiles">security.login</result>
+        </action>
+          <action name="ChangePassword" class="net.aegis.lab.web.action.security.ChangePassword">
+            <result name="success" type="tiles">security.changepassword</result>
+         </action>
+
+        <!-- Add actions here -->
+        
+    </package>
+
+</struts>

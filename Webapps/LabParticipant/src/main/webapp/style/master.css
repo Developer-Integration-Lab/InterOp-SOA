@@ -1,0 +1,486 @@
+
+/*
+ dark tan - a1a15e
+ medium tan - AEAE5D
+ light tan - e0e0c2
+ dark grey purple - 424B6E
+ medium grey purple - 5D6997
+ light grey purple - 9CA4C2
+ dark blue (font) - 006
+ medium grey - 999
+*/
+
+body
+{
+	background:#E0E0C2 url('style-images/main_bg.gif') repeat-x;
+	color:#006;
+	font-family:sans-serif;
+	margin:0;
+}
+
+#logo
+{
+	background:transparent url('style-images/NHIN_logo_dim.gif') no-repeat;
+	left:0px;
+	position:absolute;
+	top:0px;
+	height:116px;
+	width:116px;
+}
+
+h1
+{
+	font-style:italic;
+}
+
+h1.page-title
+{
+	margin:0.6em auto 0.6em 185px;
+}
+
+#left-menu
+{
+	float:left;
+	margin-top:40px;
+	width:175px;
+}
+
+.menu, .menu-admin
+{
+	margin-top:16px;
+	padding:0;
+}
+
+.menu-title, .menu a, .menu-admin a, .menu-disabled,
+.menu .current, .menu-admin .current
+{
+	display:block;
+	padding:4px 10px;
+}
+
+.menu .menu-title, .menu-admin .menu-title
+{
+	background:#AEAE5D url('style-images/menu_title.gif');
+	color:#fff;
+	font-weight:bold;
+}
+
+.menu a, .menu a:visited, .menu-admin a, .menu-admin a:visited
+{
+	color:#eee;
+	text-decoration:none;
+}
+
+.menu a, .menu a:visited, .menu .current
+{
+	background:#5D6997 url('style-images/menu_bg.gif');
+}
+
+.menu-admin a, .menu-admin a:visited, .menu-admin .current
+{
+	background:#F5C43D url('style-images/menu_admin_bg.gif');
+}
+
+.menu a:hover, .menu a:active,
+.menu-admin a:hover, .menu-admin a:active
+{
+	color:#fff;
+}
+
+.menu .current, .menu-admin .current
+{
+	background-position:175px 0px;
+	color:#fff;
+	text-align:right;
+}
+
+.menu .menu-disabled
+{
+	background:#999 url('style-images/menu_disabled_bg.gif');
+	color:#ddd;
+}
+
+#content
+{
+	background-color:White;
+	border:#5D6997 solid 4px;
+	margin:0 10px 0 175px;
+	padding-bottom:3px;
+}
+
+.content-title
+{
+	background:#fff url('style-images/content_title_bg.gif') repeat-y;
+	border-bottom:#596695 solid 2px;
+	margin:0 40px 0 0;
+	padding:1em 0 0 10px;
+}
+
+.content-title table
+{
+	width:99%;
+}
+
+.content-title-text
+{
+	font-size:1.2em;
+	line-height:2em;
+}
+
+.title-button
+{
+	text-align:right;
+}
+
+.content-subtitle
+{
+	font-size:1em;
+	border-bottom:#9CA4C2 solid 2px;
+	font-weight:bold;
+	line-height:1.5em;
+	margin:0 40px 0 0;
+	padding:0.7em 0 0 10px;
+}
+
+.content-area
+{
+	padding-top:7px;
+	padding-left:7px;
+}
+
+#content p
+{
+	margin:7px;
+}
+
+table.content-data, table.content-data th, table.content-data tr, table.content-data tr td,
+table.test-results, table.test-results th, table.test-results tr, table.test-results tr td,
+table.test-meter, table.test-meter th, table.test-meter tr, table.test-meter tr td
+{
+	border-collapse:collapse;
+}
+
+table.test-results, table.test-results th, table.test-results tr, table.test-results tr td
+{
+	padding-top:8px;
+	padding-bottom:8px;
+}
+
+table.content-data tr th, table.test-results
+{
+	border-bottom:#9CA4C2 solid 1px;
+}
+
+table.test-results tr th
+{
+	font-size:1.2em;
+	text-align:left;
+}
+
+tr.test-scenario td.name
+{
+	padding-left:20px;
+}
+
+tr.testable-event td.name
+{
+	padding-left:40px;
+	font-style:italic;
+}
+
+tr.test-scenario .value, tr.testable-event .value
+{
+	padding:0 20px;
+}
+
+.odd-row
+{
+	background-color:#E0E0C2;
+}
+
+.content-area label.short, .content-area label.long
+{
+	display:block;
+	font-weight:bold;
+	line-height:44px;
+}
+
+.content-area label.short
+{
+	text-align:right;
+	width:250px;
+}
+
+.content-area label.long
+{
+	text-align:left;
+	width:100%;
+}
+
+/*
+ Display only label and data styles - Richard Ettema
+*/
+.content-area label.short-display, .content-area label.long-display
+{
+	display:block;
+	font-size:0.8em;
+	line-height:32px;
+}
+
+.content-area label.short-display
+{
+	text-align:right;
+	width:250px;
+}
+
+.content-area label.long-display
+{
+}
+
+.content-area span.short-display, .content-area span.long-display
+{
+	display:block;
+	font-size:0.8em;
+	font-weight:bold;
+	line-height:32px;
+}
+
+.content-area span.short-display
+{
+	text-align:right;
+	width:250px;
+}
+
+.content-area span.long-display
+{
+	text-align:left;
+	width:100%;
+}
+
+.test-name
+{
+	vertical-align:top;
+}
+
+.inputText, .inputTextArea, .inputSelect	
+{
+	border:#5D6997 solid 3px;
+	font-size:1em;
+	margin:2px;
+	padding:7px;
+	vertical-align:middle;
+}
+
+.inputButton
+{
+	background-color:#424B6E;
+	color:#eee;
+	font-size:1em;
+	margin:2px;
+	padding:5px;
+	vertical-align:middle;
+}
+
+/* FIXME: Internet explorer does *not* play well with these collapsing areas.  What's the problem?! */
+
+.collapsible-title, .section-title
+{
+	background-repeat:repeat-y;
+	color:#fff;
+	margin:7px 0px;
+	padding:3px 7px;
+}
+
+.collapsible-title
+{
+	cursor:pointer;
+}
+
+.collapsed
+{
+	background-image:url('style-images/collapsible_title_closed_bg.gif');
+	background-position:right;
+	text-align:right;
+}
+
+.expanded, .section-title
+{
+	background-image:url('style-images/collapsible_title_open_bg.gif');
+	background-position:left;
+	text-align:left;
+}
+
+/* Bizarre IE Behavior #36,478: if you remove this border, or make it 0px,
+ * the associated span will slide to the left to align against the document
+ * edge instead of the containing <div>...  Why?!
+ */
+.collapsible-area
+{
+	border:1px transparent solid;
+	margin-left:10px;
+}
+
+/* Another fantastic IE 7 bug.  If you leave this span with no width or 100% width specified,
+ * the text will move outside of the *containing* div as if it were flowing against the top
+ * level objects on the page!  
+ */
+.collapsible-content
+{
+	width:99%;
+}
+
+#footer
+{
+	color:#a1a15e;
+	font-size:0.8em;
+	padding:5px 10px;
+	text-align:right;
+}
+
+.status-good, .status-bad
+{
+	padding:7px;
+	vertical-align:middle;
+}
+
+.status-good
+{
+	background-color:#afa;
+	border:2px solid #363;
+	color:#363;
+}
+
+.status-bad
+{
+	background-color:#faa;
+	border:2px solid #633;
+	color:#633;
+}
+
+.dashboard-table tr td
+{
+	padding:7px 5px;
+}
+
+.test-meter
+{
+	width:200px;
+}
+
+.test-meter tr td
+{
+	font-size:1px;
+	line-height:14px;
+	padding-left:0;
+	padding-right:0;
+}
+
+.test-pending
+{
+	background-color:#AAA;
+}
+
+.test-in-progress
+{
+	background-color:#FF0;
+}
+
+.test-pass
+{
+	background-color:#0A0;
+}
+
+.test-fail
+{
+	background-color:#F00;
+}
+
+.search-results
+{
+	margin:3px 10px 10px 10px;
+	width:97%;
+}
+
+.search-results tr th
+{
+	background-color:#006;
+	color:#fff;
+}
+
+.search-results tr th, .search-results tr td 
+{
+	font-size:0.9em;
+	padding:2px 5px;
+}
+
+/*
+ * Login form styles
+ */
+
+#login-outer-box
+{
+	background:transparent url('style-images/login_bg.gif') 0px 325px;
+	margin:100px auto;
+	width:550px;
+}
+
+#login-box
+{
+	background:transparent url('style-images/NHIN_logo_trans.gif') no-repeat 350px 115px;
+	border:2px #a1a15e solid;
+	padding:50px 25px;
+}
+
+#login-box h1
+{
+	border-bottom:2px solid #fff;
+	color:#5d6997;
+	margin:15px 35px 80px;
+	padding-bottom:10px;
+}
+
+#login-box label
+{
+	color:#77773c;
+	display:block;
+	font-size:1.2em;
+	text-align:right;
+	width:125px;
+}
+
+#login-box .inputText
+{
+	width:175px;
+}
+
+#login-box table, #login-box tr, #login-box td
+{
+	border-collapse:collapse;
+}
+
+/*
+ * error form styles
+ */
+
+.error-title
+{
+	background:#fff url('style-images/error_title_bg.gif') repeat-y;
+	border-bottom:#633 solid 2px;
+	margin:0 40px 0 0;
+	padding:1em 0 0 10px;
+}
+
+.error-title-text
+{
+	color:#633;
+	font-size:1.2em;
+	line-height:2em;
+}
+
+.stack-trace
+{
+	display:block;
+	font-family:monospace;
+	font-size:1.1em;
+	white-space:pre;
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>    
+    <package name="gatewayagent" namespace="/gatewayagent" extends="tiles-default">
+
+
+        <action name="TransactionList" class="net.aegis.lab.web.action.gatewayagent.TransactionList">
+            <result name="input" type="tiles">gatewayagent.transactionList</result>
+            <result name="success" type="tiles">gatewayagent.transactionList</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+      <action name="DownloadMessage" class="net.aegis.lab.web.action.gatewayagent.DownloadMessage">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">fileStream</param>
+                <param name="contentDisposition">attachment;filename="${filename}"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+
+        <!-- add actions here -->
+
+    </package>
+</struts>

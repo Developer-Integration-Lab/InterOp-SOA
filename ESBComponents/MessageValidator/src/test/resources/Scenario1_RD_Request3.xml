@@ -1,0 +1,232 @@
+
+--uuid:9e764b3c-3812-4bfb-8672-15741c861878
+Content-Id:
+<rootpart * e764b3c-3812-4bfb-8672-15741c861878 @
+	example.jaxws.sun.com>
+	Content-Type:
+	application/xop+xml;charset=utf-8;type="application/soap+xml"
+	Content-Transfer-Encoding: binary
+
+<?xml version='1.0' encoding='UTF-8'?>
+	<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope"
+		xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+		xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion"
+		xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd"
+		xmlns:exc14n="http://www.w3.org/2001/10/xml-exc-c14n#">
+		<S:Header>
+			<To xmlns="http://www.w3.org/2005/08/addressing">https://D9YF7ZN1.aegis.net:9897/CONNECTGateway/NhinService/RespondingGateway_Retrieve_Service/DocRetrieve
+			</To>
+			<Action xmlns="http://www.w3.org/2005/08/addressing">urn:ihe:iti:2007:CrossGatewayRetrieve</Action>
+			<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+				<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+			</ReplyTo>
+			<MessageID xmlns="http://www.w3.org/2005/08/addressing">uuid:5bac7a1b-cb34-4a53-a0a5-19a3bed97690
+			</MessageID>
+			<wsse:Security S:mustUnderstand="true">
+				<wsu:Timestamp
+					xmlns:ns17="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512"
+					xmlns:ns16="http://schemas.xmlsoap.org/soap/envelope/" wsu:Id="_1">
+					<wsu:Created>2012-02-06T19:12:34Z</wsu:Created>
+					<wsu:Expires>2012-02-06T19:17:34Z</wsu:Expires>
+				</wsu:Timestamp>
+				<saml2:Assertion xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+					xmlns:exc14n="http://www.w3.org/2001/10/xml-exc-c14n#" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
+					xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					ID="891f25be-ea2e-4d9e-9ea5-70feeb34cb15" IssueInstant="2012-02-06T19:12:34.696Z"
+					Version="2.0">
+					<saml2:Issuer
+						Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">CN=SAML User,OU=SU,O=SAML User,L=Los Angeles,ST=CA,C=US</saml2:Issuer>
+					<saml2:Subject>
+						<saml2:NameID
+							Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">UID=Scenario 1 RDI-1.1b</saml2:NameID>
+						<saml2:SubjectConfirmation
+							Method="urn:oasis:names:tc:SAML:2.0:cm:holder-of-key">
+							<saml2:SubjectConfirmationData>
+								<ds:KeyInfo>
+									<ds:KeyValue>
+										<ds:RSAKeyValue>
+											<ds:Modulus>iBZ/n+dEppKXo8ThovFtk4sDERkrrSSHvZ86Ubtn13qjoPTN1rtJSimn2hs1TVBHdKL+yOhBD6vcwmn/5VXytKwf2vdCpASfo/QCjYyzmyhXNBUBEascjI3uv/zodfclVud+4v9c1RFh9kbAh2lY8Y1G8s0q0EyLEFZ4byucx65dtIF/sg09BtyCPKr7YWlFIYoSyH+uiLtYh7GcWmocChSJNVKK95BZ9+hbwX1h9ZNkXXA5R4TeKiE9mTbx55up54jaT6v2gDRv72ZkqLheOoUUXegrRoudqK1ZU/5y+4IfKqVjGZqD99uELVPHN4+xEBfppbuZfuITvSaCAhp/2Q==</ds:Modulus>
+											<ds:Exponent>AQAB</ds:Exponent>
+										</ds:RSAKeyValue>
+									</ds:KeyValue>
+								</ds:KeyInfo>
+							</saml2:SubjectConfirmationData>
+						</saml2:SubjectConfirmation>
+					</saml2:Subject>
+					<saml2:AuthnStatement AuthnInstant="2012-02-06T19:12:18.220Z"
+						SessionIndex="123456">
+						<saml2:SubjectLocality />
+						<saml2:AuthnContext>
+							<saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:X509</saml2:AuthnContextClassRef>
+						</saml2:AuthnContext>
+					</saml2:AuthnStatement>
+					<saml2:AttributeStatement>
+						<saml2:Attribute Name="urn:oasis:names:tc:xspa:1.0:subject:subject-id">
+							<saml2:AttributeValue xmlns:ns6="http://www.w3.org/2001/XMLSchema-instance"
+								xmlns:ns7="http://www.w3.org/2001/XMLSchema" ns6:type="ns7:string">Lab IT
+								Testcase</saml2:AttributeValue>
+						</saml2:Attribute>
+						<saml2:Attribute
+							Name="urn:oasis:names:tc:xspa:1.0:subject:organization">
+							<saml2:AttributeValue xmlns:ns6="http://www.w3.org/2001/XMLSchema-instance"
+								xmlns:ns7="http://www.w3.org/2001/XMLSchema" ns6:type="ns7:string">2.16.840.1.113883.0.210</saml2:AttributeValue>
+						</saml2:Attribute>
+						<saml2:Attribute
+							Name="urn:oasis:names:tc:xspa:1.0:subject:organization-id">
+							<saml2:AttributeValue xmlns:ns6="http://www.w3.org/2001/XMLSchema-instance"
+								xmlns:ns7="http://www.w3.org/2001/XMLSchema" ns6:type="ns7:string">2.16.840.1.113883.0.210</saml2:AttributeValue>
+						</saml2:Attribute>
+						<saml2:Attribute Name="urn:nhin:names:saml:homeCommunityId">
+							<saml2:AttributeValue xmlns:ns6="http://www.w3.org/2001/XMLSchema-instance"
+								xmlns:ns7="http://www.w3.org/2001/XMLSchema" ns6:type="ns7:string">2.16.840.1.113883.0.210</saml2:AttributeValue>
+						</saml2:Attribute>
+						<saml2:Attribute Name="urn:oasis:names:tc:xacml:2.0:subject:role">
+							<saml2:AttributeValue>
+								<hl7:Role xmlns:hl7="urn:hl7-org:v3"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" code="46255001"
+									codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"
+									displayName="Pharmacist" xsi:type="hl7:CE" />
+							</saml2:AttributeValue>
+						</saml2:Attribute>
+						<saml2:Attribute
+							Name="urn:oasis:names:tc:xspa:1.0:subject:purposeofuse">
+							<saml2:AttributeValue>
+								<hl7:PurposeForUse xmlns:hl7="urn:hl7-org:v3"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" code="TREATMENT"
+									codeSystem="2.16.840.1.113883.3.18.7.1" codeSystemName="nhin-purpose"
+									displayName="Treatment" xsi:type="hl7:CE" />
+							</saml2:AttributeValue>
+						</saml2:Attribute>
+						<saml2:Attribute
+							Name="urn:oasis:names:tc:xacml:2.0:resource:resource-id">
+							<saml2:AttributeValue xmlns:ns6="http://www.w3.org/2001/XMLSchema-instance"
+								xmlns:ns7="http://www.w3.org/2001/XMLSchema" ns6:type="ns7:string">VEN21000037^^^&amp;2.16.840.1.113883.0.210&amp;ISO</saml2:AttributeValue>
+						</saml2:Attribute>
+					</saml2:AttributeStatement>
+					<saml2:AuthzDecisionStatement
+						Decision="Permit"
+						Resource="https://D9YF7ZN1.aegis.net:9897/CONNECTGateway/NhinService/RespondingGateway_Retrieve_Service/DocRetrieve">
+						<saml2:Action Namespace="urn:oasis:names:tc:SAML:1.0:action:rwedc">Execute</saml2:Action>
+						<saml2:Evidence>
+							<saml2:Assertion ID="cef3dac6-0bd5-4093-9c86-934c6a112665"
+								IssueInstant="2012-02-06T19:12:18.223Z" Version="2.0">
+								<saml2:Issuer
+									Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">CN=SAML User,OU=SU,O=SAML User,L=Los Angeles,ST=CA,C=US</saml2:Issuer>
+								<saml2:Conditions NotBefore="2012-02-06T19:12:18.223Z"
+									NotOnOrAfter="2012-02-06T19:12:18.223Z" />
+								<saml2:AttributeStatement>
+									<saml2:Attribute Name="AccessConsentPolicy"
+										NameFormat="http://www.hhs.gov/healthit/nhin" />
+									<saml2:Attribute Name="InstanceAccessConsentPolicy"
+										NameFormat="http://www.hhs.gov/healthit/nhin" />
+								</saml2:AttributeStatement>
+							</saml2:Assertion>
+						</saml2:Evidence>
+					</saml2:AuthzDecisionStatement>
+					<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+						<ds:SignedInfo>
+							<ds:CanonicalizationMethod
+								Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+							<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+							<ds:Reference URI="#891f25be-ea2e-4d9e-9ea5-70feeb34cb15">
+								<ds:Transforms>
+									<ds:Transform
+										Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+									<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+								</ds:Transforms>
+								<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+								<ds:DigestValue>4SB1BTvnw/H+viFpDhU/S67jDAc=</ds:DigestValue>
+							</ds:Reference>
+						</ds:SignedInfo>
+						<ds:SignatureValue>X8+HvOm/uNUvhgr8xRRP/AIjsaZnWZuASY9dGgD3ocRgOP94YpjuywlhHwaSOT8E8F1B1kAhoem2
+							zGA8XLZjogO51u94jAcKokUK8WMl0ShGdAna//9gGBqKg4hWVQGsILFV7bNKAtL1yLexaVqa0YsV
+							z6NiQCAT4wV+UBVfKKHEwbLl8++WBgdsAqP1bYhyBrfvLo6Lw+tu/pM+ga5mZcRqONyU/B8vC+NJ
+							EXpwXhhlTr1QqJi4ixDKqug/BHt83L72ov88CBPrXxZtwMNQELE+6q0i39zH0DAxPioHRgwxpZXO
+							8dx5BhilKJwkBklmF7i3FDGHdYc2eKPEoKBkwQ==</ds:SignatureValue>
+						<ds:KeyInfo>
+							<ds:KeyValue>
+								<ds:RSAKeyValue>
+									<ds:Modulus>iBZ/n+dEppKXo8ThovFtk4sDERkrrSSHvZ86Ubtn13qjoPTN1rtJSimn2hs1TVBHdKL+yOhBD6vc
+										wmn/5VXytKwf2vdCpASfo/QCjYyzmyhXNBUBEascjI3uv/zodfclVud+4v9c1RFh9kbAh2lY8Y1G
+										8s0q0EyLEFZ4byucx65dtIF/sg09BtyCPKr7YWlFIYoSyH+uiLtYh7GcWmocChSJNVKK95BZ9+hb
+										wX1h9ZNkXXA5R4TeKiE9mTbx55up54jaT6v2gDRv72ZkqLheOoUUXegrRoudqK1ZU/5y+4IfKqVj
+										GZqD99uELVPHN4+xEBfppbuZfuITvSaCAhp/2Q==</ds:Modulus>
+									<ds:Exponent>AQAB</ds:Exponent>
+								</ds:RSAKeyValue>
+							</ds:KeyValue>
+						</ds:KeyInfo>
+					</ds:Signature>
+				</saml2:Assertion>
+				<ds:Signature
+					xmlns:ns17="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512"
+					xmlns:ns16="http://schemas.xmlsoap.org/soap/envelope/" Id="_2">
+					<ds:SignedInfo>
+						<ds:CanonicalizationMethod
+							Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+							<exc14n:InclusiveNamespaces
+								PrefixList="wsse S" />
+						</ds:CanonicalizationMethod>
+						<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+						<ds:Reference URI="#_1">
+							<ds:Transforms>
+								<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+									<exc14n:InclusiveNamespaces
+										PrefixList="wsu wsse S" />
+								</ds:Transform>
+							</ds:Transforms>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+							<ds:DigestValue>
+								<Include xmlns="http://www.w3.org/2004/08/xop/include"
+									href="cid:072def9e-ba5a-4430-892f-fa8a9ca734cd@example.jaxws.sun.com" />
+							</ds:DigestValue>
+						</ds:Reference>
+					</ds:SignedInfo>
+					<ds:SignatureValue>
+						<Include xmlns="http://www.w3.org/2004/08/xop/include"
+							href="cid:f0caa3c3-d8fd-46e5-aa99-139448aa4315@example.jaxws.sun.com" />
+					</ds:SignatureValue>
+					<ds:KeyInfo>
+						<wsse:SecurityTokenReference
+							wsse11:TokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0">
+							<wsse:KeyIdentifier
+								ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">891f25be-ea2e-4d9e-9ea5-70feeb34cb15</wsse:KeyIdentifier>
+						</wsse:SecurityTokenReference>
+					</ds:KeyInfo>
+				</ds:Signature>
+			</wsse:Security>
+		</S:Header>
+		<S:Body>
+			<ns6:RetrieveDocumentSetRequest
+				xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+				xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"
+				xmlns:ns6="urn:ihe:iti:xds-b:2007" xmlns:ns7="urn:gov:hhs:fha:nhinc:gateway:samltokendata">
+				<ns6:DocumentRequest>
+					<ns6:HomeCommunityId>urn:oid:2.16.840.1.113883.0.101</ns6:HomeCommunityId>
+					<ns6:RepositoryUniqueId>1</ns6:RepositoryUniqueId>
+					<ns6:DocumentUniqueId>1.RI1.101.00037.33333</ns6:DocumentUniqueId>
+				</ns6:DocumentRequest>
+			</ns6:RetrieveDocumentSetRequest>
+		</S:Body>
+	</S:Envelope>
+	--uuid:9e764b3c-3812-4bfb-8672-15741c861878
+	Content-Id: <072def9e-ba5a-4430-892f-fa8a9ca734cd@example.jaxws.sun.com>
+	Content-Type: application/octet-stream
+	Content-Transfer-Encoding: binary
+
+	ÚcJŒ&á3²+Z¶ŠëðÉÍC
+	--uuid:9e764b3c-3812-4bfb-8672-15741c861878
+	Content-Id:
+	<f0caa3c3-d8fd-46e5-aa99-139448aa4315 @
+		example.jaxws.sun.com>
+		Content-Type: application/octet-stream
+		Content-Transfer-Encoding: binary
+
+		6|•½ó×à©²ïu˜ÉÙd%Z ½âÔ…“‚Kæsg¾äÑ”q® :ñw­ä8)Æ 4y2USÎäYÄ¸ 9ž>¥w\‹“{‘ôŠ€‰i °Èý X)ç
+		ú”û©& • wÒÆ
+		»²¬²FÐ
+		Aï¯´Ü¢H™<µÑ‰®„y™¬þ³åô{•û®q®PÓ;äÒC KÿÁS¯d÷rIêå UŒÄÐÃ(­,º"ˆ—i€UìÁê­
+		<çy1  À ° bP  G7é ² à  æ 7 À ; ƒÄqÇM  HÐHBÑ  mÍP ² D \ ØTôh ´
+			r  Ò ¹ sú ‰ e ³ ÀÌoô  p | Æ ¦ ƒ -
+			uuid:9e764b3c-3812-4bfb-8672-15741c861878--

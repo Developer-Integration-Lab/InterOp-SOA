@@ -1,0 +1,9 @@
+case_id,message_id,patientId,hcid,aaid,docEntryStatus,returnType,serviceStartTimeFrom,serviceStartTimeTo,serviceStopTimeFrom,serviceStopTimeTo,msg_type,doc_list
+QD1,uuid:99d152e8-6587-44af-8e5c-09b93260ddd1,CAN20000042,2.16.840.1.113883.0.200,2.16.840.1.113883.0.200,"('urn:oasis:names:tc:ebxml-regrep:StatusType:Approved','urn:oasis:names:tc:ebxml-regrep:StatusType:DeferredCreation')",LeafClass,20080120000000,20080220000000,20080220000000,20080320000000,request,
+QD1,uuid:99d152e8-6587-44af-8e5c-09b93260ddd1,CAN20000042,2.16.840.1.113883.0.200,2.16.840.1.113883.0.200,,,,,,,response,1
+QD2,uuid:9e3e481d-f4c8-41fa-a10f-771718163b57,RI1.101.00037,2.16.840.1.113883.0.101,2.16.840.1.113883.0.101,('urn:oasis:names:tc:ebxml-regrep:StatusType:Approved'),LeafClass,,,,,request,
+QD2,uuid:9e3e481d-f4c8-41fa-a10f-771718163b57,RI1.101.00037,2.16.840.1.113883.0.101,2.16.840.1.113883.0.101,,,,,,,response,2^3^4
+QD3,urn:uuid:8d770836-6afb-414d-a564-15e895384184,N600007,,2.16.840.1.113883.3.596,('urn:oasis:names:tc:ebxml-regrep:StatusType:Approved')^^^('urn:ihe:iti:2010:StatusType:DeferredCreation'),LeafClass,,,,,request,
+QD4,uuid:691f7f55-49cb-4320-b545-0d86d2c10076,000000088880,2.25.256133121442266547198931747355024016667.1.2.1,2.25.256133121442266547198931747355024016667.1.2.3,,,,,,,response,5
+QD5,urn:uuid:4d2811b9-0343-45b2-800b-76cdf97ef7e8,NN600002,,2.16.840.1.113883.3.614,('urn:oasis:names:tc:ebxml-regrep:StatusType:Approved')^^^('urn:ihe:iti:2010:StatusType:DeferredCreation'),LeafClass,,,,,request,
+QD6,uuid:35c0b1d6-0198-48b3-a841-96cc2dc8ae63,OCH2980200,2.16.840.1.113883.3.346,1.2.840.114350.1.13.66.3.7.3.688884.100,,,,,,,response,6

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+	xsi:schemaLocation="http://cxf.apache.org/transports/http/configuration
+http://cxf.apache.org/schemas/configuration/http-conf.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxws
+http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/osgi/cxf-extension-osgi.xml" />
+
+	<!-- <http-conf:conduit name="{http://localhost:8080/CONNECTAdapter/EntityPatientDiscovery}EntityPatientDiscoveryPortType.http-conduit"> -->
+	<http-conf:conduit name="*.http-conduit">
+		<http-conf:client Connection="Keep-Alive"
+			ReceiveTimeout="300000" AllowChunking="false" />
+	</http-conf:conduit>
+
+	<!-- this is the Message Driven POJO (MDP) -->
+
+	<!-- JMS ActiveMQ Connection Factory -->
+	<!-- <bean id="jmsActiveMQFactory" class="org.apache.activemq.pool.PooledConnectionFactory"> 
+		<property name="connectionFactory"> <bean class="org.apache.activemq.ActiveMQConnectionFactory"> 
+		<property name="brokerURL" value="tcp://localhost:61616"/> </bean> </property> 
+		</bean> -->
+
+	<bean id="jmsActiveMQFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="tcp://localhost:61616" />
+		<property name="useAsyncSend" value="true" />
+	</bean>
+
+	<!-- ActiveMQ destination to use by default -->
+	<bean id="Queue-2.4.8-Destination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="Queue-2.4.8" />
+	</bean>
+
+	<bean id="Queue-3.1-Destination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="Queue-3.1" />
+	</bean>
+
+	<bean id="Queue-3.2-Destination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="Queue-3.2" />
+	</bean>
+
+	<!-- Spring JMS Template for ActiveMQ -->
+	<!-- <bean id="jmsActiveMQTemplate" class="org.springframework.jms.core.JmsTemplate"> 
+		<property name="connectionFactory"> <ref bean="jmsActiveMQFactory"/> </property> 
+		<property name="defaultDestination"> <ref bean="defaultDestination"/> </property> 
+		</bean> -->
+
+	<!-- Provides listener threads <bean id="listenerContainer" class="org.springframework.jms.listener.SimpleMessageListenerContainer"> 
+		<property name="connectionFactory" ref="jmsActiveMQFactory"/> <property name="destination" 
+		ref="defaultDestination"/> <property name="messageListener" ref="messageListener"/> 
+		</bean> -->
+
+
+	<bean id="messageListener" class="net.aegis.md.jms.listener.QueueMsgListener" />
+
+	<!-- and this is the message listener container -->
+	<!-- <bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer"> -->
+	<bean id="Queue-2.4.8-jmsContainer"
+		class="org.springframework.jms.listener.SimpleMessageListenerContainer">
+		<property name="connectionFactory" ref="jmsActiveMQFactory" />
+		<property name="destination" ref="Queue-2.4.8-Destination" />
+		<property name="messageListener" ref="messageListener" />
+		<!-- <property name="ConcurrentConsumers" value="10"/> -->
+	</bean>
+
+	<bean id="Queue-3.1-jmsContainer"
+		class="org.springframework.jms.listener.SimpleMessageListenerContainer">
+		<property name="connectionFactory" ref="jmsActiveMQFactory" />
+		<property name="destination" ref="Queue-3.1-Destination" />
+		<property name="messageListener" ref="messageListener" />
+	</bean>
+
+	<bean id="Queue-3.2-jmsContainer"
+		class="org.springframework.jms.listener.SimpleMessageListenerContainer">
+		<property name="connectionFactory" ref="jmsActiveMQFactory" />
+		<property name="destination" ref="Queue-3.2-Destination" />
+		<property name="messageListener" ref="messageListener" />
+	</bean>
+
+	<bean id="applicationContextProvider" class="net.aegis.md.util.ApplicationContextProvider"/>
+
+</beans>
+<!-- END SNIPPET: beans -->

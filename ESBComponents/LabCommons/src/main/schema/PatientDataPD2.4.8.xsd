@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="patientPD">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="userFamilyName" type="xs:string"/>
+				<xs:element name="userGivenName" type="xs:string"/>
+				<xs:element name="userInitials" type="xs:string"/>
+				<xs:element name="userName" type="xs:string"/>
+				<xs:element name="userRoleCode" type="xs:string"/>
+				<xs:element name="userRoleDisplayName" type="xs:string"/>
+				<xs:element name="userPurposeCode" type="xs:string"/>
+				<xs:element name="userPurposeDisplayName" type="xs:string"/>
+				<xs:element name="patientId" type="xs:string"/>
+				<xs:element name="patientPrefix" type="xs:string"/>
+				<xs:element name="patientLastName" type="xs:string"/>
+				<xs:element name="patientGivenName" type="xs:string"/>
+				<xs:element name="patientGender" type="xs:string"/>
+				<xs:element name="patientDateOfBirth" type="xs:string"/>
+				<xs:element name="patientSsn" type="xs:string"/>
+				<xs:element name="patientTel" type="xs:string"/>
+				<xs:element name="patientStreetAddress" type="xs:string"/>
+				<xs:element name="patientCity" type="xs:string"/>
+				<xs:element name="patientState" type="xs:string"/>
+				<xs:element name="patientZip" type="xs:string"/>
+				<xs:element name="demographicQueryOnly" type="xs:string" default="N"/><!-- to support multiple names , addresses , telephones along with backward comaptibility-->
+				<xs:element name="patientNames" type="patientNamesType" minOccurs="0"/>
+				<xs:element name="patientTels" type="patientTelsType" minOccurs="0"/>
+				<xs:element name="patientAddresses" type="patientAddressesType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="patientNamesType">
+		<xs:sequence>
+			<xs:element name="patientName" type="patientNameType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="patientTelsType">
+		<xs:sequence>
+			<xs:element name="patientTel" type="patientTelType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="patientAddressesType">
+		<xs:sequence>
+			<xs:element name="patientAddress" type="patientAddressType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="patientAddressType">
+		<xs:sequence>
+			<xs:element name="patientStreetAddress1" type="xs:string"/>
+			<xs:element name="patientStreetAddress2" type="xs:string"/>
+			<xs:element name="patientCity" type="xs:string"/>
+			<xs:element name="patientState" type="xs:string"/>
+			<xs:element name="patientZip" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="patientNameType">
+		<xs:sequence>
+			<xs:element name="patientPrefix" type="xs:string"/>
+			<xs:element name="patientLastName" type="xs:string"/>
+			<xs:element name="patientGivenNames" type="patientGivenNamesType"/>
+			<xs:element name="patientSuffix" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="patientTelType">
+		<xs:attribute name="value" type="xs:string"/>
+		<xs:attribute name="use" type="telephoneUseType"/>
+	</xs:complexType>
+	<xs:complexType name="patientGivenNamesType">
+		<xs:sequence>
+			<xs:element name="givenName" type="xs:string" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="telephoneUseType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WP"/>
+			<xs:enumeration value="HP"/>
+			<xs:enumeration value="CP"/>
+			<xs:enumeration value="OP"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

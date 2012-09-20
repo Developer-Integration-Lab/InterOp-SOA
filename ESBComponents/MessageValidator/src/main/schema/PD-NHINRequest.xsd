@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aegis.net/mv/jaxb/PD" xmlns:lab="http://www.aegis.net/mv/jaxb/PD"
+	xmlns:labmsg="http://www.aegis.net/mv/jaxb/msg" elementFormDefault="qualified">
+	<xs:include schemaLocation="PD-NHINCommon.xsd" />
+	<xs:import namespace="http://www.aegis.net/mv/jaxb/msg" />
+
+	<xs:element name="PDNhinRequest" type="lab:PDNhinRequest">
+	</xs:element>
+
+	<xs:complexType name="PDNhinRequest">
+		<xs:complexContent>
+			<xs:extension base="labmsg:nhinMessage">
+				<xs:sequence>
+					<xs:element name="receiver" type="lab:receiver"></xs:element>
+					<xs:element name="sender" type="lab:sender" minOccurs="0"></xs:element>
+					<!-- <xs:element name="messageID" type="xs:string" minOccurs="0"></xs:element> -->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

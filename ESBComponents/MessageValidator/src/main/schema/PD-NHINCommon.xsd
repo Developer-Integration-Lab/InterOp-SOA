@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aegis.net/mv/jaxb/PD" xmlns:lab="http://www.aegis.net/mv/jaxb/PD"
+	elementFormDefault="qualified">
+
+	
+	<xs:complexType name="receiver">
+		<xs:sequence>
+			<xs:element name="patient" type="lab:patient"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="sender">
+		<xs:sequence>
+			<xs:element name="patient" type="lab:patient"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="patient">
+		<xs:sequence>
+			<xs:element name="patientId" type="xs:string"></xs:element>
+			<xs:element name="assigningAuthority" type="xs:string"></xs:element>
+			<xs:element name="HCID" type="xs:string"></xs:element>
+			<xs:element name="addresses" type="lab:address" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+	      <xs:element name="dateOfBirth" type="xs:dateTime" minOccurs="0"/>
+	      <xs:element name="gender" type="xs:string" minOccurs="0"/>
+	      <xs:element name="personnames" type="lab:personname" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+	      <xs:element name="phonenumbers" type="lab:phonenumber" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+	      <xs:element name="ssn" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="address">
+    <xs:sequence>
+      <xs:element name="street1" type="xs:string" minOccurs="0"/>
+      <xs:element name="street2" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="state" type="xs:string" minOccurs="0"/>
+      <xs:element name="postal" type="xs:string" minOccurs="0"/>      
+    </xs:sequence>
+  </xs:complexType>
+  
+   <xs:complexType name="personname">
+    <xs:sequence>
+      <xs:element name="firstName" type="xs:string" minOccurs="0"/>
+      <xs:element name="lastName" type="xs:string" minOccurs="0"/>
+      <xs:element name="middleName" type="xs:string" minOccurs="0"/>
+      <xs:element name="prefix" type="xs:string" minOccurs="0"/>
+      <xs:element name="suffix" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="phonenumber">
+    <xs:sequence>
+      <xs:element name="value" type="xs:string" minOccurs="0"/>
+      <xs:element name="use" type="lab:telephoneUse"/>
+    </xs:sequence>
+  </xs:complexType>
+	<xs:simpleType name="telephoneUse">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WP"/>
+			<xs:enumeration value="HP"/>
+			<xs:enumeration value="CP"/>
+			<xs:enumeration value="OP"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>

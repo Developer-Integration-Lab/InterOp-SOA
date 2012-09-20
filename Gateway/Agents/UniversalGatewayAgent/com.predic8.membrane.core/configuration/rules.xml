@@ -1,0 +1,75 @@
+<?xml version = "1.0" ?>
+<configuration>
+  <rules>
+    <forwarding-rule name="1029test1_IA"
+                      port="9897"
+                      blockRequest="false"
+                      blockResponse="false"
+                      inboundTLS="true"
+                      outboundTLS="true"
+                      host="d23rq4m1.aegis.net"
+                      method="*">
+      <targetport>8181</targetport>
+      <targethost>d33rkgh1.aegis.net</targethost>
+      <interceptors>
+        <interceptor id="urlRewriter"
+                      name="Simple URL Rewriter" />
+      </interceptors>
+    </forwarding-rule>
+    <forwarding-rule name="1029test2_IA"
+                      port="9893"
+                      blockRequest="false"
+                      blockResponse="false"
+                      inboundTLS="true"
+                      outboundTLS="true"
+                      host="d23rq4m1.aegis.net"
+                      method="*">
+      <targetport>8181</targetport>
+      <targethost>dfrh0fh1.aegis.net</targethost>
+      <interceptors>
+        <interceptor id="urlRewriter"
+                      name="Simple URL Rewriter" />
+      </interceptors>
+    </forwarding-rule>
+
+    <forwarding-rule name="1026test1"
+                      port="9891"
+                      blockRequest="false"
+                      blockResponse="false"
+                      inboundTLS="true"
+                      outboundTLS="true"
+                      host="d23rq4m1.aegis.net"
+                      method="*">
+      <targetport>8181</targetport>
+      <targethost>d23rq4m1.aegis.net</targethost>
+      <interceptors>
+        <interceptor id="urlRewriter"
+                      name="Simple URL Rewriter" />
+      </interceptors>
+    </forwarding-rule>
+  </rules>
+  <global>
+    <adjustHostHeader>false</adjustHostHeader>
+  </global>
+  <gui>
+    <autotrackexchange>true</autotrackexchange>
+    <indentMessage>true</indentMessage>
+  </gui>
+  <proxy active="false"
+          authentication="false">
+    <proxy-host />
+    <proxy-port>0</proxy-port>
+    <proxy-username />
+    <proxy-password />
+  </proxy>
+  <security>
+    <keystore>
+      <location>C:\Users\Sunil.Bhaskarla.AEGIS\Desktop\AEGIS_CA_cert\gateway.jks</location>
+      <password>d23rq4m1</password>
+    </keystore>
+    <truststore>
+      <location>C:\Users\Sunil.Bhaskarla.AEGIS\Desktop\AEGIS_CA_cert\cacerts.jks</location>
+      <password>changeit</password>
+    </truststore>
+  </security>
+</configuration>

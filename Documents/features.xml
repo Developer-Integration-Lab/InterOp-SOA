@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<features>
+   <feature name="esb-component-dependencies" version="1.0.0">
+	 <bundle>mvn:org.aspectj/com.springsource.org.aspectj.weaver/1.6.8.RELEASE</bundle>
+     <bundle>mvn:org.dom4j/com.springsource.org.dom4j/1.6.1</bundle>
+     <bundle>mvn:org.apache.commons/com.springsource.org.apache.commons.collections/3.2.1</bundle>
+     <bundle>mvn:org.jboss.javassist/com.springsource.javassist/3.12.1.GA</bundle>
+     <bundle>mvn:javax.persistence/com.springsource.javax.persistence/1.99.0</bundle>
+     <bundle>mvn:org.antlr/com.springsource.antlr/2.7.7</bundle>
+     <bundle>mvn:net.sourceforge.cglib/com.springsource.net.sf.cglib/2.2.0</bundle>
+     <bundle>mvn:javax.xml.stream/com.springsource.javax.xml.stream/1.0.1</bundle>
+     <bundle>mvn:org.objectweb.asm/com.springsource.org.objectweb.asm/1.5.3</bundle>
+     <bundle>mvn:org.objectweb.asm/com.springsource.org.objectweb.asm.attrs/1.5.3</bundle>
+     <bundle>mvn:org.hibernate/com.springsource.org.hibernate/3.3.2.GA</bundle>
+     <bundle>mvn:org.hibernate/com.springsource.org.hibernate.annotations/3.3.1.ga</bundle>
+     <bundle>mvn:org.hibernate/com.springsource.org.hibernate.annotations.common/3.3.0.ga</bundle>
+     <bundle>mvn:org.hibernate/com.springsource.org.hibernate.ejb/3.3.2.GA</bundle>
+	 <bundle>mvn:net.sourceforge.ehcache/com.springsource.net.sf.ehcache/1.6.2</bundle>
+	 <bundle>mvn:org.springframework/org.springframework.jdbc/3.0.5.RELEASE</bundle>
+	 <bundle>mvn:org.springframework/org.springframework.orm/3.0.5.RELEASE</bundle>
+	 <bundle>mvn:com.mysql.jdbc/com.springsource.com.mysql.jdbc/5.1.6</bundle>
+	 <bundle>mvn:org.codehaus.woodstox/stax2-api/3.1.1</bundle>
+	 <!-- <bundle>mvn:org.codehaus.woodstox/woodstox-core-asl/4.1.1</bundle> -->
+	 <bundle>mvn:com.oreilly.servlet/com.springsource.com.oreilly.servlet/0.0.0.BUILD-20021105</bundle>	 
+	 <bundle>mvn:org.springframework/org.springframework.test/3.0.5.RELEASE</bundle>
+  </feature>
+  <feature name="esb-components" version="1.0.0">
+	 <feature version="1.0.0">esb-component-dependencies</feature>
+	 <feature version="3.0.5.RELEASE">spring-web</feature>
+	 <bundle>mvn:net.aegis/LabCommons/1.0.0</bundle>
+	 <bundle>mvn:net.aegis/NhincCommonTypesLib/2.4.8</bundle>
+	 <bundle>mvn:net.aegis/CONNECTCommonTypesLib/3.2.1</bundle>
+	 <bundle>mvn:net.aegis/TestProcessor/1.0.0</bundle>
+	 <bundle>mvn:net.aegis/LabCore/1.0.0</bundle>
+	 <bundle>mvn:net.aegis.gateway.client/Connect248WSClient/1.0.0</bundle>
+	 <bundle>mvn:net.aegis.gateway.client/Connect32WSClient/1.0.0</bundle>
+	 <bundle>mvn:net.aegis/MessageDispatcher/1.0.0</bundle>
+	 <bundle>mvn:net.aegis/MessageValidator/1.0.0</bundle>
+  </feature>
+</features>

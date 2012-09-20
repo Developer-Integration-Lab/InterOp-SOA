@@ -1,0 +1,7 @@
+HTTP response - https://ihdedbtest.axolotl.com/xc/services/RespondingGatewayRetrieve_Service - 200 null:HTTP/1.1 200 OK
+Content-type: multipart/related; type="application/xop+xml"; boundary="uuid:48ef68cc-27d8-44ed-b040-641856490817"; start="<root.message@cxf.apache.org>"; start-info="application/soap+xml
+Content-length: 2480
+X-powered-by: Servlet 2.5; JBoss-5.0/JBossWeb-2.1
+Server: Apache-Coyote/1.1
+Date: Tue, 10 Apr 2012 22:12:53 GMT
+

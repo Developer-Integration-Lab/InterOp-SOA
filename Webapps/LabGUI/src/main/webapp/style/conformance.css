@@ -1,0 +1,896 @@
+
+/*
+client colors:
+
+ darkest blue (font) - 000048
+ dark blue - 4C4C7F			<--> medium tan - 4C4C7F
+ medium blue - 7A7ACC			<--> medium grey purple - 7A7ACC
+ light blue - E5E5FF			<--> light tan - E5E5FF
+ medium green (admin) - 5E994C		<--> gold - 5E994C
+ medium grey - 999
+*/
+
+body
+{
+    background:#E5E5FF url('style-images/conformance/main_bg.gif') repeat-x;
+    color:#006;
+    font-family:sans-serif;
+    margin:0;
+}
+
+#logo
+{
+    background:transparent url('style-images/conformance/NHIN_logo_dim.gif') no-repeat;
+    left:0px;
+    position:absolute;
+    top:0px;
+    height:116px;
+    width:116px;
+}
+
+h1
+{
+    font-style:italic;
+}
+
+h1.page-title
+{
+    margin:0.6em auto 0.6em 185px;
+}
+
+#test-lab-switch
+{
+    /* left:200px;
+    position:inherit;
+    top:0px; 
+    left:400px;
+    height:116px;
+    width:116px;
+    
+    text-align:right;
+    */
+     margin:0.6em auto 0.6em 185px;
+}
+
+
+#left-menu
+{
+    float:left;
+    margin-top:40px;
+    width:175px;
+}
+
+.menu
+{
+    margin-top:16px;
+    padding:0;
+}
+
+.menu-title, .menu-admin, .menu-item, .menu-disabled,
+.menu-admin-current, .menu-item-current
+{
+    display:block;
+    padding:4px 10px;
+}
+
+.menu-title, .menu-title a
+{
+    /*background:#4C4C7F url('style-images/conformance/menu_title.gif');*/
+    background:#4C4C7F;
+    color:#eee;
+    font-weight:bold;
+}
+
+.menu-title a, .menu-title a:visited
+{
+    color:#eee;
+    text-decoration:none;
+}
+
+.menu-title a:hover, .menu-title a:active
+{
+    color:#fff;
+    text-decoration:none;
+}
+
+.menu-admin, .menu-admin a
+{
+    /*background:#5E994C url('style-images/conformance/menu_admin_bg.gif');*/
+    background:#5E994C;
+    color:#fff;
+    font-weight:bold;
+}
+
+.menu-admin a, .menu-admin a:visited
+{
+    color:#eee;
+    text-decoration:none;
+}
+
+.menu-admin a:hover, .menu-admin a:active
+{
+    color:#fff;
+    text-decoration:none;
+}
+
+.menu-item, .menu-item a
+{
+    /*background:#7A7ACC url('style-images/conformance/menu_bg.gif');*/
+    background:#7A7ACC;
+    color:#eee;
+}
+
+.menu-item a, .menu-item a:visited
+{
+    color:#eee;
+    text-decoration:none;
+}
+
+.menu-item a:hover, .menu-item a:active
+{
+    color:#fff;
+    text-decoration:none;
+}
+
+.menu-disabled, .menu-disabled a
+{
+    /*background:#999 url('style-images/conformance/menu_disabled_bg.gif');*/
+    background:#999;
+    color:#555;
+}
+
+.menu-disabled a, .menu-disabled a:visited
+{
+    color:#eee;
+    text-decoration:none;
+}
+
+.menu-disabled a:hover, .menu-disabled a:active
+{
+    color:#fff;
+    text-decoration:none;
+}
+
+.menu-item-current
+{
+    background:#7A7ACC;
+    background-position:175px 0px;
+    color:#fff;
+    text-align:right;
+    font-weight:bold;
+}
+
+.menu-admin-current
+{
+    background:#5E994C;
+    background-position:175px 0px;
+    color:#fff;
+    text-align:right;
+    font-weight:bold;
+}
+
+/*
+.menu, .menu-admin
+{
+    margin-top:16px;
+    padding:0;
+}
+
+.menu-title, .menu a, .menu-admin a, .menu-disabled,
+.menu .current, .menu-admin .current
+{
+    display:block;
+    padding:4px 10px;
+}
+
+.menu .menu-title, .menu-admin .menu-title
+{
+    background:#4C4C7F url('style-images/conformance/menu_title.gif');
+    color:#fff;
+    font-weight:bold;
+}
+
+.menu a, .menu a:visited, .menu-admin a, .menu-admin a:visited
+{
+    color:#eee;
+    text-decoration:none;
+}
+
+.menu a, .menu a:visited, .menu .current
+{
+    background:#7A7ACC url('style-images/conformance/menu_bg.gif');
+}
+
+.menu-admin a, .menu-admin a:visited, .menu-admin .current
+{
+    background:#5E994C url('style-images/conformance/menu_admin_bg.gif');
+}
+
+.menu a:hover, .menu a:active,
+.menu-admin a:hover, .menu-admin a:active
+{
+    color:#fff;
+}
+
+.menu .current, .menu-admin .current
+{
+    background-position:175px 0px;
+    color:#fff;
+    text-align:right;
+}
+
+.menu .menu-disabled
+{
+    background:#999 url('style-images/conformance/menu_disabled_bg.gif');
+    color:#555;
+}
+*/
+
+#switch-platform {
+    margin:0 0 0 175px;
+}
+
+#switch-lab {
+    background:#fff url('style-images/content_title_bg.gif') repeat-y;
+    border:#5D6997 solid 4px;
+    color:#fff;
+    padding:8px;
+    text-decoration:none;
+}
+
+#switch-lab a, #switch-lab a:visited {
+    color:white;
+}
+
+#switch-conformance {
+    background:#fff url('style-images/conformance/content_title_bg.gif') repeat-y;
+    border:#7A7ACC solid 4px;
+    color:#fff;
+    padding:8px;
+    text-decoration:none;
+}
+
+#switch-conformance a, #switch-conformance a:visited {
+    color:white;
+}
+
+#content
+{
+    background-color:White;
+    border:#7A7ACC solid 4px;
+    margin:0 10px 0 175px;
+    padding-bottom:3px;
+        min-height:400px;
+}
+
+#content-no-menu
+{
+    background-color:White;
+    border:#7A7ACC solid 4px;
+    margin:10px 10px 10px 10px;
+    padding-bottom:3px;
+        min-height:400px;
+}
+
+#content-attachment-menu
+{
+    background-color:White;
+    border:#7A7ACC solid 4px;
+    margin:4px 4px 4px 4px;
+    padding-bottom:3px;
+    min-height:400px;
+}
+
+#content-pleasewait
+{
+    background:#fff url('style-images/conformance/content_title_bg.gif') repeat-y;
+    border:#7A7ACC solid 4px;
+    color:#fff;
+    margin:0 0 0 175px;
+    padding:0px;
+}
+#content-pleasewait-startTimer
+{
+    background:#fff url('style-images/content_title_bg.gif') repeat-y;
+    border:#5D6997 solid 4px;
+    margin:0 0 0 175px;
+    padding:0px;
+}
+.content-title
+{
+    background:#fff url('style-images/conformance/content_title_bg.gif') repeat-y;
+    border-bottom:#596695 solid 2px;
+    color:#fff;
+    margin:0 40px 0 0;
+    padding:1em 0 0 10px;
+}
+
+.content-title table
+{
+    width:99%;
+}
+
+.content-title-text
+{
+    font-size:1.2em;
+    line-height:2em;
+}
+
+.title-button
+{
+    text-align:right;
+}
+
+.content-subtitle
+{
+    font-size:1em;
+    border-bottom:#9CA4C2 solid 2px;
+    font-weight:bold;
+    line-height:1.5em;
+    margin:0 40px 0 0;
+    padding:0.7em 0 0 10px;
+}
+
+.content-area
+{
+    padding-top:7px;
+    padding-left:7px;
+}
+
+#content p
+{
+    margin:7px;
+}
+
+#content-no-menu p
+{
+    margin:7px;
+}
+
+table.content-data, table.content-data th, table.content-data tr, table.content-data tr td,
+table.test-results, table.test-results th, table.test-results tr, table.test-results tr td,
+table.test-meter, table.test-meter th, table.test-meter tr, table.test-meter tr td
+{
+    border-collapse:collapse;
+}
+
+table.test-results, table.test-results th, table.test-results tr, table.test-results tr td
+{
+    padding-top:8px;
+    padding-bottom:8px;
+}
+
+table.content-data tr th, table.test-results
+{
+    border-bottom:#9CA4C2 solid 1px;
+}
+
+table.content-data td
+{
+    padding:4px;
+    height:24px;
+}
+
+table.test-results tr th
+{
+    font-size:1.2em;
+    text-align:left;
+}
+
+tr.test-scenario td.name
+{
+    padding-left:20px;
+}
+
+tr.testable-event td.name
+{
+    padding-left:40px;
+    font-style:italic;
+}
+
+tr.test-scenario .value, tr.testable-event .value
+{
+    padding:0 20px;
+}
+
+.odd-row
+{
+    background-color:#E5E5FF;
+}
+
+.content-area label.short, .content-area label.long, .content-area label.long-right
+{
+    display:block;
+    /*font-weight:bold;*/
+    line-height:44px;
+}
+
+.content-area label.short
+{
+    text-align:right;
+    width:250px;
+}
+
+.content-area label.long
+{
+    text-align:left;
+    width:100%;
+}
+
+.content-area label.long-right
+{
+    text-align:right;
+    width:100%;
+}
+
+/*
+ Display only label and data styles - Richard Ettema
+*/
+.content-area label.short-display, .content-area label.long-display, .content-area label.long-display-right
+{
+    display:block;
+    font-size:0.8em;
+    line-height:20px;
+    /*font-weight:bold;*/
+}
+
+.content-area label.short-display
+{
+    text-align:right;
+    width:250px;
+}
+
+.content-area label.long-display
+{
+}
+
+.content-area label.long-display-right
+{
+    text-align:right;
+}
+
+.content-area span.short-display, .content-area span.long-display
+{
+    display:block;
+    font-size:0.8em;
+    font-weight:bold;
+    line-height:20px;
+}
+
+.content-area span.short-display
+{
+    text-align:right;
+    width:250px;
+}
+
+.content-area span.long-display
+{
+    text-align:left;
+    width:100%;
+}
+
+.test-name
+{
+    vertical-align:top;
+}
+
+.inputText, .inputTextArea, .inputSelect
+{
+    border:#7A7ACC solid 3px;
+    font-size:1em;
+    margin:2px;
+    padding:7px;
+    vertical-align:middle;
+}
+
+.inputSelect {
+    padding:1px;
+}
+
+.inputButton
+{
+    background-color:#424B6E;
+    color:#eee;
+    font-size:1em;
+    margin:2px;
+    padding:5px;
+    vertical-align:middle;
+    cursor: pointer;
+}
+
+.inputButtonDisabled
+{
+    background-color:#F4F4F4;
+    color:#A0A0A0;
+    font-size:1em;
+    margin:2px;
+    padding:5px;
+    vertical-align:middle;
+    cursor: pointer;
+}
+
+.tableButton
+{
+    background-color:#424B6E;
+    color:#eee;
+    font-size:.5em;
+    margin:2px;
+    padding:5px;
+    vertical-align:middle;
+    width:200px;
+}
+
+.disabledButton
+{
+    background-color:#5F5F5F;
+    color:#eee;
+    font-size:1em;
+    margin:2px;
+    padding:5px;
+    vertical-align:middle;
+}
+
+/* FIXME: Internet explorer does *not* play well with these collapsing areas.  What's the problem?! */
+
+.collapsible-title, .section-title
+{
+    background-repeat:repeat-y;
+    color:#fff;
+    margin:7px 0px;         /* top & bottom are 7px, and right & left are 0 px */
+    padding:3px 7px;
+}
+
+.collapsible-title
+{
+    cursor:pointer;
+}
+
+.collapsed
+{
+    background-image:url('style-images/conformance/collapsible_title_closed_bg.gif');
+    background-position:right;
+    margin-right:7px;
+    text-align:right;
+}
+
+.expanded/*, .section-title*/
+{
+    background-image:url('style-images/conformance/collapsible_title_open_bg.gif');
+    background-position:left;
+    margin-left:7px;
+    text-align:left;
+}
+
+.section-title
+{
+    background-image:url('style-images/conformance/collapsible_title_open_bg.gif');
+    background-position:left;
+    text-align:left;
+}
+
+/* Bizarre IE Behavior #36,478: if you remove this border, or make it 0px,
+ * the associated span will slide to the left to align against the document
+ * edge instead of the containing <div>...  Why?!
+ */
+.collapsible-area
+{
+    border:1px transparent solid;
+    margin-left:10px;
+    display:block;
+    /*font-size:0.8em;*/
+    line-height:20px;
+    /*font-weight:bold;*/
+}
+
+/* Another fantastic IE 7 bug.  If you leave this span with no width or 100% width specified,
+ * the text will move outside of the *containing* div as if it were flowing against the top
+ * level objects on the page!
+ */
+.collapsible-content
+{
+    width:99%;
+}
+
+.scrollable-area
+{
+    margin-right:10px;
+    overflow:auto;
+}
+
+.scrollable-area-200
+{
+    height:200px;
+    margin-right:10px;
+    overflow:auto;
+}
+
+.scrollable-area-400
+{
+    height:400px;
+    margin-right:10px;
+    overflow:auto;
+}
+
+.scrollable-area-600
+{
+    height:600px;
+    margin-right:10px;
+    overflow:auto;
+}
+
+#footer
+{
+    color:#a1a15e;
+    font-size:0.8em;
+    padding:5px 10px;
+    text-align:right;
+}
+
+.status-good, .status-completed, .status-in-progress, .status-manual, .status-bad, .status-incomplete, .status-error, .status-noAction, status-verified-good, status-verified-completed, status-notverified, status-verified-failed, status-verified-incomplete
+{
+    padding:7px;
+    vertical-align:middle;
+}
+
+.status-good, .status-verified-good
+{
+    background-color:#afa;
+    border:2px solid #363;
+    color:#363;
+}
+
+.status-completed, .status-verified-completed
+{
+    background-color:#afa;
+    border:2px solid #363;
+    color:#363;
+}
+
+.status-in-progress
+{
+    background-color:#0af;
+    border:2px solid #363;
+    color:#363;
+}
+
+.status-manual
+{
+    background-color:#ff0;
+    border:2px solid #363;
+    color:#363;
+}
+
+.status-bad, .status-verified-failed
+{
+    background-color:#faa;
+    border:2px solid #633;
+    color:#633;
+}
+
+.status-incomplete, .status-error, .status-verified-incomplete
+{
+    background-color:#faa;
+    border:2px solid #633;
+    color:#633;
+}
+
+.status-noAction
+{
+    background-color:#B8860B;
+    border:2px solid #633;
+    color:#000000;
+
+}
+
+.dashboard-table tr td
+{
+    padding:7px 5px;
+}
+
+.test-meter
+{
+    width:200px;
+}
+
+.test-meter tr td
+{
+    font-size:1px;
+    line-height:14px;
+    padding-left:0;
+    padding-right:0;
+}
+
+.test-pending
+{
+    background-color:#AAA;
+}
+
+.test-in-progress
+{
+    background-color:#0AF;
+}
+
+.test-manual
+{
+    background-color:#FF0;
+}
+
+.test-pass
+{
+    background-color:#0A0;
+}
+
+.test-fail
+{
+    background-color:#F00;
+}
+
+.test-completed
+{
+    background-color:#0A0;
+}
+
+.test-incomplete
+{
+    background-color:#F00;
+}
+
+.search-results
+{
+    margin:3px 10px 10px 10px;
+    width:97%;
+    text-align:center;
+}
+
+.search-results tr th
+{
+    background-color:#006;
+    color:#fff;
+}
+
+.search-results tr th, .search-results tr td
+{
+    font-size:0.9em;
+    padding:2px 5px;
+}
+
+/*
+ * Login form styles
+ */
+
+#login-outer-box
+{
+    background:transparent url('style-images/conformance/login_bg.gif') 0px 325px;
+    margin:100px auto;
+    width:550px;
+}
+
+#login-box
+{
+    background:transparent url('style-images/conformance/NHIN_logo_trans.gif') no-repeat 350px 115px;
+    border:2px #a1a15e solid;
+    padding:50px 25px;
+}
+
+#login-box h1
+{
+    border-bottom:2px solid #fff;
+    color:#5d6997;
+    margin:15px 35px 80px;
+    padding-bottom:10px;
+}
+
+#login-box label
+{
+    color:#77773c;
+    display:block;
+    font-size:1.2em;
+    text-align:right;
+    width:125px;
+}
+
+#login-box .inputText
+{
+    width:175px;
+}
+
+#login-box table, #login-box tr, #login-box td
+{
+    border-collapse:collapse;
+}
+
+/*
+ * error form styles
+ */
+
+.error-title
+{
+    background:#fff url('style-images/conformance/error_title_bg.gif') repeat-y;
+    border-bottom:#633 solid 2px;
+    margin:0 40px 0 0;
+    padding:1em 0 0 10px;
+}
+
+.error-title-text
+{
+    color:#B11;
+    font-size:1.2em;
+    line-height:2em;
+}
+
+.stack-trace
+{
+    color:#000000;
+    display:block;
+    font-family:monospace;
+    font-size:1.0em;
+    white-space:pre;
+}
+
+.actionMessage
+{
+    font-size:1.0em;
+    line-height:1.2em;
+}
+
+.errorMessage
+{
+    color:#B11;
+    font-size:1.0em;
+    line-height:1.2em;
+}
+
+#layer1
+{
+    position: absolute;
+    visibility: hidden;
+    width: 400px;
+    height: 300px;
+    left: 20px;
+    top: 300px;
+    background-color: #ccc;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+#close
+{
+    float: right;
+}
+
+.hoverText {
+	border-bottom: 1px dashed blue;
+}
+
+.tooltip {
+    white-space: normal;
+    text-align: justify;
+    font-size: 1em;
+    padding: 4px;
+    border: 1px solid #9CA4C2;
+    background-color: #E9EAF1;
+}
+
+a, a:visited {
+    color: #0066C8;
+}
+
+textarea {
+    font-family: sans-serif;
+}
+
+.inputText, .inputTextArea, .inputSelect, .inputPassword
+{
+	border:#5D6997 solid 3px;
+	font-size:1em;
+	margin:2px;
+	padding:7px;
+	vertical-align:middle;
+}
+
+.thSz
+{
+    font-size:1.2em;
+    text-align:left;
+    background-color:silver;
+}

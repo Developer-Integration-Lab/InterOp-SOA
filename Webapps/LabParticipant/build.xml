@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   - This build file will build the LabParticipant module.
+   -
+   - The primary targets are:
+   - 
+   -     build         Incremental build; no clean before compile
+   -     build-all     Full build; clean before compile
+   -     deploy        Incremental exploded deployment to $dir.deploy}
+   -     unit-test     Executes the unit test suite
+   -     javadoc       Generate the API javadoc                 
+   -     get-sources   Download any available source jar files for dependent jars
+   - 
+   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<project name="LabParticipant" default="build-all" basedir="." xmlns:artifact="urn:maven-artifact-ant">
+
+  <!-- ======================================================================================== -->
+  <!-- PROPERTIES                                                                               -->
+  <!-- ======================================================================================== -->
+
+  <!-- Load Environment Variables -->
+  <property environment="env" />
+
+  <!-- Load User-Specific Build Properties File -->
+  <property file="${basedir}/LabParticipant.properties" />		
+	
+  <!-- Directories -->
+  <property name="dir.output" value="${basedir}/target" />
+  <property name="dir.doc.api" value="${dir.output}/api-docs" />
+  <property name="dir.src" value="${basedir}/src/main" />
+  <property name="dir.src.data" value="${dir.src}/data" />
+  <property name="dir.src.java" value="${dir.src}/java" />
+  <property name="dir.src.resources" value="${dir.src}/resources" />
+  <property name="dir.test" value="${basedir}/src/test" />
+  <property name="dir.test.java" value="${dir.test}/java" />
+  <property name="dir.test.resources" value="${dir.test}/resources" />
+  <property name="dir.webapp" value="${dir.src}/webapp" />
+
+
+  <!-- ======================================================================================== -->
+  <!-- TASKS AND TYPEDEFS                                                                -->
+  <!-- ======================================================================================== -->
+	<path id="maven-ant-tasks.classpath" path="${basedir}/lib/maven-ant-tasks-2.1.3.jar" />
+  <typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="urn:maven-artifact-ant" classpathref="maven-ant-tasks.classpath"/>
+
+  
+  <!-- ======================================================================================== -->
+  <!-- INITIALIZING                                                                             -->
+  <!-- ======================================================================================== -->
+
+  <target name="init" description="Initializes the build environment">
+    <echo>
+  -----------------------------------------------------------
+   \/   ${ant.version}
+  \()/  Building: ${basedir}
+  -()-  Built On: J2SE v${ant.java.version} on ${os.name} v${os.version}
+  /()\  Built By: ${user.name}
+  -----------------------------------------------------------
+    </echo>
+    <mkdir dir="${dir.output}" />
+    <echoproperties destfile="${dir.output}/ant.properties" />
+  </target>
+
+
+  <!-- ======================================================================================== -->
+  <!-- DEPENDENCY MANAGEMENT                                                                    -->
+  <!-- ======================================================================================== -->
+
+  <target name="init-dependencies" depends="init" unless="pom" description="Initializes dependencies">
+    <!-- read the Maven project object model (pom) -->
+    <artifact:pom id="pom" file="pom.xml" />
+
+    <!-- define some properties based on pom information -->
+    <property name="module.filename.artifact" value="${pom.build.finalName}.${pom.packaging}" />
+    <property name="module.filename.sources" value="${pom.build.finalName}-sources.jar" />
+
+    <!-- ensure dependency jars are available -->
+    <artifact:dependencies pomrefid="pom" pathId="module.dependencies.path" usescope="test" />
+  </target>
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  <target name="get-source" depends="init-dependencies" description="Downloads sources for dependencies">
+    <artifact:dependencies pomrefid="pom" sourcesFilesetId="module.dependencies.sources" usescope="test" />
+  </target>
+
+
+  <!-- ======================================================================================== -->
+  <!-- BUILDING                                                                                 -->
+  <!-- ======================================================================================== -->
+
+  <target name="build" depends="compile,package, install" description="Incremental build" />
+  <target name="build-all" depends="clean, build, package, install" description="Clean build" />
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  <target name="clean" depends="init" description="Deletes compiled and generated sources">
+    <delete includeEmptyDirs="true" quiet="true">
+      <fileset dir="${dir.output}" />
+    </delete>
+  </target>
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  <target name="compile" depends="init-dependencies" description="Compiles sources">
+    <mkdir dir="${dir.output}/classes" />
+    <javac
+      destdir="${dir.output}/classes"
+      failonerror="yes"
+      classpathref="module.dependencies.path"
+      fork="yes"
+      source="1.6"
+      debug="true">
+      <src>
+        <pathelement location="${dir.src.java}" />
+        
+      </src>
+    </javac>
+  </target>
+	
+	
+	 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	  <target name="package" depends="compile" description="Generates deployment and source archives">
+
+	    <!-- build list of the dependency jars to bundle -->
+	    <artifact:dependencies pomrefid="pom" filesetId="lib.fileset" usescope="runtime" />
+
+	    <!-- libraries -->
+	    <mkdir dir="${dir.output}/lib" />
+	    <copy todir="${dir.output}/lib" preservelastmodified="yes">
+	      <fileset refid="lib.fileset" />
+	      <mapper type="flatten" />
+	    </copy>
+
+	    <!-- resources -->
+	    <copy todir="${dir.output}/classes" preservelastmodified="yes" flatten="true" includeEmptyDirs="false">
+	      <fileset dir="${dir.src.resources}" />
+	    </copy>
+
+	    <!-- meta info -->
+	    <mkdir dir="${dir.output}/metainf" />	   
+
+	    <!-- generate deployment archive -->
+	    <war
+	      destfile="${dir.output}/${module.filename.artifact}"
+	      webxml="${dir.webapp}/WEB-INF/web.xml">
+	      <fileset dir="${dir.webapp}">
+	        <exclude name="**/web.xml" />
+	        <exclude name="**/META-INF/*" />
+	      </fileset>
+	      <classes dir="${dir.output}/classes" />
+	      <lib dir="${dir.output}/lib" />
+	      <metainf dir="${dir.output}/metainf" />
+	      <manifest>
+	        <attribute name="Built-By" value="${user.name}@${env.HOSTNAME}" />
+	        <attribute name="Module-Version" value="${pom.version}" />
+	      </manifest>
+	    </war>
+
+	    <!-- generate source archive -->
+	    <jar destfile="${dir.output}/${module.filename.sources}">
+	      <fileset dir="${dir.src.java}" />
+	    </jar>
+	  </target>
+	
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	<target name="install" depends="package" description="Copies deployment archive, source archive and pom to local Maven repository">
+	  	<artifact:install file="${dir.output}/${module.filename.artifact}">
+	  	  <pom refid="pom" />
+	  	  <attach file="${dir.output}/${module.filename.sources}" classifier="sources" />
+	  	</artifact:install>
+	  </target>
+	
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	
+  <!-- ======================================================================================== -->
+  <!-- DEPLOYING                                                                                -->
+  <!-- ======================================================================================== -->
+
+  <target name="deploy" depends="package" description="Deploys the module">
+    <fail unless="dir.deploy" message="property 'dir.deploy' is not defined" />
+
+    <!-- make deployment directory -->
+    <mkdir dir="${dir.deploy}/${pom.build.finalName}" />
+
+    <!-- web content -->
+    <copy todir="${dir.deploy}/${pom.build.finalName}" preservelastmodified="yes">
+      <fileset dir="${dir.webapp}">
+        <exclude name="**/META-INF/*" />
+      </fileset>
+    </copy>
+
+  	<!-- meta inf -->
+    <mkdir dir="${dir.deploy}/${pom.build.finalName}/META-INF" />
+    <copy todir="${dir.deploy}/${pom.build.finalName}/META-INF" preservelastmodified="yes">
+      <fileset dir="${dir.output}/metainf" />
+    </copy>
+
+    <!-- libraries -->
+    <mkdir dir="${dir.deploy}/${pom.build.finalName}/WEB-INF/lib" />
+    <copy todir="${dir.deploy}/${pom.build.finalName}/WEB-INF/lib" preservelastmodified="yes">
+      <fileset dir="${dir.output}/lib" />
+    </copy>
+
+    <!-- classes and resources -->
+    <mkdir dir="${dir.deploy}/${pom.build.finalName}/WEB-INF/classes" />
+    <copy todir="${dir.deploy}/${pom.build.finalName}/WEB-INF/classes" preservelastmodified="yes">
+      <fileset dir="${dir.output}/classes" />
+    </copy>
+
+  </target>	
+  
+  <!-- ======================================================================================== -->
+  <!-- DOCUMENTATION                                                                                -->
+  <!-- ======================================================================================== -->
+	
+  <target name="javadoc" depends="init-dependencies" description="Generates the API documentation">
+    <mkdir dir="${dir.doc.api}" />
+    <javadoc
+      packagenames="net.aegis.*"
+      sourcepath="${dir.src.java}"
+      destdir="${dir.doc.api}"
+      classpathref="module.dependencies.path"
+      version="true"
+      private="yes"
+      linksource="yes">
+      <doctitle>
+        <![CDATA[<h1>LabParticipant - Web Module</h1>]]>
+      </doctitle>
+      <bottom>
+        <![CDATA[<i>Copyright &#169; 2011 AEGIS.net, Inc. All Rights Reserved.</i>]]>
+      </bottom>
+      <tag name="copyright" scope="all" description="Copyright:" />
+      <link href="http://java.sun.com/j2se/1.5.0/docs/api/" />
+      <link href="http://junit.sourceforge.net/javadoc/" />
+    </javadoc>
+  </target>
+
+</project>

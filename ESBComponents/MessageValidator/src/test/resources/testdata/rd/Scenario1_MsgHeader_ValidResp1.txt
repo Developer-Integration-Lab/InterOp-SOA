@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+X-Powered-By: Servlet/2.5
+Server: Sun GlassFish Enterprise Server v2.1.1
+Content-Type: multipart/related;start="<rootpart*b8be5c12-cc69-4eec-927a-80551a51d72e@example.jaxws.sun.com>";type="application/xop+xml";boundary="uuid:b8be5c12-cc69-4eec-927a-80551a51d72e";start-info="application/soap+xml"
+Transfer-Encoding: chunked
+Date: Wed, 28 Mar 2012 14:07:15 GMT
+

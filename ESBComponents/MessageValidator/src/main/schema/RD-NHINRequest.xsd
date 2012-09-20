@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aegis.net/mv/jaxb/RD" xmlns:lab="http://www.aegis.net/mv/jaxb/RD" xmlns:labmsg="http://www.aegis.net/mv/jaxb/msg"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://www.aegis.net/mv/jaxb/msg"/>
+	<xs:element name="rdNhinDocumentSetRequest"> 
+	<xs:complexType>	
+		<xs:complexContent>
+			<xs:extension base="labmsg:nhinMessage">
+				<xs:sequence>
+					<xs:element name="resourceId" type="xs:string" minOccurs="0"></xs:element>
+					<xs:element name="requestSet" type="lab:rdNhinDocumentRequest" 
+							minOccurs="1" maxOccurs="unbounded"></xs:element>
+				</xs:sequence>	
+			</xs:extension>
+		</xs:complexContent>
+		</xs:complexType> 
+	</xs:element>
+	
+	<xs:complexType name="rdNhinDocumentRequest">
+		<xs:sequence>
+			<xs:element name="homeCommunityId" type="xs:string"></xs:element>
+			<xs:element name="repositoryId" type="xs:string"></xs:element>
+			<xs:element name="documentUniqueId" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+</xs:schema>

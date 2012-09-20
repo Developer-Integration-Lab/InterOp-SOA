@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET: beans -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:soap="http://cxf.apache.org/bindings/soap"
+	xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+	xsi:schemaLocation="http://cxf.apache.org/transports/http/configuration
+http://cxf.apache.org/schemas/configuration/http-conf.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxws
+http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+  	<import resource="classpath:META-INF/cxf/osgi/cxf-extension-osgi.xml"/>
+
+	<!-- <http-conf:conduit name="{http://localhost:8080/CONNECTAdapter/EntityPatientDiscovery}EntityPatientDiscoveryPortType.http-conduit"> -->
+	<http-conf:conduit name="*.http-conduit">
+		<http-conf:client Connection="Keep-Alive"
+			ReceiveTimeout="300000" AllowChunking="false" />
+	</http-conf:conduit>
+
+	<jaxws:client id="entityPatientDiscoveryPortType32Proxy"
+		serviceClass="gov.hhs.fha.nhinc.entitypatientdiscovery.EntityPatientDiscoveryPortType"
+		address="http://localhost:8080/CONNECTGateway/EntityPatientDiscovery"
+		endpointName="EntityPatientDiscoveryPortSoap" 
+		serviceName="EntityPatientDiscovery" >
+		<jaxws:binding>
+	  	   <soap:soapBinding mtomEnabled="true" version="1.2"/>
+	  	</jaxws:binding>
+  	</jaxws:client>
+	<jaxws:client id="entityDocQueryPortType32Proxy"
+		serviceClass="gov.hhs.fha.nhinc.entitydocquery.EntityDocQueryPortType"
+		address="http://localhost:8080/CONNECTGateway/EntityService/EntityDocQueryUnsecured"
+		endpointName="EntityDocQueryPortSoap" 
+		serviceName="EntityDocQuery">
+		<jaxws:binding>
+	  	   <soap:soapBinding mtomEnabled="true" version="1.2"/>
+	  	</jaxws:binding>
+  	</jaxws:client>
+	
+	<jaxws:client id="entityDocRetrievePortType32Proxy"
+		serviceClass="gov.hhs.fha.nhinc.entitydocretrieve.EntityDocRetrievePortType"
+		address="http://localhost:8080/CONNECTGateway/EntityService/EntityDocRetrieve"
+		endpointName="EntityDocRetrievePortSoap" 
+		serviceName="EntityDocRetrieve">
+		<jaxws:binding>
+	  	   <soap:soapBinding mtomEnabled="true" version="1.2"/>
+	  	</jaxws:binding>
+  	</jaxws:client>
+		
+	<bean id="applicationConfigurationContext"
+		class="net.aegis.gateway.client.connect32.osgi.util.ApplicationConfigurationContext"
+		init-method="init">
+		<!-- <property name="bundleContext"/> -->
+	</bean> 
+	
+	<bean id="applicationContextProvider"
+		class="net.aegis.gateway.client.connect32.util.ApplicationContextProvider">
+	</bean>
+	
+</beans>
+<!-- END SNIPPET: beans -->

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+       http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.5.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <aop:aspectj-autoproxy/>
+
+    <tx:annotation-driven/>
+
+    <!-- datasouce, transaction manager and hibernate template definition for
+            test harness database-->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="namingStrategy"
+          class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+        <property name="staticField">
+            <value>org.hibernate.cfg.DefaultNamingStrategy.INSTANCE</value>
+        </property>
+    </bean>
+    <bean id="extendedFinderNamingStrategy" class="net.aegis.lab.genericdao.finder.impl.ExtendedFinderNamingStrategy"/>
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="namingStrategy"><ref bean="namingStrategy"/></property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+                <prop key="hibernate.show_sql">${hibernate.show.sql}</prop>
+                <!--<prop key="hibernate.c3p0.acquire_increment">${hibernate.c3p0.acquireIncrement}</prop>
+                <prop key="hibernate.c3p0.idle_test_period">${hibernate.c3p0.idleConnectionTestPeriod}</prop>
+                <prop key="hibernate.c3p0.timeout">${hibernate.c3p0.maxIdleTime}</prop>
+                <prop key="hibernate.c3p0.max_size">${hibernate.c3p0.maxPoolSize}</prop>
+                <prop key="hibernate.c3p0.min_size">${hibernate.c3p0.minPoolSize}</prop>-->
+            </props>
+        </property>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mappingLocations">
+            <list>
+                <value>classpath:net/aegis/ri/auditrepo/dao/pojo/Auditrepository.hbm.xml</value>
+                <value>classpath:net/aegis/ri/auditrepo/dao/pojo/Auditextension.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+    <!--<bean id="dataSource"
+          class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+        <property name="jdbcUrl" value="jdbc:mysql://${db.host.ri.auditrepo}:${db.port.ri.auditrepo}/auditrepo" />
+        <property name="user" value="${db.user.ri.auditrepo}" />
+        <property name="password" value="${db.pwd.ri.auditrepo}" />
+        <property name="initialPoolSize" value="${hibernate.c3p0.initialPoolSize}" />
+        <property name="minPoolSize" value="${hibernate.c3p0.minPoolSize}" />
+        <property name="maxPoolSize" value="${hibernate.c3p0.maxPoolSize}" />
+        <property name="acquireRetryAttempts" value="${hibernate.c3p0.acquireRetryAttempts}" />
+        <property name="acquireIncrement" value="${hibernate.c3p0.acquireIncrement}" />
+        <property name="idleConnectionTestPeriod" value="${hibernate.c3p0.idleConnectionTestPeriod}" />
+        <property name="maxIdleTime" value="${hibernate.c3p0.maxIdleTime}" />
+        <property name="maxConnectionAge" value="${hibernate.c3p0.maxConnectionAge}" />
+        <property name="preferredTestQuery" value="${hibernate.c3p0.preferredTestQuery}" />
+        <property name="testConnectionOnCheckin" value="${hibernate.c3p0.testConnectionOnCheckin}" />
+    </bean>-->
+    <bean id="dataSource"
+            class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+            <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+            <property name="url" value="jdbc:mysql://${db.host.ri.auditrepo}:${db.port.ri.auditrepo}/auditrepo" />
+            <property name="username" value="${db.user.ri.auditrepo}" />
+            <property name="password" value="${db.pwd.ri.auditrepo}" />
+    </bean>
+    <!--  Dao Layer instances -->
+    <bean id="auditRepoDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.ri.auditrepo.dao.AuditrepositoryDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.ri.auditrepo.dao.pojo.Auditrepository</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <bean id="auditExtensionDAO" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>net.aegis.ri.auditrepo.dao.AuditextensionDAO</value>
+        </property>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>net.aegis.ri.auditrepo.dao.pojo.Auditextension</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <!--  Dao Layer generic config-->
+    <bean id="finderIntroductionAdvisor" class="net.aegis.lab.genericdao.finder.impl.FinderIntroductionAdvisor"/>
+    <bean id="abstractDaoTarget"
+          class="net.aegis.lab.genericdao.impl.GenericDaoHibernateImpl" abstract="true">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+        <property name="namingStrategy"><ref bean="extendedFinderNamingStrategy" /></property>
+    </bean>
+    <bean id="abstractDao" class="org.springframework.aop.framework.ProxyFactoryBean" abstract="true">
+        <property name="interceptorNames">
+            <list>
+                <value>finderIntroductionAdvisor</value>
+            </list>
+        </property>
+    </bean>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:db-${aegis.implementation.environment}.properties"/>
+    </bean>
+    <context:component-scan base-package="net.aegis.ri.auditrepo" />
+
+    <bean id="auditextensionService" class="net.aegis.ri.auditrepo.auditextension.service.AuditextensionServiceImpl"></bean>
+
+    <bean id="auditrepoService" class="net.aegis.ri.auditrepo.auditrepository.service.AuditrepoServiceImpl"></bean>
+
+</beans>

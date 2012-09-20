@@ -1,0 +1,440 @@
+
+--uuid:ab30e3ae-8524-4c23-b892-b39d7bf5f775
+Content-Id:
+<rootpart * ab30e3ae-8524-4c23-b892-b39d7bf5f775 @
+	example.jaxws.sun.com>
+	Content-Type:
+	application/xop+xml;charset=utf-8;type="application/soap+xml"
+	Content-Transfer-Encoding: binary
+
+<?xml version='1.0' encoding='UTF-8'?>
+	<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope"
+		xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd">
+		<S:Header>
+			<To xmlns="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</To>
+			<Action xmlns="http://www.w3.org/2005/08/addressing">urn:ihe:iti:2007:CrossGatewayRetrieveResponse
+			</Action>
+			<MessageID xmlns="http://www.w3.org/2005/08/addressing">uuid:c81485ab-4875-410a-9f82-f7199f1a01d2
+			</MessageID>
+			<RelatesTo xmlns="http://www.w3.org/2005/08/addressing">uuid:f544ccb2-9bc3-47ec-beb8-0d3f1a701a26
+			</RelatesTo>
+			<wsse:Security S:mustUnderstand="true">
+				<wsu:Timestamp
+					xmlns:ns15="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512"
+					xmlns:ns14="http://schemas.xmlsoap.org/soap/envelope/" wsu:Id="_1">
+					<wsu:Created>2012-02-06T19:12:26Z</wsu:Created>
+					<wsu:Expires>2012-02-06T19:17:26Z</wsu:Expires>
+				</wsu:Timestamp>
+				<wsse11:SignatureConfirmation
+					xmlns:ns15="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512"
+					xmlns:ns14="http://schemas.xmlsoap.org/soap/envelope/" wsu:Id="_5002"
+					Value="E4jsfmQxkMh2W8Dd8AjS7/gWfFY1kLS+VFi2EjPmsusO2lY1ZBP14EImSso9peO/PGaJTau4l+/wz4xQCiLHR8ytH0p/buU2Vhj2s+ByYOUBVKaL6fT6Efhzeqs7Zt/VfUXIRYjISo66l4GnT9COq1zEegiOD6Q3IpdrA9DGWOFz1eyiHGjw23bkwzU+lsILcWLU8fMuNUJHuWe+YDFQWAD54O2Kf+H0Synut7fLGu9IwS+mTWqdXKV8FtkoWPkTMbVFQkE6CqVqZbw/9xolAeJoW67raWfLRms9ItBiNzSEAqPMXgPtPkS2+COWdqmUlUw0lbSqHxXQRefLLKCViA==" />
+			</wsse:Security>
+		</S:Header>
+		<S:Body>
+			<ns6:RetrieveDocumentSetResponse
+				xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+				xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"
+				xmlns:ns6="urn:ihe:iti:xds-b:2007" xmlns:ns7="urn:gov:hhs:fha:nhinc:gateway:samltokendata">
+				<ns4:RegistryResponse
+					status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success" />
+				<ns6:DocumentResponse>
+					<ns6:HomeCommunityId>urn:oid:2.16.840.1.113883.0.101</ns6:HomeCommunityId>
+					<ns6:RepositoryUniqueId>1</ns6:RepositoryUniqueId>
+					<ns6:DocumentUniqueId>1.RI1.101.00037.11111</ns6:DocumentUniqueId>
+					<ns6:mimeType>text/xml</ns6:mimeType>
+					<ns6:Document>
+						<xop:Include xmlns:xop="http://www.w3.org/2004/08/xop/include"
+							href="cid:b0852217-d432-49d1-a6c7-60fbcb87a407@example.jaxws.sun.com" />
+					</ns6:Document>
+				</ns6:DocumentResponse>
+			</ns6:RetrieveDocumentSetResponse>
+		</S:Body>
+	</S:Envelope>
+	--uuid:ab30e3ae-8524-4c23-b892-b39d7bf5f775
+	Content-Id:
+	<b0852217-d432-49d1-a6c7-60fbcb87a407 @
+		example.jaxws.sun.com>
+		Content-Type: application/octet-stream
+		Content-Transfer-Encoding: binary
+
+		<ClinicalDocument
+			xsi:schemaLocation="urn:hl7-org:v3 
+ http://xreg2.nist.gov:8080/hitspValidation/schema/cdar2c32/infrastructure/cda/C32_CDA.xsd"
+			xmlns:sdtc="urn:hl7-org:sdtc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns="urn:hl7-org:v3">
+			<realmCode code="US" />
+			<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
+			<templateId assigningAuthorityName="CDA/R2"
+				root="2.16.840.1.113883.3.27.1776" />
+			<templateId assigningAuthorityName="CCD"
+				root="2.16.840.1.113883.10.20.1" />
+			<templateId assigningAuthorityName="HITSP/C32"
+				root="2.16.840.1.113883.3.88.11.32.1" />
+			<templateId root="2.16.840.1.113883.10.20.3"
+				assigningAuthorityName="CCD" />
+			<templateId root="2.16.840.1.113883.10.20.10" /> <!-- Laika missing -->
+			<templateId root="2.16.840.1.113883.10.20.20" /> <!-- Laika missing -->
+			<templateId root="2.16.840.1.113883.10.20.30" /> <!-- Laika missing -->
+			<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1" />
+			<id root="2.16.840.1.113883.3.72" extension="NHIN C32 Test"
+				assigningAuthorityName="NHIN: Testing Work Group" />
+			<code code="34133-9" displayName="Summarization of patient data"
+				codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+			<title>Marta Marquez</title>
+			<effectiveTime value="20090518094500-0500" />                  <!-- 1.01 -->
+			<confidentialityCode />
+			<languageCode code="en-US" />                               <!-- 1.12 -->
+			<h3>Patient</h3>
+			<recordTarget>
+				<table border="1" width="25%" bgcolor="#d3d3d3">
+					<patientRole>
+						<id extension="1234567" /> <!-- Added -->                <!-- 1.02 -->
+						<addr>
+							<tr>
+								<td colspan="5">
+									<strong> Ms Marta Marquez        </strong>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<streetAddressLine>19591 Springs Pl</streetAddressLine>     <!-- 1.030.1 -->
+								</td>
+								<td>
+									<city>Atlanta</city>                                         <!-- 1.030.3 -->
+								</td>
+								<td>
+									<state>GA</state>                                      <!-- 1.030.4 -->
+								</td>
+								<td>
+									<postalCode>30345</postalCode>                      <!-- 1.030.5 -->
+								</td>
+								<td>
+									<country>US</country>                                <!-- 1.030.6 -->
+								</td>
+							</tr>
+						</addr>
+						<telecom value="tel:1-987-555-9000" use="HP" />                      <!-- 1.040.1 -->
+						<telecom value="tel:1-987-555-9001" use="WP" />                      <!-- 1.040.2 -->
+					</patientRole>
+				</table>
+			</recordTarget>
+			<h3>Information Source</h3>
+			<table border="1" width="25%" bgcolor="#d3d3d3">
+				<tr>
+					<td>
+						<strong>
+							<prefix>Dr</prefix>                 <!-- 10.authprefix -->
+							<given qualifier="CL">Sidney</given>  <!-- 10.authgiven1 -->
+							<family qualifier="BR">Garfield</family><!-- 10.authfamily -->
+						</strong>
+					</td>
+					<td>
+						<name>Kaiser Permanente</name>                            <!-- 10.orgname -->
+					</td>
+				</tr>
+			</table>
+			<h3>Support</h3>
+			<table border="1" width="25%" bgcolor="#d3d3d3">
+				<tr>
+					<td>
+						<strong>
+							Mr Joe Marquez     </strong>
+					</td>
+				</tr>
+			</table>
+			<documentationOf>
+				<serviceEvent classCode="PCPR">
+					<effectiveTime>
+						<low value="20070612" />                      <!-- 10.servicetimelow -->
+						<high value="20070712" />                    <!-- 10.servicetimehigh -->
+					</effectiveTime>
+					<performer typeCode="PRF">
+						<templateId assigningAuthorityName="HITSP/C32"
+							root="2.16.840.1.113883.3.88.11.32.4" />
+						<time>
+							<low value="20070612" />
+							<high value="20070712" />
+						</time>
+						<assignedEntity>
+							<id />
+							<code code="HARDCODED" displayName="HARDCODED"
+								codeSystemName="HARDCODED" codeSystem="2.16.840.1.113883.6.101" />
+							<addr>
+								<streetAddressLine>1250 Main St.</streetAddressLine>
+								<city>Roma</city>
+								<state>TN</state>
+								<postalCode>37662</postalCode>
+								<country>US</country>
+							</addr>
+							<telecom value="tel:1-423-555-1238" use="WP" />
+							<assignedPerson>
+								<name>
+									<prefix>Dr.</prefix>
+									<given qualifier="CL">"HARDCODED"</given>
+									<family qualifier="BR">"HARDCODED"</family>
+								</name>
+							</assignedPerson>
+							<representedOrganization>
+								<id assigningAuthorityName="HARDCODED" root="HARDCODED" />
+								<name>"HARDCODED"</name>
+							</representedOrganization>
+							<!-- <patient xmlns="HARDCODED"> <id extension="HARDCODED" root="HARDCODED" 
+								xmlns="HARDCODED"/> </patient> -->
+						</assignedEntity>
+					</performer>
+				</serviceEvent>
+			</documentationOf>
+			<component>
+				<structuredBody>
+					<component>
+						<section>
+							<templateId assigningAuthorityName="CCD"
+								root="2.16.840.1.113883.10.20.1.2" />
+							<code code="48765-2" displayName="HARDCODED" codeSystemName="HARDCODED"
+								codeSystem="2.16.840.1.113883.6.1" />
+							<title>Allergies, Adverse Reactions, Alerts</title>
+							<text>
+								<h3>Allergy and Drug Sensitivity</h3>
+								<table border="1" width="90%" bgcolor="#F5C43D">
+									<thead>
+										<tr>
+											<th>Event Date</th>
+											<th>Substance</th>
+											<th>Event Type</th>
+											<th>Severity</th>
+											<th>Reaction</th>
+											<th>Status</th>
+										</tr>
+									</thead>
+									<tbody bgcolor="#E0E0C2">
+										<tr>
+											<td>
+												<content ID="adverse_event_date-1">19751204</content> <!-- 6.01 -->
+											</td>
+											<td>
+												<content ID="product-1">Compazine</content> <!-- 6.04 -->
+											</td>
+											<td>
+												<content ID="event-1">Drug Allergy</content>  <!-- 6.025 -->
+											</td>
+											<td>
+												<content ID="severity-1">moderate</content> <!-- 6.07 -->
+											</td>
+											<td>
+												<content ID="reaction-1">Dystonia</content> <!-- 6.05 -->
+											</td>
+											<td>
+												<content ID="status-1">Active</content> <!-- 6.statusname -->
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<content ID="adverse_event_date-2">19900215</content> <!-- 6.01 -->
+											</td>
+											<td>
+												<content ID="product-2">Penicillin</content> <!-- 6.04 -->
+											</td>
+											<td>
+												<content ID="event-2">Drug Allergy</content>  <!-- 6.025 -->
+											</td>
+											<td>
+												<content ID="severity-2">moderate</content> <!-- 6.07 -->
+											</td>
+											<td>
+												<content ID="reaction-2">Dystonia</content> <!-- 6.05 -->
+											</td>
+											<td>
+												<content ID="status-2">Active</content> <!-- 6.statusname -->
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+						</section>
+					</component>
+					<component>
+						<section>
+							<templateId root="2.16.840.1.113883.10.20.1.8"
+								assigningAuthorityName="CCD" />
+							<code code="10160-0" displayName="History of medication use"
+								codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+							<title>Medications</title>
+							<text>
+								<h3>Medications</h3>
+								<table border="1" width="90%" bgcolor="#F5C43D">
+									<thead>
+										<tr>
+											<th>Product Display Name</th>
+											<th>Free Text Brand Name</th>
+											<th>Ordered Value</th>
+											<th>Ordered Unit</th>
+											<th>Expiration Time</th>
+											<th>Product Details</th>
+										</tr>
+									</thead>
+									<tbody bgcolor="#E0E0C2">
+										<tr>
+											<td>
+												<content ID="medication-1">BactrimDS100EA</content>
+											</td>
+											<td>Bactrim DS</td>
+											<td>28</td>
+											<td>1</td>
+											<td>20080715</td>
+											<td>
+												<ul>
+													<font size="2.0em">
+														<li>Interval: 12</li>
+													</font>
+													<font size="2.0em">
+														<li>Route Display Name: Oral</li>
+													</font>
+													<font size="2.0em">
+														<li>Coded Brand Name: Sulfamethoxazole 800 MG /
+															Trimethoprim 160 MG Oral Tablet [Bactrim DS]</li>
+													</font>
+													<font size="2.0em">
+														<li>Product Concentration: </li>
+													</font>
+													<font size="2.0em">
+														<li>Type of Medication: 73639000 (Prescription)</li>
+													</font>
+													<font size="2.0em">
+														<li>Order Number: 245002194</li>
+													</font>
+													<font size="2.0em">
+														<li>Fills: </li>
+													</font>
+													<font size="2.0em">
+														<li>Prescription Number: 123987456</li>
+													</font>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<content ID="medication-2">Ativan</content>
+											</td>
+											<td>Ativan</td>
+											<td>90</td>
+											<td>1</td>
+											<td>20090813</td>
+											<td>
+												<ul>
+													<font size="2.0em">
+														<li>Interval: 6</li>
+													</font>
+													<font size="2.0em">
+														<li>Route Display Name: Oral</li>
+													</font>
+													<font size="2.0em">
+														<li>Coded Brand Name: Ativan 1 MG Oral Tablet</li>
+													</font>
+													<font size="2.0em">
+														<li>Product Concentration: </li>
+													</font>
+													<font size="2.0em">
+														<li>Type of Medication: 73639000</li>
+													</font>
+													<font size="2.0em">
+														<li>Order Number: 254002105</li>
+													</font>
+													<font size="2.0em">
+														<li>Fills: </li>
+													</font>
+													<font size="2.0em">
+														<li>Prescription Number: 654321789</li>
+													</font>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<content ID="medication-3">Prozac</content>
+											</td>
+											<td>Prozac</td>
+											<td>100</td>
+											<td>1</td>
+											<td>20080814</td>
+											<td>
+												<ul>
+													<font size="2.0em">
+														<li>Interval: 0</li>
+													</font>
+													<font size="2.0em">
+														<li>Route Display Name: Oral</li>
+													</font>
+													<font size="2.0em">
+														<li>Coded Brand Name: Prozac 20 MG Oral Capsule</li>
+													</font>
+													<font size="2.0em">
+														<li>Product Concentration: </li>
+													</font>
+													<font size="2.0em">
+														<li>Type of Medication: 73639000</li>
+													</font>
+													<font size="2.0em">
+														<li>Order Number: 254002115</li>
+													</font>
+													<font size="2.0em">
+														<li>Fills: </li>
+													</font>
+													<font size="2.0em">
+														<li>Prescription Number: 654321790</li>
+													</font>
+												</ul>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+						</section>
+					</component>
+					<component>
+						<section>
+							<templateId root="2.16.840.1.113883.10.20.1.11"
+								assigningAuthorityName="CCD" />
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"
+								assigningAuthorityName="CCD" />
+							<code code="11450-4" displayName="Problems" codeSystem="2.16.840.1.113883.6.1"
+								codeSystemName="LOINC" />
+							<title>Conditions or Problems</title>
+							<text>
+								<h3>Conditions</h3>
+								<table border="1" width="90%" bgcolor="#F5C43D">
+									<thead>
+										<tr>
+											<th>Problem Name</th>
+											<th>Problem Type</th>
+											<th>Problem Date</th>
+										</tr>
+									</thead>
+									<tbody bgcolor="#E0E0C2">
+										<tr>
+											<td>
+												<content ID="problem-1">404684003</content>
+											</td>
+											<td>Clinical Finding</td>
+											<td>20080604</td>
+										</tr>
+										<tr>
+											<td>
+												<content ID="problem-2">404684003</content>
+											</td>
+											<td>Clinical Finding</td>
+											<td>20070610</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+						</section>
+					</component>
+				</structuredBody>
+			</component>
+		</ClinicalDocument>
+
+		--uuid:ab30e3ae-8524-4c23-b892-b39d7bf5f775--

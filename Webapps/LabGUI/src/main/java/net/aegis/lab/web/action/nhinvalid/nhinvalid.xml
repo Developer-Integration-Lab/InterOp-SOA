@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="nhinvalid" namespace="/nhinvalid" extends="tiles-default">
+
+        <action name="NhinvalidDashboard" class="net.aegis.lab.web.action.nhinvalid.NhinvalidDashboard">
+            <result name="input" type="tiles">nhinvalid.dashboard</result>
+            <result name="success" type="tiles">nhinvalid.dashboard</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="ValidateSubmittedTestResults" class="net.aegis.lab.web.action.nhinvalid.ValidateSubmittedTestResults">
+            <result name="input" type="tiles">nhinvalid.validatesubmitted.test.results</result>
+            <result name="success" type="tiles">nhinvalid.validatesubmitted.test.results</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="SubmittedScenarioResults" class="net.aegis.lab.web.action.nhinvalid.SubmittedScenarioResults">
+            <result name="input" type="tiles">nhinvalid.submitted.scenario.results</result>
+            <result name="success" type="tiles">nhinvalid.submitted.scenario.results</result>
+            <result name="error" type="tiles">error.default</result>
+         </action>
+
+        <action name="AssignSubmission" class="net.aegis.lab.web.action.nhinvalid.AssignSubmission">
+            <result name="input" type="tiles">assign.submission</result>
+            <result name="success" type="tiles">assign.submission</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="TestCaseHelp" class="net.aegis.lab.web.action.nhinvalid.TestCaseHelp">
+            <result name="success">/WEB-INF/nhinvalid/TestCaseHelp.jsp</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="TestCaseSpec" class="net.aegis.lab.web.action.nhinvalid.TestCaseSpec">
+            <result name="success">/WEB-INF/nhinvalid/TestCaseSpec.jsp</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="DisplayComments" class="net.aegis.lab.web.action.nhinvalid.DisplayComments">
+            <result name="success">/WEB-INF/nhinvalid/ScenarioComments.jsp</result>
+        </action>
+
+        <action name="LogEntries" class="net.aegis.lab.web.action.nhinvalid.LogEntries">
+            <result name="input" type="tiles">nhinvalid.log.entries</result>
+            <result name="success" type="tiles">nhinvalid.log.entries</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="MyInfo" class="net.aegis.lab.web.action.nhinvalid.MyInfo">
+            <result name="input" type="tiles">nhinvalid.myinfo</result>
+            <result name="success" type="tiles">nhinvalid.myinfo</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <!-- <action name="LogSearch" class="net.aegis.lab.web.action.nhinvalid.LogSearch">
+            <result name="input" type="tiles">nhinvalid.log.search</result>
+            <result name="success" type="tiles">nhinvalid.log.search</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+        <!-- <action name="ExportLogFiles" class="net.aegis.lab.web.action.nhinvalid.ExportLogFiles">
+             <result name="success">/WEB-INF/nhinvalid/ExportLogFiles.jsp</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+       <!--   <action name="ShowExportLogFile" class="net.aegis.lab.web.action.nhinvalid.ShowExportLogFile">
+            <result name="success">/WEB-INF/nhinvalid/ShowExportLogFile.jsp</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+        <!-- <action name="MessageSearch" class="net.aegis.lab.web.action.nhinvalid.MessageSearch">
+            <result name="input" type="tiles">nhinvalid.message.search</result>
+            <result name="success" type="tiles">nhinvalid.message.search</result>
+            <result name="error" type="tiles">error.default</result>
+        </action>
+
+        <action name="ValidMessageSearch" class="net.aegis.lab.web.action.nhinvalid.MessageSearch" method="messageSearch">
+            <result name="input" type="tiles">nhinvalid.message.search</result>
+            <result name="success" type="tiles">nhinvalid.message.search</result>
+            <result name="error" type="tiles">error.default</result>
+        </action> -->
+
+        <!-- Add actions here -->
+
+    </package>
+
+</struts>
+

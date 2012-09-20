@@ -1,0 +1,7 @@
+case_id,message_id,hcid,msg_type,registry_status,doc_list
+RD_SCENARIO_1:1,uuid:eb3e5a9a-8d0c-4e7b-8f75-95449179e911,urn:oid:2.16.840.1.113883.0.101,request,,2
+RD_SCENARIO_1:1,uuid:9b8f35c9-abf5-4c06-8a90-f4fa0dcb337e,urn:oid:2.16.840.1.113883.0.101,response,success,2
+RD_SCENARIO_1:2,uuid:eb3e5a9a-8d0c-4e7b-8f75-95449179e912,urn:oid:2.16.840.1.113883.0.101,request,,3
+RD_SCENARIO_1:2,uuid:9b8f35c9-abf5-4c06-8a90-f4fa0dcb337f,urn:oid:2.16.840.1.113883.0.101,response,success,3
+RD_SCENARIO_1:3,uuid:eb3e5a9a-8d0c-4e7b-8f75-95449179e913,urn:oid:2.16.840.1.113883.0.101,request,,4
+RD_SCENARIO_1:3,uuid:9b8f35c9-abf5-4c06-8a90-f4fa0dcb337g,urn:oid:2.16.840.1.113883.0.101,response,success,4

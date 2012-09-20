@@ -1,0 +1,144 @@
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action soap:mustUnderstand="1" xmlns="http://www.w3.org/2005/08/addressing">urn:ihe:iti:2007:CrossGatewayQueryResponse</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:f070a537-f307-4f92-acfb-34a58cf34dcd</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</To>
+		<RelatesTo xmlns="http://www.w3.org/2005/08/addressing">uuid:691f7f55-49cb-4320-b545-0d86d2c10076</RelatesTo>
+		<wsse:Security soap:mustUnderstand="true" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+			<wsse11:SignatureConfirmation Value="nF+3Pvy/Wvd4FT+DQianLivkvyx3uCwd5zvsFMBdvYYra85r3oY44W6BQkqgGw/wxZncPJ0ktRbrpU96S5w9Xj8rHtuV/txEKj8zY2aPpavH/sI47ZthEvPV5Rsn/XEXhUF9zxYO0UtubWzioA91SwiGDJUa8Q1ycOPaM/WLpOqk2k1FZonZwyzYwsai2ndYtb0k1vxPXDp7sFS0ORNW2FAaHsSEiEAiURnks1Rwc6P9EqB+cKbY7LwPBLqnWRfKg4aHD+SZQcUUw4PeTlSo+i1nu/qXFeG999zhthsXE/DpJVNvlHcJ6HQg4aIHdwXdnmM5s2ZsA6bqvGiy+AlYFw==" wsu:Id="SigConf-91" xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+		</wsse:Security>
+	</soap:Header>
+	<soap:Body>
+		<ns3:AdhocQueryResponse status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success" xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" xmlns:ns5="urn:ihe:iti:xds-b:2007">
+			<RegistryObjectList>
+				<ExtrinsicObject home="urn:oid:2.25.256133121442266547198931747355024016667.1.2.1" id="urn:uuid:96552b24-89b9-45c7-8575-d50b1e9e80bb" lid="urn:uuid:96552b24-89b9-45c7-8575-d50b1e9e80bb" mimeType="text/xml" objectType="urn:uuid:34268e47-fdf5-41a6-ba33-82133c465248" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved">
+					<Slot name="languageCode">
+						<ValueList>
+							<Value>en-us</Value>
+						</ValueList>
+					</Slot>
+					<Slot name="repositoryUniqueId">
+						<ValueList>
+							<Value>2.25.256133121442266547198931747355024016667.1.2.5.12</Value>
+						</ValueList>
+					</Slot>
+					<Slot name="sourcePatientId">
+						<ValueList>
+							<Value>000000088880^^^&amp;2.25.256133121442266547198931747355024016667.1.2.3&amp;ISO</Value>
+						</ValueList>
+					</Slot>
+					<Name>
+						<LocalizedString value="CCD"/>
+					</Name>
+					<Description>
+						<LocalizedString value="Continuity of Care Document"/>
+					</Description>
+					<VersionInfo versionName="1.1"/>
+					<Classification classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d" classifiedObject="urn:uuid:96552b24-89b9-45c7-8575-d50b1e9e80bb" id="urn:uuid:f0024872-0df8-43c5-bb1b-08b06b69374e" lid="urn:uuid:f0024872-0df8-43c5-bb1b-08b06b69374e" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved">
+						<Slot name="authorPerson">
+							<ValueList>
+								<Value>ELYSIUM</Value>
+							</ValueList>
+						</Slot>
+						<Slot name="authorInstitution">
+							<ValueList>
+								<Value>WNYTEST</Value>
+							</ValueList>
+						</Slot>
+						<Slot name="authorRole">
+							<ValueList>
+								<Value>HIE</Value>
+							</ValueList>
+						</Slot>
+						<Slot name="authorSpecialty">
+							<ValueList>
+								<Value>HIE</Value>
+							</ValueList>
+						</Slot>
+						<VersionInfo versionName="1.1"/>
+					</Classification>
+					<Classification classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a" classifiedObject="urn:uuid:96552b24-89b9-45c7-8575-d50b1e9e80bb" id="urn:uuid:4d613805-6193-4f86-a35f-a9affd641227" lid="urn:uuid:4d613805-6193-4f86-a35f-a9affd641227" nodeRepresentation="34133-9" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved">
+						<Slot name="codingScheme">
+							<ValueList>
+								<Value>2.16.840.1.113883.6.1</Value>
+							</ValueList>
+						</Slot>
+						<Name>
+							<LocalizedString value="SUMMARIZATION OF EPISODE NOTE"/>
+						</Name>
+						<VersionInfo versionName="1.1"/>
+					</Classification>
+					<Classification classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f" classifiedObject="urn:uuid:96552b24-89b9-45c7-8575-d50b1e9e80bb" id="urn:uuid:61ee2aba-5af2-4fff-b45b-53496bfe2302" lid="urn:uuid:61ee2aba-5af2-4fff-b45b-53496bfe2302" nodeRepresentation="N" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved">
+						<Slot name="codingScheme">
+							<ValueList>
+								<Value>2.16.840.1.113883.5.25</Value>
+							</ValueList>
+						</Slot>
+						<Name>
+							<LocalizedString value="NORMAL CONFIDENTIALITY"/>
+						</Name>
+						<VersionInfo versionName="1.1"/>
+					</Classification>
+					<Classification classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d" classifiedObject="urn:uuid:96552b24-89b9-45c7-8575-d50b1e9e80bb" id="urn:uuid:fbfda923-5032-4d17-b92d-0d598ef792b2" lid="urn:uuid:fbfda923-5032-4d17-b92d-0d598ef792b2" nodeRepresentation="2.16.840.113883.10.20.1" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved">
+						<Slot name="codingScheme">
+							<ValueList>
+								<Value>HITSP</Value>
+							</ValueList>
+						</Slot>
+						<Name>
+							<LocalizedString value="HL7 CCD Document"/>
+						</Name>
+						<VersionInfo versionName="1.1"/>
+					</Classification>
+					<Classification classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1" classifiedObject="urn:uuid:96552b24-89b9-45c7-8575-d50b1e9e80bb" id="urn:uuid:57ee2b80-a7d3-4e6d-8ba7-f5912ff7680b" lid="urn:uuid:57ee2b80-a7d3-4e6d-8ba7-f5912ff7680b" nodeRepresentation="P0-00905" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved">
+						<Slot name="codingScheme">
+							<ValueList>
+								<Value>2.16.840.1.113883.6.5</Value>
+							</ValueList>
+						</Slot>
+						<Name>
+							<LocalizedString value=" Health care information exchange"/>
+						</Name>
+						<VersionInfo versionName="1.1"/>
+					</Classification>
+					<Classification classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead" classifiedObject="urn:uuid:96552b24-89b9-45c7-8575-d50b1e9e80bb" id="urn:uuid:96fd951e-7197-4846-8b59-894ecc54cf9b" lid="urn:uuid:96fd951e-7197-4846-8b59-894ecc54cf9b" nodeRepresentation="394802001" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved">
+						<Slot name="codingScheme">
+							<ValueList>
+								<Value>2.16.840.1.113883.6.96</Value>
+							</ValueList>
+						</Slot>
+						<Name>
+							<LocalizedString value="General Medicine"/>
+						</Name>
+						<VersionInfo versionName="1.1"/>
+					</Classification>
+					<Classification classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983" classifiedObject="urn:uuid:96552b24-89b9-45c7-8575-d50b1e9e80bb" id="urn:uuid:bde4ce5d-2016-46eb-9207-2969641873a0" lid="urn:uuid:bde4ce5d-2016-46eb-9207-2969641873a0" nodeRepresentation="34133-9" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved">
+						<Slot name="codingScheme">
+							<ValueList>
+								<Value>2.16.840.1.113883.6.1</Value>
+							</ValueList>
+						</Slot>
+						<Name>
+							<LocalizedString value="SUMMARIZATION OF EPISODE NOTE"/>
+						</Name>
+						<VersionInfo versionName="1.1"/>
+					</Classification>
+					<ExternalIdentifier id="urn:uuid:7d557a31-9bc6-413a-819f-212fb353c8bb" identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427" lid="urn:uuid:7d557a31-9bc6-413a-819f-212fb353c8bb" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalIdentifier" registryObject="urn:uuid:96552b24-89b9-45c7-8575-d50b1e9e80bb" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved" value="000000088880^^^&amp;2.25.256133121442266547198931747355024016667.1.2.3&amp;ISO">
+						<Name>
+							<LocalizedString value="XDSDocumentEntry.patientId"/>
+						</Name>
+						<VersionInfo versionName="1.1"/>
+					</ExternalIdentifier>
+					<ExternalIdentifier id="urn:uuid:effa628b-e25f-4e29-a0e1-8c1389389df9" identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab" lid="urn:uuid:effa628b-e25f-4e29-a0e1-8c1389389df9" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalIdentifier" registryObject="urn:uuid:96552b24-89b9-45c7-8575-d50b1e9e80bb" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved" value="2.25.56534635362506578698328444887643634333">
+						<Name>
+							<LocalizedString value="XDSDocumentEntry.uniqueId"/>
+						</Name>
+						<VersionInfo versionName="1.1"/>
+					</ExternalIdentifier>
+				</ExtrinsicObject>
+				<ObjectRef home="urn:oid:2.25.256133121442266547198931747355024016667.1.2.1" id="urn:uuid:96552b24-89b9-45c7-8575-d50b1e9e80bb"/>
+			</RegistryObjectList>
+		</ns3:AdhocQueryResponse>
+	</soap:Body>
+</soap:Envelope>

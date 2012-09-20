@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="test" namespace="/test" extends="tiles-default">
+
+        <action name="ActiveScenarios" class="net.aegis.lab.participant.web.action.test.ActiveScenarios">
+            <result name="input" type="tiles">test.active.scenarios</result>
+            <result name="success" type="tiles">test.active.scenarios</result>
+        </action>
+
+        <action name="ScenarioCases" class="net.aegis.lab.participant.web.action.test.ScenarioCases">
+            <result name="input" type="tiles">test.scenario.cases</result>
+            <result name="success" type="tiles">test.scenario.cases</result>
+        </action>
+
+        <action name="ExecuteTestCase" class="net.aegis.lab.participant.web.action.test.ExecuteTestCase">
+            <result name="input" type="tiles">test.scenario.cases</result>
+            <result name="success" type="tiles">test.scenario.cases</result>
+        </action>
+
+        <action name="ResetTest" class="net.aegis.lab.participant.web.action.test.ResetTest">
+            <result name="input" type="tiles">test.reset.test</result>
+            <result name="success" type="tiles">test.reset.test</result>
+        </action>
+
+        <action name="DisplayDocuments" class="net.aegis.lab.participant.web.action.test.DisplayDocuments">
+            <result name="success">/WEB-INF/test/Documents.jsp</result>
+        </action>
+
+        <!-- Add actions here -->
+
+    </package>
+
+</struts>

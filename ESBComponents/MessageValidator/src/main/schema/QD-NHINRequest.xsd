@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aegis.net/mv/jaxb/QD" xmlns:lab="http://www.aegis.net/mv/jaxb/QD"
+	xmlns:labmsg="http://www.aegis.net/mv/jaxb/msg" elementFormDefault="qualified">
+	<xs:import namespace="http://www.aegis.net/mv/jaxb/msg" />
+
+	<xs:element name="QDNhinRequest" type="lab:QDNhinRequest">
+	</xs:element>
+
+
+	<xs:complexType name="QDNhinRequest">
+		<xs:complexContent>
+			<xs:extension base="labmsg:nhinMessage">
+				<xs:sequence>
+					<!-- <xs:element name="messageID" type="xs:string" minOccurs="0"></xs:element> -->
+					<xs:element name="responderPatientID" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="responderHCID" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="responderAAID" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="docEntryStatusList" type="xs:string"
+						nillable="true" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="entryClassCodeList" type="xs:string"
+						nillable="true" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="returnType" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="entryCreationTimeFrom" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="entryCreationTimeTo" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="serviceStartTimeFrom" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="serviceStartTimeTo" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="serviceStopTimeFrom" type="xs:string"
+						minOccurs="0"></xs:element>
+					<xs:element name="serviceStopTimeTo" type="xs:string"
+						minOccurs="0"></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+
+	</xs:complexType>
+
+</xs:schema>

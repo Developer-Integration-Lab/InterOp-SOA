@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd">
+	<S:Header>
+		<To xmlns="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</To>
+		<Action S:mustUnderstand="1" xmlns="http://www.w3.org/2005/08/addressing">urn:hl7-org:v3:PRPA_IN201306UV02:CrossGatewayPatientDiscovery</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">uuid:127d4e33-2669-482d-99bf-642c0bf88ada</MessageID>
+		<RelatesTo xmlns="http://www.w3.org/2005/08/addressing">uuid:811344bf-ddc5-4ac9-8913-b038ead5acf6</RelatesTo>
+		<wsse:Security S:mustUnderstand="true">
+			<wsu:Timestamp wsu:Id="_1" xmlns:ns15="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512" xmlns:ns14="http://schemas.xmlsoap.org/soap/envelope/">
+				<wsu:Created>2011-08-12T19:30:28Z</wsu:Created>
+				<wsu:Expires>2011-08-12T19:35:28Z</wsu:Expires>
+			</wsu:Timestamp>
+			<wsse11:SignatureConfirmation wsu:Id="_5002" Value="UjUpdNGLx0yWyW9vGXyALsmaRtZ8KnJR1GUzodJ3SGSa4p7+6tCxXH5sYhbzwwKe4Cyw3KooHnqh8OPNw3oXUJZf81A7AUgOz24bovh4aw30VNW8X1KO+uGlJjdr+DSnKPRLkBXvyaD9VRuxU27e2n9la94amf2Fq8TEgDM30Rw=" xmlns:ns15="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512" xmlns:ns14="http://schemas.xmlsoap.org/soap/envelope/"/>
+		</wsse:Security>
+	</S:Header>
+	<S:Body>
+		<PRPA_IN201306UV02 ITSVersion="XML_1.0" xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" xmlns:ns3="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:ns4="urn:gov:hhs:fha:nhinc:common:patientcorrelationfacade">
+			<id extension="6629229a:1317815e117:-50cc" root="1.1"/>
+			<creationTime value="2011812193018"/>
+			<interactionId extension="PRPA_IN201306UV02" root="2.16.840.1.113883.1.6"/>
+			<processingCode code="P"/>
+			<processingModeCode code="R"/>
+			<acceptAckCode code="AL"/>
+			<receiver typeCode="RCV">
+				<device determinerCode="INSTANCE" classCode="">
+					<id root="1.2.345.678.999"/>
+					<asAgent classCode="AGNT">
+						<representedOrganization determinerCode="INSTANCE" classCode="ORG">
+							<id/>
+						</representedOrganization>
+					</asAgent>
+				</device>
+			</receiver>
+			<sender typeCode="SND">
+				<device determinerCode="INSTANCE" classCode="">
+					<id root="1.2.345.678.999"/>
+					<asAgent classCode="AGNT">
+						<representedOrganization determinerCode="INSTANCE" classCode="ORG">
+							<id/>
+						</representedOrganization>
+					</asAgent>
+				</device>
+			</sender>
+			<acknowledgement>
+				<typeId extension="PRPA_IN201305UV02" root="2.16.840.1.113883.1.6"/>
+				<typeCode code="AA"/>
+				<targetMessage xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+			</acknowledgement>
+			<controlActProcess moodCode="EVN" classCode="">
+				<code codeSystem="2.16.840.1.113883.1.6" code="PRPA_TE201306UV"/>
+				<queryAck>
+					<queryId extension="-abd3453dcd24wkkks545" root="2.16.840.1.113883.0.200"/>
+					<queryResponseCode code="OK"/>
+					<resultTotalQuantity value="1"/>
+					<resultCurrentQuantity value="1"/>
+					<resultRemainingQuantity value="0"/>
+				</queryAck>
+				<queryByParameter>
+					<queryId extension="-abd3453dcd24wkkks545" root="2.16.840.1.113883.0.200"/>
+					<statusCode code="new"/>
+					<responseModalityCode code="R"/>
+					<responsePriorityCode code="I"/>
+					<parameterList>
+						<livingSubjectAdministrativeGender>
+							<value code="M"/>
+							<semanticsText representation="TXT"/>
+						</livingSubjectAdministrativeGender>
+						<livingSubjectBirthTime>
+							<value value="19570423"/>
+							<semanticsText representation="TXT"/>
+						</livingSubjectBirthTime>
+						<livingSubjectId>
+							<value extension="CAN20000019" root="2.16.840.1.113883.0.200"/>
+							<semanticsText representation="TXT"/>
+						</livingSubjectId>
+						<livingSubjectId>
+							<value extension="" root="2.16.840.1.113883.4.1"/>
+							<semanticsText representation="TXT"/>
+						</livingSubjectId>
+						<livingSubjectName>
+							<value>
+								<family partType="FAM">Smith</family>
+								<given partType="GIV">John</given>
+							</value>
+							<semanticsText representation="TXT"/>
+						</livingSubjectName>
+						<patientAddress>
+							<value/>
+						</patientAddress>
+					</parameterList>
+				</queryByParameter>
+			</controlActProcess>
+		</PRPA_IN201306UV02>
+	</S:Body>
+</S:Envelope>

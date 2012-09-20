@@ -1,0 +1,8 @@
+POST /CONNECTGateway/NhinService/RespondingGateway_Retrieve_Service/DocRetrieve HTTP/1.1
+Content-type: multipart/related;start="<rootpart*bcbaf9e6-8d43-4c78-aa8d-4771d08413c4@example.jaxws.sun.com>";type="application/xop+xml";boundary="uuid:bcbaf9e6-8d43-4c78-aa8d-4771d08413c4";start-info="application/soap+xml";action="urn:ihe:iti:2007:CrossGatewayRetrieve"
+Accept: application/soap+xml, multipart/related, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+User-Agent: JAX-WS RI 2.1.7-hudson-48-
+Host: D7Z0S3Q1.aegis.net:9897
+Connection: keep-alive
+Content-Length: 10634
+X-Forwarded-For: 10.0.3.87

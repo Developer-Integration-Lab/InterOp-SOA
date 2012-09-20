@@ -1,0 +1,324 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action xmlns="http://www.w3.org/2005/08/addressing"
+			soap:mustUnderstand="1">urn:hl7-org:v3:PRPA_IN201305UV02:CrossGatewayPatientDiscovery
+		</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:f295df55-42ef-4247-a616-f309e81de0b8
+		</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://conformance1.5amsolutions.com:443/CONNECTGateway/NhinService/NhinPatientDiscovery
+		</To>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing"
+			soap:mustUnderstand="1">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+		<wsse:Security
+			xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+			soap:mustUnderstand="true">
+			<wsu:Timestamp
+				xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+				wsu:Id="Timestamp-129">
+				<wsu:Created>2011-09-13T17:52:48.937Z</wsu:Created>
+				<wsu:Expires>2011-09-13T17:57:48.937Z</wsu:Expires>
+			</wsu:Timestamp>
+			<saml2:Assertion xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
+				xmlns:xs="http://www.w3.org/2001/XMLSchema" ID="_d769fced-f87e-4afc-86cb-625b1b169073"
+				IssueInstant="2011-09-13T17:52:46.594Z" Version="2.0">
+				<saml2:Issuer
+					Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">CN=WNYCIEDBTEST,OU=NHIN-Test,O=nhin,C=US</saml2:Issuer>
+				<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+					<ds:SignedInfo>
+						<ds:CanonicalizationMethod
+							Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+						<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+						<ds:Reference URI="#_d769fced-f87e-4afc-86cb-625b1b169073">
+							<ds:Transforms>
+								<ds:Transform
+									Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+								<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+									<ec:InclusiveNamespaces
+										xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="xs" />
+								</ds:Transform>
+							</ds:Transforms>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+							<ds:DigestValue>GMR89DqQ0Ou319AVy++zodIL2NM=</ds:DigestValue>
+						</ds:Reference>
+					</ds:SignedInfo>
+					<ds:SignatureValue>1k8YTTCLQpuyFbXBpLBqqiqfJcf7AD80gs56jaH1bGYF6CXk9SZibLN5XCcA+V9Q4DEpv8kln3XEvSD/g0wMLtlgDL2CfFA0n+OInTDYYqbGJg7K87Il4wcwhXEySW0W1p11E21xRkI9wBwSla2gofsyRlUYBzTLf9RO1te6Tq628iJjuAu7iX0WaC8Srll4zzpjc/53Z/RuVupyirFc0JZx50A1qccPRYqgdI2gVwhODM/CXo1fCD5asrYkeK7ktaR+qG7Ck9WIGzQng2vxHl9EnXwLWNt6001dV9sYXwn5O8DL/LrMKJaGoL0xSB+RRCOEm4gyhCxRkYlKflguwg==
+					</ds:SignatureValue>
+					<ds:KeyInfo>
+						<ds:X509Data>
+							<ds:X509Certificate>MIIHDTCCBfWgAwIBAgIES3OD+DANBgkqhkiG9w0BAQsFADB2MQswCQYDVQQGEwJVUzEQMA4GA1UE
+								ChMHRW50cnVzdDEiMCAGA1UECxMZQ2VydGlmaWNhdGlvbiBBdXRob3JpdGllczExMC8GA1UECxMo
+								RW50cnVzdCBORkkgVGVzdCBTaGFyZWQgU2VydmljZSBQcm92aWRlcjAeFw0xMTA5MDgyMTI0MDVa
+								Fw0xMTEyMDgyMTU0MDVaMEcxCzAJBgNVBAYTAlVTMQ0wCwYDVQQKEwRuaGluMRIwEAYDVQQLEwlO
+								SElOLVRlc3QxFTATBgNVBAMTDFdOWUNJRURCVEVTVDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+								AQoCggEBAN28FWjwNkd3btrTTKVtSsv+yn/ZzJcBFziPDQOyWA4CWI6UzLZ8r2+furS7zYPcOzdp
+								FULOD9/WGs8jnbO8NVB3vc7kYXn5FCSYqGAJleZ0ToONlP+7vklOHgd+cOC4k1gdfKSMpukp0nWP
+								k+ek12qLD1njI9sLsHqMrhh7NMOboeUGl+wSp2aeTJ37vG8ZofH6r1xnY0Fx5DrlI82Gy8EjSgla
+								WxrIDYUX1rqHaxnjdSKMDkNHXVbe9Y6HNJ3e9MHohzJfUmpfdRz5CMXO2tknKi7SgI61PzlqnVbF
+								LAUubsUhGUMbKQD5gCBoVX1fLoyWVFEglU6VuRKegCrkqLsCAwEAAaOCA9AwggPMMAsGA1UdDwQE
+								AwIFoDArBgNVHRAEJDAigA8yMDExMDkwODIxMjQwNVqBDzIwMTExMjA4MjE1NDA1WjARBglghkgB
+								hvhCAQEEBAMCBsAwggF9BggrBgEFBQcBAQSCAW8wggFrMFUGCCsGAQUFBzAChklodHRwOi8vbmZp
+								dGVzdHdlYi5tYW5hZ2VkLmVudHJ1c3QuY29tL0FJQS9DZXJ0c0lzc3VlZFRvTkZJTWVkaXVtU1NQ
+								Q0EucDdjMIHHBggrBgEFBQcwAoaBumxkYXA6Ly9uZml0ZXN0ZGlyLm1hbmFnZWQuZW50cnVzdC5j
+								b20vb3U9RW50cnVzdCUyME5GSSUyMFRlc3QlMjBTaGFyZWQlMjBTZXJ2aWNlJTIwUHJvdmlkZXIs
+								b3U9Q2VydGlmaWNhdGlvbiUyMEF1dGhvcml0aWVzLG89RW50cnVzdCxjPVVTP2NBQ2VydGlmaWNh
+								dGU7YmluYXJ5LGNyb3NzQ2VydGlmaWNhdGVQYWlyO2JpbmFyeTBIBggrBgEFBQcwAYY8aHR0cDov
+								L25maXRlc3RvY3NwLm1hbmFnZWQuZW50cnVzdC5jb20vT0NTUC9ORklUZXN0UmVzcG9uZGVyMIIB
+								lAYDVR0fBIIBizCCAYcwgfCgge2ggeqGO2h0dHA6Ly9uZml0ZXN0d2ViLm1hbmFnZWQuZW50cnVz
+								dC5jb20vQ1JMcy9ORklUZXN0U1NQQ0EuY3JshoGqbGRhcDovL25maXRlc3RkaXIubWFuYWdlZC5l
+								bnRydXN0LmNvbS9vdT1FbnRydXN0JTIwTkZJJTIwVGVzdCUyMFNoYXJlZCUyMFNlcnZpY2UlMjBQ
+								cm92aWRlcixvdT1DZXJ0aWZpY2F0aW9uJTIwQXV0aG9yaXRpZXMsbz1FbnRydXN0LGM9VVM/Y2Vy
+								dGlmaWNhdGVSZXZvY2F0aW9uTGlzdDtiaW5hcnkwgZGggY6ggYukgYgwgYUxCzAJBgNVBAYTAlVT
+								MRAwDgYDVQQKEwdFbnRydXN0MSIwIAYDVQQLExlDZXJ0aWZpY2F0aW9uIEF1dGhvcml0aWVzMTEw
+								LwYDVQQLEyhFbnRydXN0IE5GSSBUZXN0IFNoYXJlZCBTZXJ2aWNlIFByb3ZpZGVyMQ0wCwYDVQQD
+								EwRDUkwyMB8GA1UdIwQYMBaAFEyY0MmWfQSXZn1srY08pQxcaX2MMB0GA1UdDgQWBBR41t7dyIul
+								U3OOZy2kp9rs42DfgTAJBgNVHRMEAjAAMBkGCSqGSIb2fQdBAAQMMAobBFY4LjADAgOoMA0GCSqG
+								SIb3DQEBCwUAA4IBAQAFMvVwSet6zseiend8oIEpDXpiNrlJSCouFHDEV0qv1C92vDf1+uMVxNRq
+								/7fOMH9TUakuSVoUGjCUtLEun9sv2TMEs6mcIrhDcC6a5vP4y4382nEc/0S2KV2qrGhoKo3qs4Y8
+								6ffUa+FJGG3fs78iwga7mhdsdBAjZsAw3IMlALE4rXG2ZvlsvOXcz4y/uel+Z4jVoiGpE7kgqSYV
+								0tL3qAYs+4nooQw9EiKjR0ivailu7N7enHmszHr0nrRcdbWADJMIHNkUdgRrpxJg665GLIkiIMFA
+								8CvJjKmnmiDnXxvJg1hUpIBkuZyhZwYHzKblPVJCalsjAB+0//ihRlSm
+							</ds:X509Certificate>
+						</ds:X509Data>
+						<ds:KeyValue>
+							<ds:RSAKeyValue>
+								<ds:Modulus>3bwVaPA2R3du2tNMpW1Ky/7Kf9nMlwEXOI8NA7JYDgJYjpTMtnyvb5+6tLvNg9w7N2kVQs4P39Ya
+									zyOds7w1UHe9zuRhefkUJJioYAmV5nROg42U/7u+SU4eB35w4LiTWB18pIym6SnSdY+T56TXaosP
+									WeMj2wuweoyuGHs0w5uh5QaX7BKnZp5Mnfu8bxmh8fqvXGdjQXHkOuUjzYbLwSNKCVpbGsgNhRfW
+									uodrGeN1IowOQ0ddVt71joc0nd70weiHMl9Sal91HPkIxc7a2ScqLtKAjrU/OWqdVsUsBS5uxSEZ
+									QxspAPmAIGhVfV8ujJZUUSCVTpW5Ep6AKuSouw==</ds:Modulus>
+								<ds:Exponent>AQAB</ds:Exponent>
+							</ds:RSAKeyValue>
+						</ds:KeyValue>
+					</ds:KeyInfo>
+				</ds:Signature>
+				<saml2:Subject>
+					<saml2:NameID
+						Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">CN=RyanDoctor Axolotl, O=Test One Workgroup Organization
+						NPI</saml2:NameID>
+					<saml2:SubjectConfirmation
+						Method="urn:oasis:names:tc:SAML:2.0:cm:holder-of-key">
+						<saml2:SubjectConfirmationData>
+							<ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+								<ds:X509Data>
+									<ds:X509Certificate>MIIHDTCCBfWgAwIBAgIES3OD+DANBgkqhkiG9w0BAQsFADB2MQswCQYDVQQGEwJVUzEQMA4GA1UE
+										ChMHRW50cnVzdDEiMCAGA1UECxMZQ2VydGlmaWNhdGlvbiBBdXRob3JpdGllczExMC8GA1UECxMo
+										RW50cnVzdCBORkkgVGVzdCBTaGFyZWQgU2VydmljZSBQcm92aWRlcjAeFw0xMTA5MDgyMTI0MDVa
+										Fw0xMTEyMDgyMTU0MDVaMEcxCzAJBgNVBAYTAlVTMQ0wCwYDVQQKEwRuaGluMRIwEAYDVQQLEwlO
+										SElOLVRlc3QxFTATBgNVBAMTDFdOWUNJRURCVEVTVDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+										AQoCggEBAN28FWjwNkd3btrTTKVtSsv+yn/ZzJcBFziPDQOyWA4CWI6UzLZ8r2+furS7zYPcOzdp
+										FULOD9/WGs8jnbO8NVB3vc7kYXn5FCSYqGAJleZ0ToONlP+7vklOHgd+cOC4k1gdfKSMpukp0nWP
+										k+ek12qLD1njI9sLsHqMrhh7NMOboeUGl+wSp2aeTJ37vG8ZofH6r1xnY0Fx5DrlI82Gy8EjSgla
+										WxrIDYUX1rqHaxnjdSKMDkNHXVbe9Y6HNJ3e9MHohzJfUmpfdRz5CMXO2tknKi7SgI61PzlqnVbF
+										LAUubsUhGUMbKQD5gCBoVX1fLoyWVFEglU6VuRKegCrkqLsCAwEAAaOCA9AwggPMMAsGA1UdDwQE
+										AwIFoDArBgNVHRAEJDAigA8yMDExMDkwODIxMjQwNVqBDzIwMTExMjA4MjE1NDA1WjARBglghkgB
+										hvhCAQEEBAMCBsAwggF9BggrBgEFBQcBAQSCAW8wggFrMFUGCCsGAQUFBzAChklodHRwOi8vbmZp
+										dGVzdHdlYi5tYW5hZ2VkLmVudHJ1c3QuY29tL0FJQS9DZXJ0c0lzc3VlZFRvTkZJTWVkaXVtU1NQ
+										Q0EucDdjMIHHBggrBgEFBQcwAoaBumxkYXA6Ly9uZml0ZXN0ZGlyLm1hbmFnZWQuZW50cnVzdC5j
+										b20vb3U9RW50cnVzdCUyME5GSSUyMFRlc3QlMjBTaGFyZWQlMjBTZXJ2aWNlJTIwUHJvdmlkZXIs
+										b3U9Q2VydGlmaWNhdGlvbiUyMEF1dGhvcml0aWVzLG89RW50cnVzdCxjPVVTP2NBQ2VydGlmaWNh
+										dGU7YmluYXJ5LGNyb3NzQ2VydGlmaWNhdGVQYWlyO2JpbmFyeTBIBggrBgEFBQcwAYY8aHR0cDov
+										L25maXRlc3RvY3NwLm1hbmFnZWQuZW50cnVzdC5jb20vT0NTUC9ORklUZXN0UmVzcG9uZGVyMIIB
+										lAYDVR0fBIIBizCCAYcwgfCgge2ggeqGO2h0dHA6Ly9uZml0ZXN0d2ViLm1hbmFnZWQuZW50cnVz
+										dC5jb20vQ1JMcy9ORklUZXN0U1NQQ0EuY3JshoGqbGRhcDovL25maXRlc3RkaXIubWFuYWdlZC5l
+										bnRydXN0LmNvbS9vdT1FbnRydXN0JTIwTkZJJTIwVGVzdCUyMFNoYXJlZCUyMFNlcnZpY2UlMjBQ
+										cm92aWRlcixvdT1DZXJ0aWZpY2F0aW9uJTIwQXV0aG9yaXRpZXMsbz1FbnRydXN0LGM9VVM/Y2Vy
+										dGlmaWNhdGVSZXZvY2F0aW9uTGlzdDtiaW5hcnkwgZGggY6ggYukgYgwgYUxCzAJBgNVBAYTAlVT
+										MRAwDgYDVQQKEwdFbnRydXN0MSIwIAYDVQQLExlDZXJ0aWZpY2F0aW9uIEF1dGhvcml0aWVzMTEw
+										LwYDVQQLEyhFbnRydXN0IE5GSSBUZXN0IFNoYXJlZCBTZXJ2aWNlIFByb3ZpZGVyMQ0wCwYDVQQD
+										EwRDUkwyMB8GA1UdIwQYMBaAFEyY0MmWfQSXZn1srY08pQxcaX2MMB0GA1UdDgQWBBR41t7dyIul
+										U3OOZy2kp9rs42DfgTAJBgNVHRMEAjAAMBkGCSqGSIb2fQdBAAQMMAobBFY4LjADAgOoMA0GCSqG
+										SIb3DQEBCwUAA4IBAQAFMvVwSet6zseiend8oIEpDXpiNrlJSCouFHDEV0qv1C92vDf1+uMVxNRq
+										/7fOMH9TUakuSVoUGjCUtLEun9sv2TMEs6mcIrhDcC6a5vP4y4382nEc/0S2KV2qrGhoKo3qs4Y8
+										6ffUa+FJGG3fs78iwga7mhdsdBAjZsAw3IMlALE4rXG2ZvlsvOXcz4y/uel+Z4jVoiGpE7kgqSYV
+										0tL3qAYs+4nooQw9EiKjR0ivailu7N7enHmszHr0nrRcdbWADJMIHNkUdgRrpxJg665GLIkiIMFA
+										8CvJjKmnmiDnXxvJg1hUpIBkuZyhZwYHzKblPVJCalsjAB+0//ihRlSm
+									</ds:X509Certificate>
+								</ds:X509Data>
+								<ds:KeyValue>
+									<ds:RSAKeyValue>
+										<ds:Modulus>3bwVaPA2R3du2tNMpW1Ky/7Kf9nMlwEXOI8NA7JYDgJYjpTMtnyvb5+6tLvNg9w7N2kVQs4P39Ya
+											zyOds7w1UHe9zuRhefkUJJioYAmV5nROg42U/7u+SU4eB35w4LiTWB18pIym6SnSdY+T56TXaosP
+											WeMj2wuweoyuGHs0w5uh5QaX7BKnZp5Mnfu8bxmh8fqvXGdjQXHkOuUjzYbLwSNKCVpbGsgNhRfW
+											uodrGeN1IowOQ0ddVt71joc0nd70weiHMl9Sal91HPkIxc7a2ScqLtKAjrU/OWqdVsUsBS5uxSEZ
+											QxspAPmAIGhVfV8ujJZUUSCVTpW5Ep6AKuSouw==</ds:Modulus>
+										<ds:Exponent>AQAB</ds:Exponent>
+									</ds:RSAKeyValue>
+								</ds:KeyValue>
+							</ds:KeyInfo>
+						</saml2:SubjectConfirmationData>
+					</saml2:SubjectConfirmation>
+				</saml2:Subject>
+				<saml2:Conditions NotBefore="2011-09-13T17:51:46.594Z"
+					NotOnOrAfter="2011-09-13T17:53:46.594Z" />
+				<saml2:AuthnStatement AuthnInstant="2011-09-13T17:52:46.594Z">
+					<saml2:SubjectLocality Address="10.32.100.17"
+						DNSName="10.32.100.17" />
+					<saml2:AuthnContext>
+						<saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified
+						</saml2:AuthnContextClassRef>
+					</saml2:AuthnContext>
+				</saml2:AuthnStatement>
+				<saml2:AttributeStatement>
+					<saml2:Attribute Name="urn:oasis:names:tc:xspa:1.0:subject:subject-id">
+						<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="xs:string">RyanDoctor Axolotl</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute Name="urn:oasis:names:tc:xspa:1.0:subject:organization">
+						<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="xs:string">Test One Workgroup Organization NPI
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute Name="urn:oasis:names:tc:xacml:2.0:subject:role">
+						<saml2:AttributeValue>
+							<Role xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+								code="112247003" codeSystem="2.16.840.1.113883.6.96"
+								codeSystemName="SNOMED_CT" displayName="Medical Doctor"
+								xsi:type="CE" />
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute Name="urn:oasis:names:tc:xspa:1.0:subject:purposeofuse">
+						<saml2:AttributeValue>
+							<PurposeOfUse xmlns="urn:hl7-org:v3"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" code="TREATMENT"
+								codeSystem="2.16.840.1.113883.3.18.7.1" codeSystemName="nhin-purpose"
+								displayName="Treatment" xsi:type="CE" />
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute Name="urn:nhin:names:saml:homeCommunityId">
+						<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="xs:string">urn:oid:2.25.256133121442266547198931747355024016667.1.2.1
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute
+						Name="urn:oasis:names:tc:xspa:1.0:subject:organization-id">
+						<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+							xsi:type="xs:string">urn:oid:2.16.840.1.113883.3.709.1.2.5.11.1
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+				</saml2:AttributeStatement>
+			</saml2:Assertion>
+			<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+				Id="Signature-130">
+				<ds:SignedInfo>
+					<ds:CanonicalizationMethod
+						Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+					<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+					<ds:Reference URI="#Timestamp-129">
+						<ds:Transforms>
+							<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+						</ds:Transforms>
+						<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+						<ds:DigestValue>FDI/kDEaX8uirueAwqqTmVQtq9w=</ds:DigestValue>
+					</ds:Reference>
+				</ds:SignedInfo>
+				<ds:SignatureValue>MKTG9eFzqOJYmE5Q4gz93joVgShc6ny2qC4ReoC4cNH6DLLiT2a11ZPsPeDySdrSrKbn24Giy7T4DQr2IcF/hcaYG/hvTJhMqrob9Rg3qxjcejsZedEgTHSvaqdewsm2Y+khLbP58Y+r7B45kQ+UTmzZ8WyDjriR6T7TmXA2AaGrRycInZcl3DRCfpurv9ZMGyDmKtLGh6bNlmijgVxb/4f3pJdA8ADiui3heDqJ6r4lmnp/CGb9NqhSFtuOoEhFDNkd21IDnqAtiTCM0v57LqbzK1eY2Lny3W8mr68H19ySldBYo1diymqYk2/EG3rhGzKp/49D98nqhyLW9Lb98Q==
+				</ds:SignatureValue>
+				<ds:KeyInfo Id="KeyId-5604A202A311FE733E1315936368937194">
+					<wsse:SecurityTokenReference
+						xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+						xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+						wsu:Id="STRId-5604A202A311FE733E1315936368937195">
+						<wsse:KeyIdentifier
+							ValueType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID">_d769fced-f87e-4afc-86cb-625b1b169073
+						</wsse:KeyIdentifier>
+					</wsse:SecurityTokenReference>
+				</ds:KeyInfo>
+			</ds:Signature>
+		</wsse:Security>
+	</soap:Header>
+	<soap:Body>
+		<ns2:PRPA_IN201305UV02 xmlns:ns2="urn:hl7-org:v3"
+			xmlns:ns3="urn:ihe:iti:xcpd:2009" ITSVersion="XML_1.0">
+			<ns2:id extension="64e965ef-acf1-495b-89c2-d12b442c2459"
+				root="2.25.256133121442266547198931747355024016667.1.2.2" />
+			<ns2:creationTime value="20110913175243" />
+			<ns2:interactionId extension="PRPA_IN201305UV02"
+				root="2.16.840.1.113883.1.6" />
+			<ns2:processingCode code="T" />
+			<ns2:processingModeCode code="I" />
+			<ns2:acceptAckCode code="AL" />
+			<ns2:receiver typeCode="RCV">
+				<ns2:device classCode="DEV" determinerCode="INSTANCE">
+					<ns2:id root="2.16.840.1.113883.3.596" />
+					<ns2:telecom
+						value="https://conformance1.5amsolutions.com:443/CONNECTGateway/NhinService/NhinPatientDiscovery" />
+				</ns2:device>
+			</ns2:receiver>
+			<ns2:sender typeCode="SND">
+				<ns2:device classCode="DEV" determinerCode="INSTANCE">
+					<ns2:id root="2.25.256133121442266547198931747355024016667.1.2.5.9" />
+					<ns2:telecom
+						value="https://wnyciedbtest.axolotl.com/xc/services/PDQSupplier_Service" />
+					<ns2:asAgent classCode="AGNT">
+						<ns2:representedOrganization
+							classCode="ORG" determinerCode="INSTANCE">
+							<ns2:id root="2.25.256133121442266547198931747355024016667.1.2.1" />
+						</ns2:representedOrganization>
+					</ns2:asAgent>
+				</ns2:device>
+			</ns2:sender>
+			<ns2:controlActProcess classCode="CACT"
+				moodCode="EVN">
+				<ns2:code code="PRPA_TE201305UV02" codeSystem="2.16.840.1.113883.1.6" />
+				<ns2:authorOrPerformer typeCode="AUT">
+					<ns2:assignedDevice classCode="ASSIGNED">
+						<ns2:id assigningAuthorityName="ELYSIUM"
+							root="2.25.256133121442266547198931747355024016667.1.2.3" />
+					</ns2:assignedDevice>
+				</ns2:authorOrPerformer>
+				<ns2:queryByParameter>
+					<ns2:queryId extension="edd38811-de92-4ee4-a5c2-e7574ad67235"
+						root="2.25.256133121442266547198931747355024016667.1.2.2" />
+					<ns2:statusCode code="new" />
+					<ns2:responseModalityCode code="R" />
+					<ns2:responsePriorityCode code="I" />
+					<ns2:parameterList>
+						<ns2:livingSubjectAdministrativeGender>
+							<ns2:value code="F" codeSystem="2.16.840.1.113883.5.1"
+								codeSystemName="AdministrativeGender" codeSystemVersion="76"
+								displayName="Female" />
+							<ns2:semanticsText>LivingSubject.administrativeGender
+							</ns2:semanticsText>
+						</ns2:livingSubjectAdministrativeGender>
+						<ns2:livingSubjectBirthTime>
+							<ns2:value value="20010420000000" />
+							<ns2:semanticsText>LivingSubject.birthTime</ns2:semanticsText>
+						</ns2:livingSubjectBirthTime>
+						<ns2:livingSubjectId>
+							<ns2:value extension="000000058883"
+								root="2.25.256133121442266547198931747355024016667.1.2.3" />
+							<ns2:semanticsText>LivingSubject.id</ns2:semanticsText>
+						</ns2:livingSubjectId>
+						<ns2:livingSubjectName>
+							<ns2:value use="L">
+								<ns2:given>Theresa</ns2:given>
+								<ns2:given>S</ns2:given>
+								<ns2:family>Adams</ns2:family>
+							</ns2:value>
+							<ns2:semanticsText>LivingSubject.name</ns2:semanticsText>
+						</ns2:livingSubjectName>
+						<ns2:patientAddress>
+							<ns2:value use="H">
+								<ns2:streetAddressLine>3131 Over Street</ns2:streetAddressLine>
+								<ns2:city>Ft Worth</ns2:city>
+								<ns2:state>TX</ns2:state>
+								<ns2:postalCode>76101</ns2:postalCode>
+							</ns2:value>
+							<ns2:semanticsText>Patient.addr</ns2:semanticsText>
+						</ns2:patientAddress>
+						<ns2:patientTelecom>
+							<ns2:value use="WP" value="tel:+1-682-633-0111" />
+							<ns2:semanticsText>Patient.telecom</ns2:semanticsText>
+						</ns2:patientTelecom>
+						<ns2:patientTelecom>
+							<ns2:value use="H" value="tel:+1-682-633-0909" />
+							<ns2:semanticsText>Patient.telecom</ns2:semanticsText>
+						</ns2:patientTelecom>
+					</ns2:parameterList>
+				</ns2:queryByParameter>
+			</ns2:controlActProcess>
+		</ns2:PRPA_IN201305UV02>
+	</soap:Body>
+</soap:Envelope>
